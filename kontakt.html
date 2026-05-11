@@ -1,146 +1,250 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="bs">
-
   <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Digitalni arhiv Tuzle</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kontakt | Digitalni arhiv Tuzle</title>
+    <link rel="stylesheet" href="css/tptpstil.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <script src="js/tptpskripte.js" defer></script>
 
-  <link rel="stylesheet" href="css/tptpstil.css" />
-  <script src="js/tptpskripte.js" defer></script>
-</head>
-<body>
-  <header>
-    <h1>Digitalni Arhiv Tuzle</h1>
 
 
-    <nav>
+  </head>
+
+  <body>
+    <header>
+      <div class="header-top">
+        <div class="logo-container">
+          <img src="images/logo1.svg" alt="Grb Tuzlanskog kantona" class="grb" />
+          <h1 class="logo">AURUM</h1>
+        </div>
+      </div>
+
+      <nav aria-label="Glavni navigacijski meni">
         <a href="index.html">Početna</a>
         <a href="sadrzaj.html">Sadržaj</a>
-        <a href="kontakt.html">Kontakt</a>
-        <a href="fotografije.html">Fotografije</a>
-        <a href="video.html">Video</a>
-
-        <!-- apsolutni link -->
+        <a href="kontakt.html" class="active">Kontakt</a>
         <a href="https://github.com/" target="_blank">GitHub</a>
-    </nav>
-</header>
+      </nav>
 
-  <main>
-    <h2>Kontakt</h2>
-  <p>
-    Vaše povratne informacije, upiti i doprinosi ključni su za rast ovog digitalnog arhiva. 
-  </p>
-
-  <div class="kontakt-grid">
-
-  <section id="poruka">
-    <h2>Pošaljite nam poruku</h2>
-    <p>Ukoliko imate pitanja, prijedloge za dopunu zbirke ili želite ostvariti saradnju, 
-      ispunite formu ispod. Nastojimo odgovoriti na sve poruke u roku od 48 sati.
-    </p>
-
-    <form id="contactForm" action="#" method="post" novalidate>
-
-      <div class="form-group">
-          <label for="ime">Ime</label>
-          <input type="text" id="ime" name="ime" placeholder="Vaše ime" />
-          <span class="field-error" id="error-ime"></span>
+      <div class="theme-switch">
+        <div class="toggle-row">
+          <span>Light</span>
+          <button id="theme-toggle" type="button">
+            <span class="toggle-circle"></span>
+          </button>
+          <span>Dark</span>
         </div>
- 
-        <div class="form-group">
-          <label for="prezime">Prezime</label>
-          <input type="text" id="prezime" name="prezime" placeholder="Vaše prezime" />
-          <span class="field-error" id="error-prezime"></span>
-        </div>
- 
-        <div class="form-group">
-          <label for="email">Email adresa</label>
-          <input type="email" id="email" name="email" placeholder="email@adresa.com" />
-          <span class="field-error" id="error-email"></span>
-        </div>
- 
-        <div class="form-group">
-          <label for="telefon">Broj telefona</label>
+      </div>
+    </header>
 
-            <div class="input-group">
-             <input type="tel" id="telefon" name="telefon" value="+387 " placeholder="+387 00 000 000" />
+    <main style="width:100%; margin:0;">
+
+      <!-- HERO -->
+      <section class="hero-kontakt">
+        <p class="hero-label">Digitalni arhiv grada soli</p>
+        <h2>Kontaktirajte nas</h2>
+        <p>
+          Imate pitanje, prijedlog ili materijal koji bi obogatio naš arhiv? <br>
+          Slobodno nam se obratite — svaki doprinos je dobrodošao.
+        </p>
+      </section>
+
+      <!-- INFO KARTICE -->
+      <div class="kontakt-kartice">
+        <div class="kontakt-kartica">
+          <div class="k-ikona"><i class="fa-solid fa-location-dot"></i></div>
+          <span class="k-label">Lokacija</span>
+          <span class="k-vrijednost">Narodna i univerzitetska biblioteka „Derviš Sušić"</span>
+          <span class="k-opis">Tuzla, Bosna i Hercegovina</span>
+        </div>
+
+        <div class="kontakt-kartica">
+          <div class="k-ikona"><i class="fa-solid fa-envelope"></i></div>
+          <span class="k-label">Email</span>
+          <span class="k-vrijednost">aurum.digitalniarh@gmail.com</span>
+          <span class="k-opis">Odgovaramo u roku od 24 sata</span>
+        </div>
+
+        <div class="kontakt-kartica">
+          <div class="k-ikona"><i class="fa-solid fa-phone"></i></div>
+          <span class="k-label">Telefon</span>
+          <span class="k-vrijednost">+387 61 000 000</span>
+          <span class="k-opis">Pon–Pet, 09:00 – 16:00</span>
+        </div>
+
+        <div class="kontakt-kartica">
+          <div class="k-ikona"><i class="fa-solid fa-clock"></i></div>
+          <span class="k-label">Radno vrijeme</span>
+          <span class="k-vrijednost">Pon – Pet: 08:00 – 20:00</span>
+          <span class="k-opis">Subota: 08:00 – 15:00 · Nedjelja: zatvoreno</span>
+        </div>
+      </div>
+
+      <!-- 2 col grid forma, mapa cesta pitanja -->
+      <div class="kontakt-grid">
+
+        <!-- lijevo forma -->
+        <div class="kontakt-forma-wrap">
+          <h3>Pošaljite poruku</h3>
+          <p>Popunite formu i javit ćemo vam se u najkraćem mogućem roku.</p>
+
+          <form id="kontaktForma" novalidate>
+            <div class="red-dva">
+              <div>
+                <label for="ime">Ime</label>
+                <input type="text" id="ime" name="ime" placeholder="Vaše prezime"/>
+                <span id="greskaIme" class="greska2"></span>
+              </div>
+              <div>
+                <label for="prezime">Prezime</label>
+                <input type="text" id="prezime" name="prezime" placeholder="Vaše prezime"/>
+                <span id="greskaPrezime" class="greska2"></span>
+              </div>
             </div>
 
-          <span class="field-error" id="error-telefon"></span>
+            <div>
+              <label for="email">Email adresa</label>
+              <input type="text" id="email" name="email" placeholder="email@adresa.com"/>
+              <span id="greskaEmail" class="greska2"></span>
+            </div>
+
+            <div>
+              <label for="telefon">Telefon</label>
+              <input type="text" id="telefon" name="telefon" value="+387 " placeholder="+387 00 000 000"/>
+              <span id="greskaTelefon" class="greska2"></span>
+            </div>
+
+            <div>
+              <label for="tema">Tema upita</label>
+              <select id="tema" name="tema">
+              <option value="">Odaberite temu</option>
+              <option value="fotografije">Fotografije</option>
+              <option value="dokumenti">Dokumenti</option>
+              <option value="video">Video arhiv</option>
+              <option value="suradnja">Želim surađivati</option>
+              <option value="greska">Želim prijaviti grešku</option>
+              <option value="prijedlog">Prijedlog za arhiv</option>
+              <option value="prijedlog">Ostalo</option>
+              </select>
+              <span id="greskaTema" class="greska2"></span>
+            </div>
+
+            <div>
+              <label for="poruka">Poruka</label>
+              <textarea id="poruka" name="poruka" rows="7" placeholder="Napišite..."></textarea>
+              <span id="greskaPoruka" class="greska2"></span>
+            </div>
+
+            <div>
+              <button type="submit">Pošalji poruku</button>
+              <button type="reset" id="resetDugme2">Poništi</button>
+            </div>
+
+            <p id="uspjesnaPoruka2"></p>
+          </form>
         </div>
-        
 
-        <div class="form-group">
-          <label for="tema">Vaša poruka</label>
-          <select id="tema" name="tema">
-            <option value="">-- Odaberite temu --</option>
-            <option value="pitanje">Imam pitanje</option>
-            <option value="prijedlog">Prijedlog za kapsulu</option>
-            <option value="suradnja">Želim surađivati</option>
-            <option value="greska">Prijaviti grešku</option>
-            <option value="ostalo">Ostalo</option>
-          </select>
-          <span class="field-error" id="error-tema"></span>
+        <!-- desno mapa + FAQ -->
+        <div class="kontakt-desno">
+
+          <!-- mapa -->
+          <div class="mapa-wrap">
+            <h3>Pronađi nas</h3>
+            <p>Iako je naš arhiv primarno digitalan, fizički materijal obrađujemo u čitaonici NUB "Derviš Sušić" u Tuzli. Ukoliko želite lično donijeti fotografije, dokumente ili druge predmete za skeniranje, javite nam se da dogovorimo susret u biblioteci i sigurno preuzimanje materijala. </p>
+            <iframe
+              title="Mapa: Biblioteka Derviš Sušić"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2843.890010094345!2d18.6796362!3d44.5378846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475ead239d1d5b07%3A0xc2091daead0c1d2e!2zTmFyb2RuYSBpIHN2ZXXEjWlsacWhbmEga25qacW-bmljYSAiRGVydmnFoSBTdcWhacSHIg!5e0!3m2!1shr!2sba!4v1778425537579!5m2!1shr!2sba" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen
+            ></iframe>
+          </div>
+
+          <!-- FAQ -->
+          <div class="faq-wrap">
+            <h3>Često postavljena pitanja</h3>
+
+            <details>
+              <summary>Kako mogu doprinijeti arhivu?</summary>
+              <p>
+                Možete nam poslati fotografije, dokumente ili priče putem
+                kontakt forme. Sve materijale pregledamo i, ukoliko su relevantni,
+                dodamo u digitalni arhiv uz vaše navođenje kao donatora.
+              </p>
+            </details>
+
+            <details>
+              <summary>Da li je arhiv dostupan svima?</summary>
+              <p>
+                Da — AURUM je potpuno besplatan i otvoren za javnost. Cilj projekta
+                je očuvanje i dijeljenje historijskog nasljeđa Tuzle sa što širom
+                publikom.
+              </p>
+            </details>
+
+            <details>
+              <summary>Koliko dugo čuvate poslane materijale?</summary>
+              <p>
+                Svi prihvaćeni materijali čuvaju se trajno u okviru arhiva.
+                Materijali koji ne budu uvršteni brišu se u roku od 30 dana
+                od pregleda.
+              </p>
+            </details>
+
+            <details>
+              <summary>Mogu li tražiti uklanjanje određenog sadržaja?</summary>
+              <p>
+                Naravno. Ukoliko imate autorska ili lična prava na sadržaj koji
+                se nalazi u arhivu, kontaktirajte nas putem forme i zahtjev ćemo
+                obraditi u roku od 7 radnih dana.
+              </p>
+            </details>
+          </div>
+
         </div>
- 
-        <div class="form-group">
-          <label for="poruka-tekst">Poruka</label>
-          <textarea id="poruka-tekst" name="poruka" rows="8" placeholder="Napišite..."></textarea>
-          <span class="field-error" id="error-poruka"></span>
-        </div>
- 
-        <div class="form-actions">
-          <button type="submit" id="submitBtn">Pošalji</button>
-          <button type="button" id="resetBtn">Poništi</button>
-        </div>
- 
-        <p id="successMsg" class="success-msg hidden"></p>
+      </div>
 
-    </form>
-  </section>
-  </div>
+    </main>
 
-  </main>
-
-
-  <aside id="lokacija" class="kontakt-sidebar"> <!-- sidebar sa lokacijom gradske biblioteke + mail + instagram stranica -->
-    <h3>Gdje nas možete pronaći?</h3>
-    <p>
-      Iako je naš arhiv primarno digitalan, fizički materijal obrađujemo 
-      u čitaonici <strong>NUB "Derviš Sušić" u Tuzli</strong>. 
-      <br><br>
-      Ukoliko želite lično donijeti fotografije, dokumente ili druge predmete za skeniranje, 
-      javite nam se da dogovorimo susret u biblioteci i sigurno preuzimanje materijala.
-    </p>
-
-    <div class="map-container">
-      <iframe
-        src="https://maps.google.com/maps?q=NUB+Dervis+Susic+Tuzla&t=&z=16&ie=UTF8&iwloc=&output=embed"
-        width="100%"
-        height="250"
-        class="mapa-okvir" 
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        title="Karta NUB Derviš Sušić u Tuzli">
-      </iframe>
+    <div class="back-to-top">
+      <a href="#">↑</a>
     </div>
 
-    <address>
-      <ul class="kontakt-list">>
-        <li>📍 <strong>Adresa:</strong> Mihajla i Živka Crnogorčevića 7, 75000 Tuzla</li>
-        <li>📧 <strong>Email:</strong> <a href="mailto:kapsula@tuzla.ba">kapsula@tuzla.ba</a></li>
-        <li>📱 <strong>Instagram:</strong> <a href="#" target="_blank" rel="noopener">@kapsulaTuzle</a></li>
-      </ul>
-    </address>
-  </aside>
+    <footer>
+      <div class="footer-left">
+        <h3>Digitalni Arhiv Tuzle - AURUM</h3>
+        <p>Autori projekta:</p>
+        <ul class="autori-lista">
+          <li>Lamija Pjanić</li>
+          <li>Lejla Kur</li>
+          <li>Leyla Bećirović</li>
+        </ul>
+      </div>
 
-  
-  <footer>
-    <p>© 2026 Digitalni arhiv Tuzle</p>
-  </footer>
-</body>
+      <div class="footer-center">
+        <a href="https://instagram.com" target="_blank">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://facebook.com" target="_blank">
+          <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        <a href="https://twitter.com" target="_blank">
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+        <a href="https://github.com" target="_blank">
+          <i class="fa-brands fa-github"></i>
+        </a>
+      </div>
 
-
+      <div class="footer-right">
+        <p>© 2026 Digitalni arhiv Tuzle.</p>
+        <p>Sva prava zadržana.</p>
+      </div>
+    </footer>
+  </body>
 </html>
