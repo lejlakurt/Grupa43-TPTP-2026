@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="bs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Video arhiv Tuzle</title>
+
+    <link rel="stylesheet" href="css/tptpstil.css" />
+    <script src="js/tptpskripte.js" defer></script>
+  </head>
+
+  <body>
+    <button type="button" id="theme-toggle" class="theme-toggle">
+      🌙 / ☀️
+    </button>
+
+    <header>
+      <div class="header-top">
+        <div class="logo-container">
+          <img
+            src="images/grb-tk.png"
+            alt="Grb Tuzlanskog kantona"
+            class="grb"
+          />
+
+          <div>
+            <h1 class="logo">Digitalni arhiv Tuzle</h1>
+
+            <p>Historija, legende, znamenitosti i priče grada soli.</p>
+          </div>
+        </div>
+      </div>
+
+      <nav aria-label="Glavni navigacijski meni">
+        <a href="index.html">Početna</a>
+        <a href="sadrzaj.html">Sadržaj</a>
+        <a href="kontakt.html">Kontakt</a>
+        <a href="fotografije.html">Fotografije</a>
+        <a href="video.html" class="active">Video</a>
+      </nav>
+    </header>
+
+    <section class="video-hero">
+      <div class="video-overlay">
+        <h1>Video arhiv grada Tuzle</h1>
+
+        <p>
+          Pogledajte snimke koji prikazuju historiju, kulturu, znamenitosti i
+          svakodnevni život Tuzle.
+        </p>
+      </div>
+    </section>
+
+    <main class="video-page">
+      <section class="video-sekcija">
+        <div class="video-info">
+          <span class="video-tag"> DIGITALNI ARHIV </span>
+
+          <h2>Tuzla kroz vrijeme</h2>
+
+          <p>
+            Ovaj video prikazuje jedinstvenu priču o gradu Tuzli, njegovoj
+            historiji, razvoju i prepoznatljivim simbolima. Kroz arhivske
+            kadrove i savremene snimke može se vidjeti kako se grad mijenjao
+            kroz vrijeme, ali i kako je sačuvao svoj identitet grada soli.
+          </p>
+
+          <div class="video-statistike">
+            <div class="stat-box">
+              <h3>120+</h3>
+              <p>Godina historije</p>
+            </div>
+
+            <div class="stat-box">
+              <h3>15+</h3>
+              <p>Znamenitosti</p>
+            </div>
+
+            <div class="stat-box">
+              <h3>1</h3>
+              <p>Grad soli</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="video-container-custom">
+          <video controls poster="images/video-cover.jpg">
+            <source src="videos/tuzla.mp4" type="video/mp4" />
+
+            Vaš preglednik ne podržava video zapis.
+          </video>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Autor: Lamija Pjanić</p>
+
+      <p>Godina izrade: 2026.</p>
+
+      <p>Digitalni arhiv Tuzle</p>
+    </footer>
+  </body>
+</html>
