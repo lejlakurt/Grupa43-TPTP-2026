@@ -485,5 +485,188 @@
   </section>
 </div>
 
+<!-- ┌────────────────────────────────────────────────────────┐ -->
+<!-- │                  11. INTERAKTIVNA MAPA                 │ -->
+<!-- └────────────────────────────────────────────────────────┘ -->
+<!-- SVG koristi <image> kao statičnu pozadinu i <g> grupe sa krugovima (<circle>) kao interaktivne tačke. Svaka grupa sadrži "data-*" koje JavaScript koristi za punjenje desnog info panela-->
+
+<section class="mapa-istrazi-sekcija" id="interaktivna-mapa">
+  <h2>Istražite mapu Tuzle</h2>
+  <p>Kliknite na označenu lokaciju na mapi da vidiš više informacija.</p>
+
+  <div class="mapa-grid">
+    <div class="mapa-svg-wrap">
+      <svg viewBox="0 0 1000 800" xmlns="http://www.w3.org/2000/svg" id="mapaSvg">
+        <image href="images/mapa.jpg" x="0" y="0" width="1000" height="800" preserveAspectRatio="xMidYMid slice"/>
+
+        <!-- ── ZNAMENITOSTI (narančasta) ── -->
+        <g class="mapa-zona" data-naziv="Skver" data-kategorija="Znamenitosti"
+           data-opis="Glavno čvorište grada i simbol Tuzle sa čuvenom česmom."
+           data-ikona="fa-landmark" data-boja="#f97316">
+          <circle cx="342" cy="330" r="8" fill="#f97316" stroke="white" stroke-width="2"/>
+        </g>
+
+        <g class="mapa-zona" data-naziv="Trg Slobode" data-kategorija="Znamenitosti"
+           data-opis="Najveći trg u Bosni i Hercegovini, poznat po velikom platou, centralnoj fontani i rekonstruisanoj zgradi Baroka."
+           data-ikona="fa-building" data-boja="#f97316">
+          <circle cx="440" cy="393" r="8" fill="#f97316" stroke="white" stroke-width="2"/>
+        </g>
+
+        <!-- ── HISTORIJA (crvena) ── -->
+        <g class="mapa-zona" data-naziv="Kapija" data-kategorija="Historija"
+           data-opis="Mjesto stradanja tuzlanske mladosti 25. maja 1995. godine."
+           data-ikona="fa-heart" data-boja="#dc2626">
+          <circle cx="530" cy="395" r="8" fill="#dc2626" stroke="white" stroke-width="2"/>
+        </g>
+
+        <g class="mapa-zona" data-naziv="Stari grad" data-kategorija="Historija"
+           data-opis="Historijska jezgra grada koja čuva duh stare Tuzle."
+           data-ikona="fa-archway" data-boja="#dc2626">
+          <circle cx="395" cy="340" r="8" fill="#dc2626" stroke="white" stroke-width="2"/>
+        </g>
+
+        <!-- ── PRIRODA (plava) ── -->
+        <g class="mapa-zona" data-naziv="Park Slana Banja" data-kategorija="Priroda"
+           data-opis="Najveća parkovska površina u gradu sa brojnim spomenicima."
+           data-ikona="fa-water" data-boja="#2563eb">
+          <circle cx="950" cy="360" r="8" fill="#2563eb" stroke="white" stroke-width="2"/>
+        </g>
+
+        <g class="mapa-zona" data-naziv="Panonska jezera" data-kategorija="Priroda"
+           data-opis="Jedinstvena slana jezera u Evropi sa ljekovitim svojstvima."
+           data-ikona="fa-tree" data-boja="#2563eb">
+          <circle cx="750" cy="430" r="8" fill="#2563eb" stroke="white" stroke-width="2"/>
+        </g>
+
+        <!-- Pulse ring (dinamički dodaje JS) -->
+        <circle id="pulseRing" class="pulse-ring" cx="0" cy="0" r="0" fill="none" stroke="white" stroke-width="2" opacity="0"/>
+      </svg>
+
+      <ul class="mapa-legenda">
+        <li><span class="dot" style="background:#f97316"></span> Znamenitosti</li>
+        <li><span class="dot" style="background:#dc2626"></span> Historija</li>
+        <li><span class="dot" style="background:#2563eb"></span> Priroda</li>
+        <li><span class="dot" style="background:#7c3aed"></span> Industrija</li>
+      </ul>
+    </div>
+
+    <!-- INFO PANEL -->
+    <div class="mapa-info-panel" id="mapaPanel">
+      <div class="panel-placeholder" id="panelPlaceholder">
+        <i class="fa-solid fa-map-location-dot"></i>
+        <p>Klikni na lokaciju za detalje.</p>
+      </div>
+
+      <div id="panelSadrzaj" style="display:none; flex-direction:column; flex:1;">
+        <div class="panel-slika" id="panelSlika">
+          <i id="panelIkona" class="fa-solid"></i>
+        </div>
+        <div class="panel-tekst">
+          <p class="panel-kategorija" id="panelKategorija"></p>
+          <h3 class="panel-naziv" id="panelNaziv"></h3>
+          <p class="panel-opis" id="panelOpis"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ┌────────────────────────────────────────────────────────┐ -->
+<!-- │                  12. GLAS GRAĐANA (SLIDER)              │ -->
+<!-- └────────────────────────────────────────────────────────┘ -->
+<!-- Interaktivni slider. Klasa "active" je trenutno vidljivi komentar-->
+
+<section id="glas-gradana">
+  <div class="container">
+    <h2>Glas građana</h2>
+    
+    <!-- Drži sve kartice i kontrolne dugmadi unutar iste cjeline -->
+    <div class="feedback-wrapper">
+      
+      <!-- Kartica 1: Aktivna po defaultu prilikom učitavanja stranice -->
+      <div class="feedback-card active">
+        <p class="quote">"Moram pohvaliti tim za ovakvu dobru stranicu."</p>
+        <p class="author">— Lejla Bećirović</p>
+      </div>
+
+      <!-- Kartica 2: Skrivena u CSS-u dok ne dobije klasu "active" -->
+      <div class="feedback-card">
+        <p class="quote">"Svaka ulica ima svoju priču, a AURUM ih čuva."</p>
+        <p class="author">— Lejla Kurt</p>
+      </div>
+
+      <!-- Kartica 3: Skrivena u CSS-u dok ne dobije klasu "active" -->
+      <div class="feedback-card">
+        <p class="quote">"Konačno digitalni arhiv kakav naš grad zaslužuje."</p>
+        <p class="author">— Lamija Pjanić</p>
+      </div>
+
+      <!-- Kontrole (Strelice): Okidaju JS funkciju sa argumentom smjera kretanja -->
+      <!-- -1 šalje slider unazad, dok 1 pomijera slider unaprijed -->
+      <!-- POMOĆ AI ALATA - COPILOT-->
+      <div class="feedback-controls">
+        <button class="prev" onclick="moveSlide(-1)" aria-label="Prethodni komentar">❮</button>
+        <button class="next" onclick="moveSlide(1)" aria-label="Sljedeći komentar">❯</button>
+      </div>
+      
+    </div>
+  </div>
+</section>
+</main>
+</div> 
+
+<!-- ┌────────────────────────────────────────────────────────┐ -->
+<!-- │                  13. BACK TO TOP (DUGME)               │ -->
+<!-- └────────────────────────────────────────────────────────┘ -->
+
+<div class="back-to-top">
+  <a href="#" aria-label="Nazad na vrh stranice">↑</a>
+</div>
+
+
+<!-- ┌────────────────────────────────────────────────────────┐ -->
+<!-- │                  14. PODNOŽJE (FOOTER)                 │ -->
+<!-- └────────────────────────────────────────────────────────┘ -->
+
+<footer>
+  
+  <!-- Lijeva kolona: Naziv i spisak autora projekta-->
+  <div class="footer-left">
+    <h3>Digitalni Arhiv Tuzle - AURUM</h3>
+    <p>Autori projekta:</p>
+    <ul class="autori-lista">
+      <li>Lamija Pjanić</li>
+      <li>Lejla Kurt</li>
+      <li>Lejla Bećirović</li>
+    </ul>
+  </div>
+
+  <!-- Srednja kolona: Socijalne mreže-->
+  <!-- Svaki link ima target="_blank" za otvaranje u novom tabu -->
+  <div class="footer-center">
+    <a href="https://instagram.com" target="_blank" aria-label="Pratite nas na Instagramu">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+    <a href="https://facebook.com" target="_blank" aria-label="Pratite nas na Facebooku">
+      <i class="fa-brands fa-facebook-f"></i>
+    </a>
+    <a href="https://twitter.com" target="_blank" aria-label="Pratite nas na Twitteru">
+      <i class="fa-brands fa-x-twitter"></i>
+    </a>
+    <a href="https://github.com" target="_blank" aria-label="Pogledajte izvorni kod na GitHubu">
+      <i class="fa-brands fa-github"></i>
+    </a>
+  </div>
+
+  <!-- Desna kolona: Informacije o autorskim pravima-->
+  <div class="footer-right">
+    <p>© 2026 Digitalni arhiv Tuzle.</p>
+    <p>Sva prava zadržana.</p>
+  </div>
+  
+</footer>
+
+</body>
+</html>
      
 
