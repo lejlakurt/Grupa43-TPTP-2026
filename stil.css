@@ -270,3 +270,344 @@ body.dark .modal-content {
 body.dark .modal-content h3 {
   color: #ffffff;
 }
+
+
+/* ┌────────────────────────────────────────────────────────┐ */
+/* │                  13. SADRŽAJ.HTML - GALERIJA           │ */
+/* └────────────────────────────────────────────────────────┘ */
+
+.galerija {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px; 
+  margin-top: 20px;
+  justify-items: center; 
+}
+
+.galerija figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  width: 100%; 
+}
+
+.galerija img {
+  width: 100%; 
+  height: auto; 
+  object-fit: contain; 
+  max-width: 100%; 
+  border-radius: 4px; 
+  border: 1px solid var(--line, #333);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.galerija img:hover {
+  transform: translateY(-5px); 
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.galerija .siroka {
+  grid-column: span 1; 
+}
+
+.galerija figcaption {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: bold; 
+  color: #222; 
+  text-align: left; 
+  width: 100%; 
+}
+
+@media (max-width: 900px) {
+  .galerija { 
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .galerija { 
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ┌────────────────────────────────────────────────────────┐ */
+/* │                  14. INTERAKTIVNA MAPA GRADA           │ */
+/* └────────────────────────────────────────────────────────┘ */
+
+.mapa-istrazi-sekcija {
+  padding: 40px 0; 
+}
+
+.mapa-grid {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 20px; 
+  align-items: start; 
+  margin-top: 30px;
+}
+
+@media (max-width: 992px) {
+  .mapa-grid { 
+    grid-template-columns: 1fr; 
+  }
+}
+
+.mapa-svg-wrap {
+  border: 1px solid #d1d5db; 
+  border-radius: 12px; 
+  overflow: hidden; 
+  background: var(--white); 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.mapa-svg-wrap svg {
+  width: 100%; 
+  height: auto;
+  display: block;
+}
+
+.mapa-zona circle {
+  cursor: pointer; 
+  transition: all 0.2s ease; 
+}
+
+.mapa-zona:hover circle {
+  r: 10; 
+}
+
+.mapa-zona.aktivan circle {
+  r: 11; 
+  stroke-width: 3; 
+  stroke: var(--white); 
+}
+
+.pulse-ring {
+  animation: pulseRing 1.5s ease-out infinite; 
+  pointer-events: none; 
+}
+
+@keyframes pulseRing {
+  0% { r: 8; opacity: 0.8; stroke-width: 2; } 
+  100% { r: 22; opacity: 0; stroke-width: 1; } 
+}
+
+.mapa-legenda {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 20px;
+  list-style: none; 
+  padding: 15px 20px;
+  background: #f9fafb; 
+  border-top: 1px solid #e5e7eb; 
+}
+
+.mapa-legenda li {
+  display: flex;
+  align-items: center; 
+  gap: 8px; 
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%; 
+}
+
+
+/* ┌────────────────────────────────────────────────────────┐ */
+/* │                  15. DESNI INFO PANEL ZA MAPU          │ */
+/* └────────────────────────────────────────────────────────┘ */
+
+.mapa-info-panel {
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  background: var(--white);
+  min-height: 380px; 
+  display: flex;
+  flex-direction: column; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.3s; 
+}
+
+.panel-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
+  flex: 1;
+  padding: 40px;
+  color: var(--muted); 
+  text-align: center;
+}
+
+.panel-placeholder i {
+  font-size: 40px;
+  margin-bottom: 15px;
+  opacity: 0.4; 
+}
+
+#panelSadrzaj {
+  display: none; 
+  flex-direction: column;
+  animation: fadeInMapa 0.4s ease; 
+}
+
+@keyframes fadeInMapa {
+  from { opacity: 0; transform: translateY(10px); } 
+  to { opacity: 1; transform: translateY(0); } 
+}
+
+.panel-slika {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 45px; 
+  color: var(--white); 
+}
+
+.panel-tekst {
+  padding: 20px;
+}
+
+.panel-kategorija {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase; 
+  letter-spacing: 1px; 
+  margin-bottom: 5px;
+}
+
+.panel-naziv {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 10px;
+}
+
+.panel-opis {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6; 
+  max-width: 100%; 
+}
+
+
+/* ┌────────────────────────────────────────────────────────┐ */
+/* │               16. SADRZAJ.HTML - VIDEO SEKCIJA         │ */
+/* └────────────────────────────────────────────────────────┘ */
+
+.banner {
+  background-size: cover; 
+  background-position: center;   
+  min-height: 300px; 
+  display: flex;
+  align-items: flex-end; 
+  padding: 40px;
+  margin-bottom: 60px; 
+}
+
+.banner h1 {
+  color: white; 
+  font-size: 42px;
+}
+
+.banner p {
+  color: #e5e7eb; 
+}
+
+.video-stranica-kontejner {
+  max-width: 1200px; 
+  margin: 0 auto; 
+  padding: 0 20px;
+  margin-bottom: 80px;
+}
+
+.video-sekcija {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  gap: 50px; 
+  align-items: center; 
+}
+
+.video-tag {
+  color: #ff6b00; 
+  font-size: 12px;
+  font-weight: bold; 
+  text-transform: uppercase; 
+  letter-spacing: 1px; 
+}
+
+.video-info h2 {
+  margin-top: 10px;
+  font-size: 32px;
+  color: #1a1a1a;
+  line-height: 1.2; 
+}
+
+.video-info p {
+  font-size: 19px;
+  line-height: 1.8; 
+  color: #334155;
+  margin-top: 25px;
+  font-style: italic; 
+  text-align: justify; 
+  border-left: 3px solid var(--orange); 
+  padding-left: 20px; 
+}
+
+.potpis-autora {
+  display: block;
+  text-align: right; 
+  margin-top: 15px;
+  font-weight: bold;
+  font-style: normal; 
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 14px;
+  color: var(--orange);
+}
+
+.video-container-custom {
+  width: 100%;
+  border-radius: 12px; 
+  overflow: hidden; 
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12); 
+  background: #000; 
+  line-height: 0;
+  transform: translateZ(0);
+}
+
+.video-container-custom video {
+  width: 100%; 
+  height: auto;
+  display: block;
+  object-fit: cover; 
+}
+
+@media (max-width: 992px) {
+  .video-sekcija {
+    grid-template-columns: 1fr; 
+    gap: 30px;
+    text-align: center; 
+  }
+
+  .video-info h2 {
+    font-size: 26px; 
+  }
+
+  .video-info p {
+    border-left: none;
+    padding-left: 0;
+    border-bottom: 2px solid var(--orange);
+    padding-bottom: 15px;
+    text-align: left;
+  }
+}
