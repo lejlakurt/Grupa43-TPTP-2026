@@ -1,0 +1,247 @@
+<!-- ┌────────────────────────────────────────────────────────┐ -->
+<!-- │                       1. HEAD                          │ -->
+<!-- └────────────────────────────────────────────────────────┘ -->
+<!-- Konfiguracija stranice, postavljanje naslova, povezivanje CSS i JS-->
+
+<!doctype html>
+<html lang="bs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AURUM | Sadržaj</title>
+    <link rel="stylesheet" href="css/tptpstil.css" />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <script src="js/tptpskripte.js" defer></script>
+    
+  </head>
+
+  <body>
+
+<!-- ┌────────────────────────────────────────────────────────┐ -->
+<!-- │                  2. ZAGLAVLJE (HEADER)                 │ -->
+<!-- └────────────────────────────────────────────────────────┘ -->
+<!-- Logo projekta, navigacijski linkovi, prekidač za promjenu teme-->
+
+<header>
+  <div class="header-top">
+    <div class="logo-container">
+      <img src="images/logo.svg" alt="Logo AURUM" class="logo-img" />
+      <h1 class="logo">AURUM</h1>
+    </div>
+  </div>
+
+  <nav aria-label="Glavni navigacijski meni">
+    <a href="index.html">Početna</a>
+    <a href="sadrzaj.html" class="active">Sadržaj</a>
+    <a href="kontakt.html">Kontakt</a>
+    <a href="https://github.com/" target="_blank">GitHub</a>
+  </nav>
+
+  <div class="theme-switch">
+    <p>Mode</p>
+
+    <div class="toggle-row">
+      <span>Light</span>
+
+      <button id="theme-toggle" type="button">
+        <span class="toggle-circle"></span>
+      </button>
+
+      <span>Dark</span>
+    </div>
+  </div>
+</header>
+
+<!-- ┌────────────────────────────────────────────────────────┐ -->
+<!-- │                  3. HERO SEKCIJA                       │ -->
+<!-- └────────────────────────────────────────────────────────┘ -->
+<!-- Uvodni blok sa opisom arhive i linkovima za navigaciju na stranici-->
+
+<section class="hero-index hero-sadrzaj">
+  <div class="hero-flex">  
+
+<div class="hero-text-block">
+            <p class="hero-label">Digitalni arhiv grada soli</p>
+            <h2>Dobrodošli u AURUM</h2>
+            <p class="hero-description">
+                Digitalni manuskript građanskog arhiva Tuzle kroz hronologiju, 
+                galeriju, mapu, kategorije, video zapise i sačuvane priče grada.
+            </p>
+        </div>
+
+    <nav class="hero-links" aria-label="Brza navigacija po sadržaju">
+      <a href="#tabela-promjena">Hronologija</a>
+      <a href="#galerija-slika">Galerija</a>
+      <a href="#interaktivna-mapa">Mapa</a>
+      <a href="#kategorije">Kategorije</a>
+      <a href="#video-arhiv">Video</a>
+      <a href="#citati">Citati</a>
+      <a href="#timeline">Timeline</a>
+    </nav>
+  </div>
+
+  <div class="hero-logo-desno">
+    <img src="images/logo.svg" alt="Logo AURUM" class="hero-logo-img" />
+  </div>
+</div>
+</section>
+    
+
+
+    <main>
+      <div class="page-card">
+
+<!-- ┌────────────────────────────────────────────────────────┐ -->
+<!-- │                  4. UVODNA SEKCIJA                     │ -->
+<!-- └────────────────────────────────────────────────────────┘ -->
+
+        <section id="uvod">
+          <h1>Digitalni Arhiv: Vremenska Kapsula Tuzle</h1>
+          <p>Ovdje čuvamo fragmente prošlosti koji polako nestaju.</p>
+        </section>
+
+
+<!-- ┌────────────────────────────────────────────────────────┐ -->
+<!-- │                  5. TABELA HRONOLOGIJE                 │ -->
+<!-- └────────────────────────────────────────────────────────┘ -->
+<!-- Tabela historijskih lokaliteta u formi klikabilne tabele-->
+
+        <section id="tabela-promjena">
+  <h2>Hronologija srušenih i izmijenjenih simbola</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Lokalitet</th>
+        <th>Godina/Period</th>
+        <th>Vrsta zapisa</th>
+        <th>Današnji status</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <!-- 1. Hotel Bristol -->
+      <tr class="clickable-row" data-target="modal-bristol" style="cursor: pointer;">
+        <td>Hotel Bristol</td>
+        <td>1908.</td>
+        <td>Razglednica</td>
+        <td>Hotel Mellain</td>
+      </tr>
+
+      <!-- 2. Stara Gimnazija -->
+      <tr class="clickable-row" data-target="modal-gimnazija" style="cursor: pointer;">
+        <td>Stara Gimnazija</td>
+        <td>1899.</td>
+        <td>Fotografija</td>
+        <td>Park - Slanac</td>
+      </tr>
+
+      <!-- 3. Kino Centar -->
+      <tr class="clickable-row" data-target="modal-kino" style="cursor: pointer;">
+        <td>Kino Centar</td>
+        <td>1912.</td>
+        <td>Fotografija</td>
+        <td>Zatvoreno</td>
+      </tr>
+
+      <!-- 4. Zgrada Barok -->
+      <tr class="clickable-row" data-target="modal-barok" style="cursor: pointer;">
+        <td>Zgrada Barok</td>
+        <td>Austrougarski period</td>
+        <td>Fotografija</td>
+        <td>Rekonstruisano</td>
+      </tr>
+
+      <!-- 5. Slana Banja -->
+      <tr class="clickable-row" data-target="modal-cesma" style="cursor: pointer;">
+        <td>Slana Banja</td>
+        <td>1930-te</td>
+        <td>Fotografija</td>
+        <td>Rekonstruisano</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ┌────────────────────────────────────────────────────────┐ -->
+<!-- │                  6. MODALNI PROZORI                    │ -->
+<!-- └────────────────────────────────────────────────────────┘ -->
+<!-- Slajderi prije/poslije-->
+
+<!-- 1. MODAL: Hotel Bristol -->
+<div id="modal-bristol" class="modal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <h3>Hotel Bristol — Nekad i sad</h3>
+    <div class="slider-container">
+      <img src="images/bristol-poslije.jpg" alt="Hotel Bristol danas" class="slider-img img-after">
+      <div class="img-before-wrapper">
+        <img src="images/bristol-prije.jpg" alt="Hotel Bristol nekad" class="slider-img img-before">
+      </div>
+      <div class="slider-handle"><div class="handle-circle"></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- 2. MODAL: Stara Gimnazija -->
+<div id="modal-gimnazija" class="modal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <h3>Stara Gimnazija — Nekad i sad</h3>
+    <div class="slider-container">
+      <img src="images/gimnazija-poslije.jpg" alt="Stara Gimnazija danas" class="slider-img img-after">
+      <div class="img-before-wrapper">
+        <img src="images/gimnazija-prije.jpg" alt="Stara Gimnazija nekad" class="slider-img img-before">
+      </div>
+      <div class="slider-handle"><div class="handle-circle"></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- 3. MODAL: Kino Centar -->
+<div id="modal-kino" class="modal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <h3>Kino Centar — Nekad i sad</h3>
+    <div class="slider-container">
+      <img src="images/kino-poslije.jpg" alt="Kino Centar danas" class="slider-img img-after">
+      <div class="img-before-wrapper">
+        <img src="images/kino-prije.jpg" alt="Kino Centar nekad" class="slider-img img-before">
+      </div>
+      <div class="slider-handle"><div class="handle-circle"></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- 4. MODAL: Zgrada Barok -->
+<div id="modal-barok" class="modal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <h3>Zgrada Barok — Nekad i sad</h3>
+    <div class="slider-container">
+      <img src="images/barok-poslije.jpg" alt="Zgrada Barok danas" class="slider-img img-after">
+      <div class="img-before-wrapper">
+        <img src="images/barok-prije.jpg" alt="Zgrada Barok nekad" class="slider-img img-before">
+      </div>
+      <div class="slider-handle"><div class="handle-circle"></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- 5. MODAL: Česma na Skveru -->
+<div id="modal-cesma" class="modal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <h3>Česma na Skveru — Nekad i sad</h3>
+    <div class="slider-container">
+      <img src="images/banja-poslije.jpg" alt="Česma na Skveru danas" class="slider-img img-after">
+      <div class="img-before-wrapper">
+        <img src="images/banja-prije.jpg" alt="Česma na Skveru nekad" class="slider-img img-before">
+      </div>
+      <div class="slider-handle"><div class="handle-circle"></div></div>
+    </div>
+  </div>
+</div>
