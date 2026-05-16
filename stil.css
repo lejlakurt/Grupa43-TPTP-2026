@@ -809,3 +809,216 @@ body.dark .modal-content h3 {
   outline-offset: 2px;
 }
 
+
+/* ┌────────────────────────────────────────────────────────┐ */
+/* │                    19. TIMELINE                        │ */
+/* └────────────────────────────────────────────────────────┘ */
+
+.timeline-sekcija {
+  width: 86%;
+  margin: 0 auto 90px; 
+}
+
+.timeline-sekcija > h2 { 
+  margin-bottom: 8px; 
+}
+
+.timeline-sekcija > p {
+  font-size: 14px;
+  margin-bottom: 50px;
+  max-width: 560px; 
+}
+
+.timeline-lista {
+  position: relative;
+  padding: 0;
+  list-style: none; 
+  margin: 0;
+}
+
+.timeline-lista::before {
+  content: "";
+  position: absolute;
+  left: 50%; 
+  top: 0;
+  bottom: 0;
+  width: 2px; 
+  background: var(--dark); 
+  transform: translateX(-50%); 
+}
+
+body.dark .timeline-lista::before { 
+  background: #334155; 
+}
+
+.tl-stavka {
+  display: grid;
+  grid-template-columns: 1fr 40px 1fr; 
+  margin-bottom: 48px; 
+  position: relative;
+  align-items: start; 
+}
+
+.tl-stavka:nth-child(odd) .tl-kartica { 
+  grid-column: 1; 
+}
+.tl-stavka:nth-child(odd) .tl-marker { 
+  grid-column: 2; 
+}
+
+.tl-stavka:nth-child(even) .tl-kartica { 
+  grid-column: 3; 
+}
+.tl-stavka:nth-child(even) .tl-marker { 
+  grid-column: 2; 
+}
+
+.tl-kartica {
+  background: var(--white);
+  padding: 24px 26px;
+  box-shadow:
+    0 8px 22px rgba(17, 24, 39, 0.09),
+    0 18px 40px rgba(17, 24, 39, 0.13); 
+  position: relative;
+  transition: transform 0.25s ease, box-shadow 0.25s ease; 
+}
+
+.tl-kartica:hover {
+  transform: translateY(-4px); 
+  box-shadow:
+    0 14px 32px rgba(17, 24, 39, 0.13),
+    0 26px 52px rgba(17, 24, 39, 0.18); 
+}
+
+.tl-stavka:nth-child(odd) .tl-kartica::after {
+  content: "";
+  position: absolute;
+  right: -12px; 
+  top: 24px; 
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 12px solid var(--white); 
+}
+
+body.dark .tl-stavka:nth-child(odd) .tl-kartica::after {
+  border-left-color: var(--dark-card);
+}
+
+.tl-stavka:nth-child(even) .tl-kartica::after {
+  content: "";
+  position: absolute;
+  left: -12px; 
+  top: 24px;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 12px solid var(--white); 
+}
+
+body.dark .tl-stavka:nth-child(even) .tl-kartica::after {
+  border-right-color: var(--dark-card);
+}
+
+.tl-marker {
+  justify-self: center; 
+  align-self: start;
+  margin-top: 20px; 
+  width: 18px;
+  height: 18px; 
+  background: var(--orange); 
+  border-radius: 50%; 
+  border: 3px solid var(--white); 
+  box-shadow: 0 0 0 2px var(--orange); 
+  z-index: 2; 
+  flex-shrink: 0;
+}
+
+body.dark .tl-marker { 
+  border-color: var(--dark-bg); 
+}
+
+.tl-godina {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--orange);
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  margin-bottom: 8px;
+}
+
+.tl-kartica h3 {
+  font-size: 17px;
+  color: var(--dark);
+  margin-bottom: 10px;
+  line-height: 1.25;
+}
+
+body.dark .tl-kartica h3 { 
+  color: #f8fafc; 
+}
+
+.tl-kartica p {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--muted); 
+}
+
+.tl-badge {
+  display: inline-block;
+  margin-top: 14px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 4px 10px;
+  border: 1.5px solid var(--orange); 
+  color: var(--orange);
+}
+
+body.dark .tl-kartica { 
+  background: var(--dark-card); 
+}
+
+
+/* ┌────────────────────────────────────────────────────────┐ */
+/* │                20. TIMELINE - RESPONSIVE (MOBILNI)     │ */
+/* └────────────────────────────────────────────────────────┘ */
+
+@media (max-width: 1000px) {
+
+  .timeline-lista::before {
+    left: 20px; 
+  }
+
+  .tl-stavka {
+    grid-template-columns: 40px 1fr; 
+    grid-template-rows: auto;
+  }
+
+  .tl-stavka:nth-child(odd) .tl-kartica,
+  .tl-stavka:nth-child(even) .tl-kartica {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .tl-stavka:nth-child(odd) .tl-marker,
+  .tl-stavka:nth-child(even) .tl-marker {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: center; 
+    margin-left: 0;
+  }
+
+  .tl-stavka:nth-child(odd) .tl-kartica::after,
+  .tl-stavka:nth-child(even) .tl-kartica::after {
+    left: -12px; 
+    right: auto; 
+    border-right: 12px solid var(--white); 
+    border-left: none; 
+  }
+
+  body.dark .tl-stavka:nth-child(odd) .tl-kartica::after,
+  body.dark .tl-stavka:nth-child(even) .tl-kartica::after {
+    border-right-color: var(--dark-card); 
+    border-left: none;
+  }
+}
