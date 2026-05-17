@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="bs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Istraži Tuzlu | Digitalni arhiv Tuzle</title>
+
+    <link rel="stylesheet" href="css/tptpstil.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <script src="js/tptpskripte.js" defer></script>
+  </head>
+
+  <body>
+    <!-- Header i navigacija -->
+    <header>
+      <div class="header-top">
+        <div class="logo-container">
+          <img src="images/logo1.svg" alt="Logo AURUM" class="grb" />
+          <h1 class="logo">AURUM</h1>
+        </div>
+      </div>
+
+      <nav aria-label="Glavni navigacijski meni">
+        <a href="index.html">Početna</a>
+        <a href="sadrzaj.html">Sadržaj</a>
+        <a href="kontakt.html">Kontakt</a>
+        <a href="istrazuj.html" class="active">Istraži</a>
+        <a href="https://github.com/" target="_blank">GitHub</a>
+      </nav>
+
+      <div class="theme-switch">
+        <div class="toggle-row">
+          <span>Light</span>
+          <button id="theme-toggle" type="button">
+            <span class="toggle-circle"></span>
+          </button>
+          <span>Dark</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="istrazuj-main">
+      <!-- Hero sekcija -->
+      <section class="hero-istrazi" aria-label="Uvod u stranicu Istraži Tuzlu">
+        <p class="hero-label">Digitalni arhiv grada soli</p>
+        <h2>Istraži Tuzlu</h2>
+        <p>
+          Otkrij historiju grada soli kroz generator arhivskih činjenica,
+          interaktivni slider poređenja fotografija i kviz koji testira tvoje
+          znanje o Tuzli.
+        </p>
+
+        <nav class="hero-istrazi-nav" aria-label="Brza navigacija po stranici">
+          <a href="#generator-sekcija">
+            <i class="fa-solid fa-lightbulb"></i> Arhivske činjenice
+          </a>
+          <a href="#mapa-sekcija">
+            <i class="fa-solid fa-images"></i> Prije i Poslije
+          </a>
+          <a href="#kviz-sekcija">
+            <i class="fa-solid fa-circle-question"></i> Kviz
+          </a>
+        </nav>
+      </section>
+
+      <!-- Generator arhivskih činjenica -->
+      <section
+        class="generator-sekcija"
+        id="generator-sekcija"
+        aria-label="Generator arhivskih činjenica o Tuzli"
+      >
+        <h2>Arhivske tajne</h2>
+        <p>Svaki klik otkriva drugu malu historijsku činjenicu iz arhiva.</p>
+
+        <div
+          id="generator"
+          role="region"
+          aria-live="polite"
+          aria-label="Prikaz nasumične arhivske činjenice"
+        >
+          <p id="fact-display">Klikni na dugme i istraži arhivske tajne...</p>
+          <button id="btn-generator" type="button">
+            <i class="fa-solid fa-shuffle" aria-hidden="true"></i>
+            Saznaj više
+          </button>
+        </div>
+      </section>
+
+      <!-- Before / after sekcija -->
+      <section
+        class="mapa-istrazi-sekcija"
+        id="mapa-sekcija"
+        aria-label="Poređenje starih i novih fotografija Tuzle"
+      >
+        <h2>Prije i Poslije</h2>
+        <p>
+          Povuci liniju lijevo-desno da vidiš kako se Tuzla mijenjala kroz
+          godine.
+        </p>
+
+        <!-- Dugmad za promjenu lokacije -->
+        <div class="ba-selector" role="group" aria-label="Odaberi lokaciju">
+          <button class="ba-dugme aktivno" data-lokacija="0" type="button">
+            Most s kipovima
+          </button>
+          <button class="ba-dugme" data-lokacija="1" type="button">
+            Skver
+          </button>
+          <button class="ba-dugme" data-lokacija="2" type="button">
+            Panonska jezera
+          </button>
+        </div>
+
+        <div class="ba-grid">
+          <!-- Slider za prikaz prije i poslije -->
+          <div
+            class="ba-kontejner slider-container"
+            id="baKontejner"
+            aria-label="Slider za poređenje fotografija"
+          >
+            <img
+              class="ba-slika slider-img img-after"
+              id="baSlika1"
+              src="images/2.svg"
+              alt="Most poslije"
+              draggable="false"
+            />
+
+            <div class="img-before-wrapper" id="baPrijeWrapper">
+              <img
+                class="ba-slika slider-img img-before"
+                id="baSlika2"
+                src="images/1.svg"
+                alt="Most prije"
+                draggable="false"
+              />
+            </div>
+
+            <div class="slider-handle" id="baRazdjela" aria-hidden="true">
+              <div class="handle-circle"></div>
+            </div>
+
+            <span class="ba-label ba-label-prije" aria-hidden="true"
+              >PRIJE</span
+            >
+            <span class="ba-label ba-label-poslije" aria-hidden="true"
+              >POSLIJE</span
+            >
+          </div>
+
+          <!-- Informacije o lokaciji -->
+          <div class="ba-info-panel" id="baInfoPanel">
+            <p class="ba-info-kategorija" id="baInfoKat">Znamenitosti</p>
+            <h3 class="ba-info-naziv" id="baInfoNaziv">Most s kipovima</h3>
+            <p class="ba-info-opis" id="baInfoOpis">
+              2024. godine se navršilo 90 godina otkako postoji most “Kipovi” u
+              Tuzli. Za devet decenija postojanja, most je saniran nekoliko puta
+              ali ove godine je doživio veću rekonstrukciju. Kipovi koje je
+              svorio vrhunski kipar Franjo Leder su postavljeni 1936. godine.
+              Prema nekim izvorima prvi je to betonski most građen u Tuzli,
+              projektovao ga je arhitekta Bogdan Đukić, a njegova gradnja počela
+              je 1935. godine.
+            </p>
+            <div class="ba-info-godine">
+              <div class="ba-godina-box">
+                <span class="ba-godina-label">PRIJE</span>
+                <span class="ba-godina-broj" id="baGodinaPrije">~1930.</span>
+              </div>
+              <div class="ba-godina-box">
+                <span class="ba-godina-label">POSLIJE</span>
+                <span class="ba-godina-broj" id="baGodinaPoslije">2024.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Kviz sekcija -->
+      <section class="kviz-sekcija" id="kviz-sekcija" aria-label="Kviz o Tuzli">
+        <h2>Kviz: koliko znaš o Tuzli?</h2>
+        <p>
+          Šest pitanja, šest šansi da dokažeš da si pravi poznavalac grada soli.
+        </p>
+
+        <div class="kviz-progres-wrap" aria-label="Napredak u kvizu">
+          <span class="kviz-progres-tekst" id="kvizProgresTekst">
+            Pitanje 1 od 6
+          </span>
+          <div
+            class="kviz-progres-bar"
+            role="progressbar"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            aria-valuenow="0"
+          >
+            <div class="kviz-progres-fill" id="kvizProgresFill"></div>
+          </div>
+          <span class="kviz-bodovi-tekuci" id="kvizBodoviTekuci">0 bod.</span>
+        </div>
+
+        <!-- Prvo pitanje -->
+        <div class="kviz-pitanje-blok aktivno" data-pitanje="0">
+          <div class="kviz-kartica">
+            <p class="kviz-broj-pitanja">Pitanje 1 od 6</p>
+            <h3>Šta znači ime "Tuzla" na turskom jeziku?</h3>
+            <div class="kviz-opcije" role="group" aria-label="Opcije odgovora">
+              <button class="kviz-opcija" data-tacno="false">Tvrđava</button>
+              <button class="kviz-opcija" data-tacno="true">
+                Mjesto soli / solana
+              </button>
+              <button class="kviz-opcija" data-tacno="false">Rijeka</button>
+              <button class="kviz-opcija" data-tacno="false">Planina</button>
+            </div>
+            <div class="kviz-feedback" id="feedback-0"></div>
+          </div>
+          <div class="kviz-kontrole">
+            <button class="kviz-btn-next" data-sljedeci="1">
+              Sljedeće <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Drugo pitanje -->
+        <div class="kviz-pitanje-blok" data-pitanje="1">
+          <div class="kviz-kartica">
+            <p class="kviz-broj-pitanja">Pitanje 2 od 6</p>
+            <h3>
+              Koje godine je sagrađena česma na Skveru, danas zaštićeni
+              kulturno-historijski spomenik?
+            </h3>
+            <div class="kviz-opcije" role="group" aria-label="Opcije odgovora">
+              <button class="kviz-opcija" data-tacno="false">1862.</button>
+              <button class="kviz-opcija" data-tacno="false">1904.</button>
+              <button class="kviz-opcija" data-tacno="true">1888.</button>
+              <button class="kviz-opcija" data-tacno="false">1921.</button>
+            </div>
+            <div class="kviz-feedback" id="feedback-1"></div>
+          </div>
+          <div class="kviz-kontrole">
+            <button class="kviz-btn-next" data-sljedeci="2">
+              Sljedeće <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Treće pitanje -->
+        <div class="kviz-pitanje-blok" data-pitanje="2">
+          <div class="kviz-kartica">
+            <p class="kviz-broj-pitanja">Pitanje 3 od 6</p>
+            <h3>
+              Pod kojim imenom je Tuzla bila poznata u periodu Bosanske
+              kraljevine?
+            </h3>
+            <div class="kviz-opcije" role="group" aria-label="Opcije odgovora">
+              <button class="kviz-opcija" data-tacno="false">
+                Soli Gornje
+              </button>
+              <button class="kviz-opcija" data-tacno="true">
+                Soli (Gornja i Donja Tuzla)
+              </button>
+              <button class="kviz-opcija" data-tacno="false">Salines</button>
+              <button class="kviz-opcija" data-tacno="false">Tuzgrad</button>
+            </div>
+            <div class="kviz-feedback" id="feedback-2"></div>
+          </div>
+          <div class="kviz-kontrole">
+            <button class="kviz-btn-next" data-sljedeci="3">
+              Sljedeće <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Četvrto pitanje -->
+        <div class="kviz-pitanje-blok" data-pitanje="3">
+          <div class="kviz-kartica">
+            <p class="kviz-broj-pitanja">Pitanje 4 od 6</p>
+            <h3>Panonska jezera u Tuzli nastala su na mjestu nekadašnjih…</h3>
+            <div class="kviz-opcije" role="group" aria-label="Opcije odgovora">
+              <button class="kviz-opcija" data-tacno="false">
+                Šumskih površina
+              </button>
+              <button class="kviz-opcija" data-tacno="false">
+                Vojnih baraka
+              </button>
+              <button class="kviz-opcija" data-tacno="true">
+                Rudnih ležišta soli
+              </button>
+              <button class="kviz-opcija" data-tacno="false">
+                Starog aerodroma
+              </button>
+            </div>
+            <div class="kviz-feedback" id="feedback-3"></div>
+          </div>
+          <div class="kviz-kontrole">
+            <button class="kviz-btn-next" data-sljedeci="4">
+              Sljedeće <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Peto pitanje -->
+        <div class="kviz-pitanje-blok" data-pitanje="4">
+          <div class="kviz-kartica">
+            <p class="kviz-broj-pitanja">Pitanje 5 od 6</p>
+            <h3>
+              Po kome je nazvana Narodna i univerzitetska biblioteka u Tuzli?
+            </h3>
+            <div class="kviz-opcije" role="group" aria-label="Opcije odgovora">
+              <button class="kviz-opcija" data-tacno="false">
+                Meša Selimović
+              </button>
+              <button class="kviz-opcija" data-tacno="false">
+                Branko Ćopić
+              </button>
+              <button class="kviz-opcija" data-tacno="true">
+                Derviš Sušić
+              </button>
+              <button class="kviz-opcija" data-tacno="false">
+                Skender Kulenović
+              </button>
+            </div>
+            <div class="kviz-feedback" id="feedback-4"></div>
+          </div>
+          <div class="kviz-kontrole">
+            <button class="kviz-btn-next" data-sljedeci="5">
+              Sljedeće <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Šesto pitanje -->
+        <div class="kviz-pitanje-blok" data-pitanje="5">
+          <div class="kviz-kartica">
+            <p class="kviz-broj-pitanja">Pitanje 6 od 6</p>
+            <h3>
+              Koji narod je prvi počeo eksploatisati slane izvore na području
+              Tuzle?
+            </h3>
+            <div class="kviz-opcije" role="group" aria-label="Opcije odgovora">
+              <button class="kviz-opcija" data-tacno="false">Rimljani</button>
+              <button class="kviz-opcija" data-tacno="true">Iliri</button>
+              <button class="kviz-opcija" data-tacno="false">Osmanlije</button>
+              <button class="kviz-opcija" data-tacno="false">Slaveni</button>
+            </div>
+            <div class="kviz-feedback" id="feedback-5"></div>
+          </div>
+          <div class="kviz-kontrole">
+            <button class="kviz-btn-next kviz-btn-zavrsi" data-sljedeci="-1">
+              Završi kviz <i class="fa-solid fa-flag-checkered"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Prikaz rezultata kviza -->
+        <div
+          class="kviz-rezultat"
+          id="kvizRezultat"
+          role="region"
+          aria-live="polite"
+          aria-label="Rezultat kviza"
+        >
+          <span class="rezultat-ikona" id="rezultatIkona" aria-hidden="true">
+            🏆
+          </span>
+          <h3>Kviz završen!</h3>
+          <span class="rezultat-bodovi" id="rezultatBodovi">0</span>
+
+          <p class="rezultat-poruka" id="rezultatPoruka"></p>
+          <button class="kviz-btn-restart" id="kvizRestart" type="button">
+            <i class="fa-solid fa-rotate-right"></i> Pokušaj ponovo
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <div class="back-to-top">
+      <a href="#" aria-label="Vrati se na vrh stranice">↑</a>
+    </div>
+
+    <footer>
+      <!-- Podaci o autorima -->
+      <div class="footer-left">
+        <h3>Digitalni Arhiv Tuzle - AURUM</h3>
+        <p>Autori projekta:</p>
+        <ul class="autori-lista">
+          <li>Lamija Pjanić</li>
+          <li>Lejla Kurt</li>
+          <li>Lejla Bećirović</li>
+        </ul>
+      </div>
+
+      <!-- Linkovi društvenih mreža -->
+      <!-- Linkovi se otvaraju u novom tabu -->
+      <div class="footer-center">
+        <a
+          href="https://instagram.com"
+          target="_blank"
+          aria-label="Pratite nas na Instagramu"
+        >
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a
+          href="https://facebook.com"
+          target="_blank"
+          aria-label="Pratite nas na Facebooku"
+        >
+          <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        <a
+          href="https://twitter.com"
+          target="_blank"
+          aria-label="Pratite nas na Twitteru"
+        >
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+        <a
+          href="https://github.com"
+          target="_blank"
+          aria-label="Pogledajte izvorni kod na GitHubu"
+        >
+          <i class="fa-brands fa-github"></i>
+        </a>
+      </div>
+
+      <!-- Autorska prava -->
+      <div class="footer-right">
+        <p>© 2026 Digitalni arhiv Tuzle.</p>
+        <p>Sva prava zadržana.</p>
+      </div>
+    </footer>
+  </body>
+</html>
