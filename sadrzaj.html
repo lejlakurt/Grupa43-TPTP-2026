@@ -1,0 +1,711 @@
+<!-- Head i povezivanje CSS i JS fajlova -->
+
+<!doctype html>
+<html lang="bs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AURUM | Sadržaj</title>
+    <link rel="stylesheet" href="css/tptpstil.css" />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <script src="js/tptpskripte.js" defer></script>
+    
+  </head>
+
+  <body>
+
+<!-- Header i navigacija -->
+
+ <header>
+      <div class="header-top">
+        <div class="logo-container">
+          <img
+            src="images/logo1.svg"
+            alt="Grb Tuzlanskog kantona"
+            class="grb"
+          />
+          <h1 class="logo">AURUM</h1>
+        </div>
+      </div>
+
+      <nav aria-label="Glavni navigacijski meni">
+        <a href="index.html">Početna</a>
+        <a href="sadrzaj.html"class="active">Sadržaj</a>
+        <a href="kontakt.html">Kontakt</a>
+        <a href="istrazuj.html">Istraži</a>
+        <a href="https://github.com/" target="_blank">GitHub</a>
+      </nav>
+
+      <div class="theme-switch">
+        <div class="toggle-row">
+          <span>Light</span>
+          <button id="theme-toggle" type="button">
+            <span class="toggle-circle"></span>
+          </button>
+          <span>Dark</span>
+        </div>
+      </div>
+    </header>
+<!-- Hero sekcija -->
+
+<section class="hero-index hero-sadrzaj">
+  <div class="hero-flex">  
+
+<div class="hero-text-block">
+            <p class="hero-label">Digitalni arhiv grada soli</p>
+            <h2>Dobrodošli u AURUM</h2>
+            <p class="hero-description">
+                Digitalni manuskript građanskog arhiva Tuzle kroz hronologiju, 
+                galeriju, mapu, kategorije, video zapise i sačuvane priče grada.
+            </p>
+        </div>
+
+    <nav class="hero-links" aria-label="Brza navigacija po sadržaju">
+      <a href="#tabela-promjena">Hronologija</a>
+      <a href="#galerija-slika">Galerija</a>
+      <a href="#interaktivna-mapa">Mapa</a>
+      <a href="#kategorije">Kategorije</a>
+      <a href="#video-arhiv">Video</a>
+      <a href="#citati">Citati</a>
+<a href="#timeline-sekcija">Timeline</a>
+    </nav>
+  </div>
+
+  <div class="hero-logo-desno">
+    <img src="images/logo1.svg" alt="Logo AURUM" class="hero-logo-img" />
+  </div>
+</section>
+    
+
+
+    <main>
+      <div class="page-card">
+
+<!-- Uvodna sekcija -->
+
+        <section id="uvod">
+          <h1>Digitalni Arhiv: Vremenska Kapsula Tuzle</h1>
+          <p>Ovdje čuvamo fragmente prošlosti koji polako nestaju.</p>
+        </section>
+
+
+<!-- Tabela hronologije -->
+
+        <section id="tabela-promjena">
+  <h2>Hronologija srušenih i izmijenjenih simbola</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Lokalitet</th>
+        <th>Godina/Period</th>
+        <th>Vrsta zapisa</th>
+        <th>Današnji status</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <!-- 1. Hotel Bristol -->
+      <tr class="clickable-row" data-target="modal-bristol" style="cursor: pointer;">
+        <td>Hotel Bristol</td>
+        <td>1908.</td>
+        <td>Razglednica</td>
+        <td>Hotel Mellain</td>
+      </tr>
+
+      <!-- 2. Stara Gimnazija -->
+      <tr class="clickable-row" data-target="modal-gimnazija" style="cursor: pointer;">
+        <td>Stara Gimnazija</td>
+        <td>1899.</td>
+        <td>Fotografija</td>
+        <td>Park - Slanac</td>
+      </tr>
+
+      <!-- 3. Kino Centar -->
+      <tr class="clickable-row" data-target="modal-kino" style="cursor: pointer;">
+        <td>Kino Centar</td>
+        <td>1912.</td>
+        <td>Fotografija</td>
+        <td>Zatvoreno</td>
+      </tr>
+
+      <!-- 4. Zgrada Barok -->
+      <tr class="clickable-row" data-target="modal-barok" style="cursor: pointer;">
+        <td>Zgrada Barok</td>
+        <td>Austrougarski period</td>
+        <td>Fotografija</td>
+        <td>Rekonstruisano</td>
+      </tr>
+
+      <!-- 5. Slana Banja -->
+      <tr class="clickable-row" data-target="modal-cesma" style="cursor: pointer;">
+        <td>Slana Banja</td>
+        <td>1930-te</td>
+        <td>Fotografija</td>
+        <td>Rekonstruisano</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- Modalni prozori -->
+
+<!-- 1. MODAL: Hotel Bristol -->
+<div id="modal-bristol" class="modal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <h3>Hotel Bristol — Nekad i sad</h3>
+    <div class="slider-container">
+      <img src="images/bristol-poslije.jpg" alt="Hotel Bristol danas" class="slider-img img-after">
+      <div class="img-before-wrapper">
+        <img src="images/bristol-prije.jpg" alt="Hotel Bristol nekad" class="slider-img img-before">
+      </div>
+      <div class="slider-handle"><div class="handle-circle"></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- 2. MODAL: Stara Gimnazija -->
+<div id="modal-gimnazija" class="modal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <h3>Stara Gimnazija — Nekad i sad</h3>
+    <div class="slider-container">
+      <img src="images/gimnazija-poslije.jpg" alt="Stara Gimnazija danas" class="slider-img img-after">
+      <div class="img-before-wrapper">
+        <img src="images/gimnazija-prije.jpg" alt="Stara Gimnazija nekad" class="slider-img img-before">
+      </div>
+      <div class="slider-handle"><div class="handle-circle"></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- 3. MODAL: Kino Centar -->
+<div id="modal-kino" class="modal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <h3>Kino Centar — Nekad i sad</h3>
+    <div class="slider-container">
+      <img src="images/kino-poslije.jpg" alt="Kino Centar danas" class="slider-img img-after">
+      <div class="img-before-wrapper">
+        <img src="images/kino-prije.jpg" alt="Kino Centar nekad" class="slider-img img-before">
+      </div>
+      <div class="slider-handle"><div class="handle-circle"></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- 4. MODAL: Zgrada Barok -->
+<div id="modal-barok" class="modal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <h3>Zgrada Barok — Nekad i sad</h3>
+    <div class="slider-container">
+      <img src="images/barok-poslije.jpg" alt="Zgrada Barok danas" class="slider-img img-after">
+      <div class="img-before-wrapper">
+        <img src="images/barok-prije.jpg" alt="Zgrada Barok nekad" class="slider-img img-before">
+      </div>
+      <div class="slider-handle"><div class="handle-circle"></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- 5. MODAL: Česma na Skveru -->
+<div id="modal-cesma" class="modal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <h3>Česma na Skveru — Nekad i sad</h3>
+    <div class="slider-container">
+      <img src="images/banja-poslije.jpg" alt="Česma na Skveru danas" class="slider-img img-after">
+      <div class="img-before-wrapper">
+        <img src="images/banja-prije.jpg" alt="Česma na Skveru nekad" class="slider-img img-before">
+      </div>
+      <div class="slider-handle"><div class="handle-circle"></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Galerija artefakata -->
+
+         <section id="galerija-slika">
+    <h2>Galerija artefakata</h2>
+
+    <div class="galerija">
+        <figure class="siroka">
+            <img src="images/skver.jpg" alt="Skver">
+            <figcaption>Razglednica starog Skvera 70-tih</figcaption>
+        </figure>
+        
+        <figure>
+            <img src="images/kipovi.jpg" alt="Kipovi">
+            <figcaption>Most Kipova 1950-ih</figcaption>
+        </figure>
+
+        <figure>
+            <img src="images/Vilsonov-trg.jpg" alt="Opština">
+            <figcaption>Zgrada opštine nekada</figcaption>
+        </figure>
+
+        <figure>
+            <img src="images/kapija.jpg" alt="Kapija">
+            <figcaption>Kapija nekad</figcaption>
+        </figure>
+
+        <figure>
+            <img src="images/Ćiro.jpg" alt="Ćiro">
+            <figcaption>Voz Ćiro</figcaption>
+        </figure>
+
+        <figure>
+            <img src="images/gradska_cesma.jpg" alt="Česma">
+            <figcaption>Gradska česma</figcaption>
+        </figure>
+
+      </div>
+    </section>
+
+        
+
+
+<!-- Timeline sekcija -->
+
+      <section class="timeline-sekcija" id="timeline-sekcija" aria-label="Vremenska linija historije Tuzle">
+
+  <h2>Vremenska linija Tuzle</h2>
+  <p>Ključni momenti koji su oblikovali grad soli — od prvih zapisa do savremenog doba.</p>
+
+  <ul class="timeline-lista" role="list">
+
+    <li class="tl-stavka" role="listitem">
+      <div class="tl-kartica">
+        <p class="tl-godina">Antičko doba · 2. st. p.n.e.</p>
+        <h3>Ilirsko vađenje soli</h3>
+        <p>Ilirska plemena počela su eksploatisati slane izvore na području
+          današnje Tuzle. Sol je bila dragocjeno dobro kojim se trgovalo
+          s primorskim narodima, što je gradu dalo prvobitan ekonomski značaj.</p>
+        <span class="tl-badge">Prahistorija</span>
+      </div>
+
+      <div class="tl-marker" aria-hidden="true"></div>
+
+      <div class="tl-side-lista">
+        <ul>
+          <li>Prvi oblici eksploatacije soli</li>
+          <li>Trgovina sa primorskim narodima</li>
+          <li>Početak razvoja naselja oko izvora</li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="tl-stavka" role="listitem">
+      <div class="tl-side-lista">
+        <ul>
+          <li>Soli kao strateško mjesto</li>
+          <li>Trgovina prema:
+            <ul>
+              <li>Jadranskom moru</li>
+              <li>Unutrašnjosti Balkana</li>
+            </ul>
+          </li>
+          <li>Važan centar Bosanske kraljevine</li>
+        </ul>
+      </div>
+
+      <div class="tl-marker" aria-hidden="true"></div>
+
+      <div class="tl-kartica">
+        <p class="tl-godina">Bosanska kraljevina · 12. – 15. st.</p>
+        <h3>Tuzla u Bosanskoj kraljevini</h3>
+        <p>Prije dolaska Osmanlija, grad je bio poznat kao <em>Soli</em> ili
+          <em>Gornja i Donja Tuzla</em> i nalazio se pod upravom bosanskih
+          vladara. Sol je i tada bila strateški resurs — bosanski vladari
+          kontrolirali su izvoz soli prema Jadranskom moru i unutrašnjosti
+          Balkana, čineći grad važnom kapicom kraljevine.</p>
+        <span class="tl-badge">Bosanska kraljevina</span>
+      </div>
+    </li>
+
+    <li class="tl-stavka" role="listitem">
+      <div class="tl-kartica">
+        <p class="tl-godina">Osmanski period · 1463.</p>
+        <h3>Tuzla pod osmanskom vlašću</h3>
+        <p>Osmanlije preuzimaju grad i daju mu ime Tuz-la ("mjesto soli").
+          Grad se razvija kao važno administrativno i trgovačko središte
+          Bosanskog sandžaka, a solana ostaje ključni privredni resurs.</p>
+        <span class="tl-badge">Osmanski period</span>
+      </div>
+
+      <div class="tl-marker" aria-hidden="true"></div>
+
+      <div class="tl-side-lista">
+        <ul>
+          <li>Dobijanje naziva Tuzla</li>
+          <li>Razvoj čaršije i zanata</li>
+          <li>Širenje trgovine soli</li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="tl-stavka" role="listitem">
+      <div class="tl-side-lista">
+        <ul>
+          <li>Modernizacija grada</li>
+          <li>Razvoj industrije i rudarstva</li>
+          <li>Izgradnja škola i bolnica</li>
+        </ul>
+      </div>
+
+      <div class="tl-marker" aria-hidden="true"></div>
+
+      <div class="tl-kartica">
+        <p class="tl-godina">1878. — 1918.</p>
+        <h3>Austrougarska uprava</h3>
+        <p>Austrougarska monarhija donosi modernizaciju: grade se škole,
+          bolnice, industrijska postrojenja i prva tramvajska pruga u BiH.
+          Tuzla postaje industrijski grad sa velikom rudarskom tradicijom.</p>
+        <span class="tl-badge">Austrougarski period</span>
+      </div>
+    </li>
+
+    <li class="tl-stavka" role="listitem">
+      <div class="tl-kartica">
+        <p class="tl-godina">1888.</p>
+        <h3>Česma na Skveru</h3>
+        <p>Izgrađena česma na centralnom gradskom trgu — Skveru.
+          Postaje simbol javnog života i okupljalište Tuzlaka. Danas
+          je zaštićeni kulturno-historijski spomenik Bosne i Hercegovine.</p>
+        <span class="tl-badge">Arhitektura</span>
+      </div>
+
+      <div class="tl-marker" aria-hidden="true"></div>
+
+      <div class="tl-side-lista">
+        <ul>
+          <li>Mjesto okupljanja građana</li>
+          <li>Jedan od simbola Skvera</li>
+          <li>Zaštićeni kulturni spomenik</li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="tl-stavka" role="listitem">
+      <div class="tl-side-lista">
+        <ul>
+          <li>Prva moderna škola u Tuzli</li>
+          <li>Austrougarska arhitektura</li>
+          <li>Razvoj obrazovanja i kulture</li>
+        </ul>
+      </div>
+
+      <div class="tl-marker" aria-hidden="true"></div>
+
+      <div class="tl-kartica">
+        <p class="tl-godina">1899.</p>
+        <h3>Stara Gimnazija — prva moderna škola</h3>
+        <p>Otvorena Stara Tuzlanska Gimnazija, jedna od prvih modernih
+          obrazovnih ustanova u BiH. Zgrada austrougarskog stila stojeći
+          je svjedok kulturnog napretka koji je grad doživio krajem 19. vijeka.</p>
+        <span class="tl-badge">Obrazovanje</span>
+      </div>
+    </li>
+
+    <li class="tl-stavka" role="listitem">
+      <div class="tl-kartica">
+        <p class="tl-godina">25. maj 1995.</p>
+        <h3>Tragedija na Kapiji</h3>
+        <p>Granatiranje centralnog gradskog trga za vrijeme agresije odnijeo
+          je živote 71 mladog Tuzlaka. Kapija postaje vječno mjesto sjećanja
+          i simbol otpora. Svake godine 25. maja grad se zaustavlja u šutnji.</p>
+        <span class="tl-badge">Savremena historija</span>
+      </div>
+
+      <div class="tl-marker" aria-hidden="true"></div>
+
+      <div class="tl-side-lista">
+        <ul>
+          <li>71 izgubljeni mladi život</li>
+          <li>Mjesto kolektivnog sjećanja</li>
+          <li>Obilježavanje svakog 25. maja</li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="tl-stavka" role="listitem">
+      <div class="tl-side-lista">
+        <ul>
+          <li>Transformacija bivših rudnika</li>
+          <li>Centar za:
+            <ul>
+              <li>turizam</li>
+              <li>rekreaciju</li>
+              <li>kulturna dešavanja</li>
+            </ul>
+          </li>
+          <li>Novi simbol savremene Tuzle</li>
+        </ul>
+      </div>
+
+      <div class="tl-marker" aria-hidden="true"></div>
+
+      <div class="tl-kartica">
+        <p class="tl-godina">2004.</p>
+        <h3>Panonska jezera — novi simbol Tuzle</h3>
+        <p>Na površini gdje su nekada bili aktivni rudnici soli nastala su
+          artificijelna Panonska jezera, turistički i rekreativni centar
+          koji postaje prepoznatljiv simbol savremene Tuzle i njene
+          transformacije.</p>
+        <span class="tl-badge">Savremeno doba</span>
+      </div>
+    </li>
+
+  </ul>
+</section>
+
+
+<!-- Kategorizacija zapisa --> 
+
+<section id="kategorije">
+  <h2>Kategorizacija zapisa</h2>
+  <ul class="main-list">
+    <li>
+      <div class="category-header">Materijalni artefakti</div>
+      <ul class="sub-list">
+        <li>
+          <strong>Arhitektura</strong>
+          <ul class="nested-list">
+            <li>Neolitsko sojeničko naselje</li>
+            <li>Turalibegova (Poljska) džamija</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Lični predmeti</strong>
+          <ul class="nested-list">
+            <li>Pisaća mašina Meše Selimovića</li>
+            <li>Rudarska oprema i "Lampaši"</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <div class="category-header">Usmena predanja</div>
+      <ul class="sub-list">
+        <li>
+          <strong>Legende</strong>
+          <ul class="nested-list">
+            <li>Legenda o tuzlanskoj kozi</li>
+            <li>Legenda o Panonskom moru</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Anegdote</strong>
+          <ul class="nested-list">
+            <li>Meša prosvjetar</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</section>
+
+<!-- Video sekcija -->
+
+<div class="video-stranica-kontejner">
+  <section class="video-sekcija" id="video-arhiv">
+    <div class="video-info">
+      <span class="video-tag">DIGITALNI ARHIV</span>
+      <h2>Tuzla kroz vrijeme</h2>
+      <p>
+        „Zemlja ćuti, kamen pamti, a čovjek je uvijek na gubitku u borbi sa vremenom. I ova tišina što se uvukla u zidove, u kosti i u sjećanja, jedini je pravi svjedok da smo bili, da smo se nadali i da smo trajali. Čovjek prođe, ugasne kao svijeća, dok gore ovi obrisi onoga što je nekad bila nečija radost, nečija tjeskoba.
+        <br><br>
+        Ne pišem ovo da bih dokazala šta je bilo, jer istina je ionako varljiva u tuđim očima. Pišem da bih sačuvala onaj drhtaj koji se javi kad prođeš pored mjesta gdje je nekad stajala kuća, a sada tamo nema ništa.
+        <br><br>
+        Tuzla nije samo gomila kamena i soli. Ona je svjedok naših trajanja, tjeskoba i nada koje su se taložile pod njenim krovovima. Sve se ionako mijenja, ruši i ponovo zida. Sve nestaje u ponorima da bi izronilo opet, neprepoznatljivo i tuđe. Ali ono što ostaje, ono što ni vrijeme odnijeti ne može, jeste trag ostavljen onima koji dolaze. Da u tuđim sjenkama prepoznaju svoje lice i da po onome što je bilo, napokon saznaju ko su oni sami.“
+      </p>
+      <span class="potpis">— Lejla Bećirović</span>
+    </div>
+    <div class="video-container-custom">
+      <video controls poster="images/video-cover.png">
+        <source src="videos/tuzla_kroz_vrijeme.mp4" type="video/mp4" />
+      </video>
+    </div>
+  </section>
+</div>
+
+<!-- Interaktivna mapa Tuzle -->
+
+<section class="mapa-istrazi-sekcija" id="interaktivna-mapa">
+  <h2>Istražite mapu Tuzle</h2>
+  <p>Kliknite na označenu lokaciju na mapi da vidiš više informacija.</p>
+
+  <div class="mapa-grid">
+    <div class="mapa-svg-wrap">
+      <svg viewBox="0 0 1000 800" xmlns="http://www.w3.org/2000/svg" id="mapaSvg">
+        <image href="images/mapa.jpg" x="0" y="0" width="1000" height="800" preserveAspectRatio="xMidYMid slice"/>
+
+        <!-- ── ZNAMENITOSTI (narančasta) ── -->
+        <g class="mapa-zona" data-naziv="Skver" data-kategorija="Znamenitosti"
+           data-opis="Glavno čvorište grada i simbol Tuzle sa čuvenom česmom."
+           data-ikona="fa-landmark" data-boja="#f97316">
+          <circle cx="342" cy="330" r="8" fill="#f97316" stroke="white" stroke-width="2"/>
+        </g>
+
+        <g class="mapa-zona" data-naziv="Trg Slobode" data-kategorija="Znamenitosti"
+           data-opis="Najveći trg u Bosni i Hercegovini, poznat po velikom platou, centralnoj fontani i rekonstruisanoj zgradi Baroka."
+           data-ikona="fa-building" data-boja="#f97316">
+          <circle cx="440" cy="393" r="8" fill="#f97316" stroke="white" stroke-width="2"/>
+        </g>
+
+        <!-- ── HISTORIJA (crvena) ── -->
+        <g class="mapa-zona" data-naziv="Kapija" data-kategorija="Historija"
+           data-opis="Mjesto stradanja tuzlanske mladosti 25. maja 1995. godine."
+           data-ikona="fa-heart" data-boja="#dc2626">
+          <circle cx="530" cy="395" r="8" fill="#dc2626" stroke="white" stroke-width="2"/>
+        </g>
+
+        <g class="mapa-zona" data-naziv="Stari grad" data-kategorija="Historija"
+           data-opis="Historijska jezgra grada koja čuva duh stare Tuzle."
+           data-ikona="fa-archway" data-boja="#dc2626">
+          <circle cx="395" cy="340" r="8" fill="#dc2626" stroke="white" stroke-width="2"/>
+        </g>
+
+        <!-- ── PRIRODA (plava) ── -->
+        <g class="mapa-zona" data-naziv="Park Slana Banja" data-kategorija="Priroda"
+           data-opis="Najveća parkovska površina u gradu sa brojnim spomenicima."
+           data-ikona="fa-water" data-boja="#2563eb">
+          <circle cx="950" cy="360" r="8" fill="#2563eb" stroke="white" stroke-width="2"/>
+        </g>
+
+        <g class="mapa-zona" data-naziv="Panonska jezera" data-kategorija="Priroda"
+           data-opis="Jedinstvena slana jezera u Evropi sa ljekovitim svojstvima."
+           data-ikona="fa-tree" data-boja="#2563eb">
+          <circle cx="750" cy="430" r="8" fill="#2563eb" stroke="white" stroke-width="2"/>
+        </g>
+
+        <!-- Pulse ring (dinamički dodaje JS) -->
+        <circle id="pulseRing" class="pulse-ring" cx="0" cy="0" r="0" fill="none" stroke="white" stroke-width="2" opacity="0"/>
+      </svg>
+
+      <ul class="mapa-legenda">
+        <li><span class="dot" style="background:#f97316"></span> Znamenitosti</li>
+        <li><span class="dot" style="background:#dc2626"></span> Historija</li>
+        <li><span class="dot" style="background:#2563eb"></span> Priroda</li>
+        <li><span class="dot" style="background:#7c3aed"></span> Industrija</li>
+      </ul>
+    </div>
+
+    <!-- INFO PANEL -->
+    <div class="mapa-info-panel" id="mapaPanel">
+      <div class="panel-placeholder" id="panelPlaceholder">
+        <i class="fa-solid fa-map-location-dot"></i>
+        <p>Klikni na lokaciju za detalje.</p>
+      </div>
+
+      <div id="panelSadrzaj" style="display:none; flex-direction:column; flex:1;">
+        <div class="panel-slika" id="panelSlika">
+          <i id="panelIkona" class="fa-solid"></i>
+        </div>
+        <div class="panel-tekst">
+          <p class="panel-kategorija" id="panelKategorija"></p>
+          <h3 class="panel-naziv" id="panelNaziv"></h3>
+          <p class="panel-opis" id="panelOpis"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+        
+<!-- Glas građana -->
+
+<section id="glas-gradana">
+  <div class="container">
+    <h2>Glas građana</h2>
+    
+    <!-- Drži sve kartice i kontrolne dugmadi unutar iste cjeline -->
+    <div class="feedback-wrapper">
+      
+      <!-- Kartica 1: Aktivna po defaultu prilikom učitavanja stranice -->
+      <div class="feedback-card active">
+        <p class="quote">"Moram pohvaliti tim za ovakvu dobru stranicu."</p>
+        <p class="author">— Lejla Bećirović</p>
+      </div>
+
+      <!-- Kartica 2: Skrivena u CSS-u dok ne dobije klasu "active" -->
+      <div class="feedback-card">
+        <p class="quote">"Svaka ulica ima svoju priču, a AURUM ih čuva."</p>
+        <p class="author">— Lejla Kurt</p>
+      </div>
+
+      <!-- Kartica 3: Skrivena u CSS-u dok ne dobije klasu "active" -->
+      <div class="feedback-card">
+        <p class="quote">"Konačno digitalni arhiv kakav naš grad zaslužuje."</p>
+        <p class="author">— Lamija Pjanić</p>
+      </div>
+
+      <!-- Kontrole (Strelice): Okidaju JS funkciju sa argumentom smjera kretanja -->
+      <!-- -1 šalje slider unazad, dok 1 pomijera slider unaprijed -->
+      <!-- POMOĆ AI ALATA - COPILOT-->
+      <div class="feedback-controls">
+        <button class="prev" onclick="moveSlide(-1)" aria-label="Prethodni komentar">❮</button>
+        <button class="next" onclick="moveSlide(1)" aria-label="Sljedeći komentar">❯</button>
+      </div>
+      
+    </div>
+  </div>
+</section>
+</main>
+</div> 
+
+<!-- Back to top dugme -->
+
+<div class="back-to-top">
+  <a href="#" aria-label="Nazad na vrh stranice">↑</a>
+</div>
+
+<!-- Footer -->
+
+<footer>
+  
+  <!-- Lijeva kolona: Naziv i spisak autora projekta-->
+  <div class="footer-left">
+    <h3>Digitalni Arhiv Tuzle - AURUM</h3>
+    <p>Autori projekta:</p>
+    <ul class="autori-lista">
+      <li>Lamija Pjanić</li>
+      <li>Lejla Kurt</li>
+      <li>Lejla Bećirović</li>
+    </ul>
+  </div>
+
+  <!-- Srednja kolona: Socijalne mreže-->
+  <!-- Svaki link ima target="_blank" za otvaranje u novom tabu -->
+  <div class="footer-center">
+    <a href="https://instagram.com" target="_blank" aria-label="Pratite nas na Instagramu">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+    <a href="https://facebook.com" target="_blank" aria-label="Pratite nas na Facebooku">
+      <i class="fa-brands fa-facebook-f"></i>
+    </a>
+    <a href="https://twitter.com" target="_blank" aria-label="Pratite nas na Twitteru">
+      <i class="fa-brands fa-x-twitter"></i>
+    </a>
+    <a href="https://github.com" target="_blank" aria-label="Pogledajte izvorni kod na GitHubu">
+      <i class="fa-brands fa-github"></i>
+    </a>
+  </div>
+
+  <!-- Desna kolona: Informacije o autorskim pravima-->
+  <div class="footer-right">
+    <p>© 2026 Digitalni arhiv Tuzle.</p>
+    <p>Sva prava zadržana.</p>
+  </div>
+  
+</footer>
+
+</body>
+</html>
