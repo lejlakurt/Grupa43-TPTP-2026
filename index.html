@@ -1,0 +1,702 @@
+<!doctype html>
+<html lang="bs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Digitalni arhiv Tuzle</title>
+
+    <link rel="stylesheet" href="css/tptpstil.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <script src="js/tptpskripte.js" defer></script>
+  </head>
+
+  <body>
+    <!-- Header i navigacija -->
+    <header>
+      <div class="header-top">
+        <div class="logo-container">
+          <img
+            src="images/logo1.svg"
+            alt="Grb Tuzlanskog kantona"
+            class="grb"
+          />
+          <h1 class="logo">AURUM</h1>
+        </div>
+      </div>
+
+      <nav aria-label="Glavni navigacijski meni">
+        <a href="index.html" class="active">Početna</a>
+        <a href="sadrzaj.html">Sadržaj</a>
+        <a href="kontakt.html">Kontakt</a>
+        <a href="istrazuj.html">Istraži</a>
+        <a href="https://github.com/" target="_blank">GitHub</a>
+      </nav>
+
+      <div class="theme-switch">
+        <div class="toggle-row">
+          <span>Light</span>
+          <button id="theme-toggle" type="button">
+            <span class="toggle-circle"></span>
+          </button>
+          <span>Dark</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="index-page">
+      <!-- Hero sekcija -->
+      <section class="hero-index">
+        <div class="hero-slika">
+          <img src="images/tuzla.jpg" alt="Panorama Tuzle" />
+        </div>
+
+        <div class="hero-tekst">
+          <p class="hero-label">Digitalni arhiv grada soli</p>
+
+          <h2>Digitalni Arhiv Tuzle</h2>
+
+          <p>
+            Digitalni arhiv Tuzle predstavlja zbirku priča, fotografija i važnih
+            zapisa koji čuvaju sjećanje na grad soli. Kroz ovaj arhiv posjetioci
+            mogu upoznati historiju Tuzle, njene legende, znamenitosti,
+            industrijski razvoj i sportski duh.
+          </p>
+
+          <a href="sadrzaj.html" class="hero-dugme">Istrazite stranicu</a>
+        </div>
+      </section>
+
+      <section class="stats">
+        <!-- Statistika stranice -->
+        <div>
+          <h3>150+</h3>
+          <p>historijskih dokumenata</p>
+        </div>
+
+        <div>
+          <h3>200+</h3>
+          <p>arhitektonskih znamenitosti</p>
+        </div>
+
+        <div>
+          <h3>12K</h3>
+          <p>sačuvanih tradicija</p>
+        </div>
+
+        <div>
+          <h3>50+</h3>
+          <p>priča o naslijeđu</p>
+        </div>
+      </section>
+
+      <!-- Filter kartica -->
+      <nav aria-label="Filter sadržaja" class="filter-index">
+        <span class="filter-naslov">Filter sadržaja:</span>
+
+        <button type="button" data-filter="sve">Sve</button>
+        <button type="button" data-filter="historija">Historija</button>
+        <button type="button" data-filter="legende">Legende</button>
+        <button type="button" data-filter="industrija">Industrija</button>
+        <button type="button" data-filter="znamenitosti">Znamenitosti</button>
+        <button type="button" data-filter="sport">Sport</button>
+        <button type="button" data-filter="arhitektura">Arhitektura</button>
+      </nav>
+
+      <!-- Slider kartice sadržaja -->
+      <section class="slider-section" id="portfolio">
+        <div class="slider-wrapper">
+          <div class="portfolio-controls">
+            <button type="button" class="prev" id="prevBtn">&#10094;</button>
+            <button type="button" class="next" id="nextBtn">&#10095;</button>
+          </div>
+
+          <div class="kartice-kontejner" id="portfolioSlider">
+            <!-- Historija -->
+            <article data-category="historija">
+              <img src="images/nastanak-tuzle.jpg" alt="Nastanak Tuzle" />
+              <h3>Nastanak Tuzle</h3>
+              <p>
+                Tuzla je jedan od najstarijih gradova u Bosni i Hercegovini, a
+                njen razvoj kroz historiju usko je povezan sa bogatim
+                nalazištima soli. Još od antičkog perioda ljudi su se
+                naseljavali na ovom prostoru upravo zbog slanih izvora koji su
+                imali veliki značaj za trgovinu i svakodnevni život. Tokom
+                osmanskog perioda Tuzla se razvijala kao važan trgovački i
+                zanatski centar, dok je austrougarski period donio modernizaciju
+                grada i razvoj industrije. Stare gradske jezgre, trgovi i
+                historijski objekti i danas podsjećaju na bogatu prošlost Tuzle.
+                Grad je kroz vrijeme postao prepoznatljiv po spoju industrije,
+                kulture i urbanog života. Brojne historijske priče, arhivski
+                zapisi i stare fotografije danas čuvaju uspomenu na razvoj Tuzle
+                kroz različite periode. Upravo zahvaljujući svojoj historiji i
+                prirodnom bogatstvu, Tuzla je izrasla u jedan od najvažnijih
+                urbanih centara Bosne i Hercegovine. Stari dio grada i danas
+                čuva tragove razvoja Tuzle kroz različite epohe i kulturne
+                uticaje. Historija Tuzle povezana je sa razvojem trgovine,
+                zanata i industrije koji su oblikovali svakodnevni život
+                građana. Grad je kroz stoljeća postao simbol spoja tradicije,
+                industrije i savremenog urbanog razvoja.
+              </p>
+              <a
+                href="https://grad.tuzla.ba/tuzla/historija-tuzle/"
+                target="_blank"
+                >Saznaj više</a
+              >
+            </article>
+
+            <article data-category="historija">
+              <img src="images/grad-soli.jpg" alt="Grad soli" />
+              <h3>Grad soli</h3>
+
+              <p>
+                Tuzla je poznata kao grad soli jer je upravo so obilježila njen
+                razvoj, identitet i historiju kroz stoljeća. Slani izvori
+                predstavljali su osnovu za razvoj trgovine, zanata i kasnije
+                industrije po kojoj je grad postao poznat. Solana Tuzla jedan je
+                od najvažnijih industrijskih simbola grada i direktno je
+                povezana sa njegovim razvojem. Vađenje soli uticalo je i na
+                izgled grada, širenje naselja i svakodnevni život stanovnika.
+                Kroz historiju su mnoge generacije Tuzlaka radile u proizvodnji
+                soli i gradile industrijsku tradiciju ovog područja. Tuzla je
+                upravo zahvaljujući soli postala prepoznatljiva širom Bosne i
+                Hercegovine i regiona. Danas se priča o soli čuva kroz Panonska
+                jezera, Solanu, muzeje i brojne historijske priče koje
+                podsjećaju na važnost ovog prirodnog bogatstva za identitet
+                grada. Industrija soli značajno je uticala na razvoj Tuzle tokom
+                dvadesetog stoljeća. Mnogi dijelovi grada i danas su povezani sa
+                historijom proizvodnje soli i radničkog života. Tuzla upravo
+                zahvaljujući ovoj tradiciji nosi prepoznatljiv naziv grada soli.
+                Slani izvori i industrija soli ostali su jedan od najvažnijih
+                simbola historije, razvoja i identiteta Tuzle kroz različite
+                generacije građana.
+              </p>
+
+              <a href="https://solana.ba/historijat-muzej/" target="_blank"
+                >Saznaj više</a
+              >
+            </article>
+
+            <article data-category="historija">
+              <img src="images/stara-tuzla.jpg" alt="Stara Tuzla" />
+              <h3>Stara Tuzla</h3>
+              <p>
+                Stara Tuzla predstavlja historijsko jezgro grada i prostor u
+                kojem se nekada odvijao svakodnevni život građana. U uskim
+                ulicama stare čaršije nalazile su se zanatske radnje, trgovine i
+                mjesta okupljanja stanovnika. Ovaj dio grada bio je važan centar
+                trgovine i društvenog života još u osmanskom periodu. Stare
+                kuće, čaršijski prostori i gradski trgovi i danas podsjećaju na
+                izgled nekadašnje Tuzle. Upravo u ovom dijelu grada razvijali su
+                se zanati, običaji i gradska kultura koja je oblikovala
+                identitet Tuzlaka. Fotografije i arhivski zapisi danas pomažu da
+                se sačuva uspomena na staru urbanu Tuzlu i način života
+                nekadašnjih generacija. Stara čaršija i historijski objekti
+                predstavljaju važan dio kulturnog naslijeđa grada i njegovog
+                urbanog identiteta. Ovaj dio Tuzle posebno je poznat po starim
+                zanatskim radnjama i tradicionalnoj gradskoj atmosferi. Mnogi
+                građani upravo staru čaršiju smatraju simbolom prošlosti i
+                urbanog duha Tuzle. Kroz stare ulice i trgove i danas se može
+                osjetiti dio historije i svakodnevnog života nekadašnje Tuzle. U
+                staroj Tuzli nalazili su se brojni dućani, kahvane i mjesta na
+                kojima su se okupljali trgovci i zanatlije iz različitih
+                dijelova grada.
+              </p>
+              <a href="https://tztz.ba/ba/" target="_blank">Saznaj više</a>
+            </article>
+
+            <!-- Legende -->
+            <article data-category="legende">
+              <img
+                src="images/legendaoslanimizvorima.jpg"
+                alt="Legenda o slanim izvorima"
+              />
+              <h3>Legenda o slanim izvorima</h3>
+              <p>
+                Legenda o slanim izvorima jedna je od najpoznatijih priča
+                povezanih sa nastankom Tuzle i njenim identitetom grada soli.
+                Slani izvori oduvijek su bili važan dio života stanovnika i
+                razlog razvoja naselja na ovom prostoru. Prema narodnim
+                predajama, ljudi su slanu vodu doživljavali kao posebno prirodno
+                bogatstvo i simbol opstanka. Kroz historiju su nastajale brojne
+                priče o slanim izvorima i njihovom značaju za razvoj grada.
+                Upravo zahvaljujući soli, Tuzla je postala poznata kao važno
+                trgovačko i industrijsko središte. Ove legende danas
+                predstavljaju važan dio kulturnog identiteta Tuzle i često se
+                povezuju sa pričama o nastanku grada. Slani izvori ostali su
+                simbol prošlosti, razvoja i prepoznatljivosti Tuzle kroz
+                različite historijske periode. Mnogi historičari i istraživači
+                upravo kroz ove priče pokušavaju prikazati važnost soli za
+                razvoj grada. Legende o slanim izvorima i danas su dio kulturne
+                tradicije i identiteta Tuzle. Priče o soli ostale su povezane sa
+                svakodnevnim životom i historijom grada soli.
+              </p>
+              <a
+                href="https://grad.tuzla.ba/tuzla/historija-tuzle/"
+                target="_blank"
+                >Saznaj više</a
+              >
+            </article>
+
+            <article data-category="legende">
+              <img src="images/mesa.jpg" alt="Meša prosvjetar" />
+              <h3>Meša prosvjetar</h3>
+              <p>
+                Ova anegdota je stvarna i Meša ju je sam često spominjao kao
+                primjer kako ga rodni grad "prizemljuje". Nakon što je objavio
+                roman "Derviš i smrt" i postao slavan širom Jugoslavije i
+                Evrope, Meša je došao u Tuzlu. Dok je šetao Korzom, sreo je
+                starog školskog druga koji ga godinama nije vidio. Prijatelj ga
+                je potapšao po ramenu i pitao: "Gdje si, Meša, šta ima? Jesi l'
+                još u onoj prosvjeti, radiš li šta?" U Tuzli niko ne može
+                postati nedodirljiva zvijezda. Bez obzira na svjetsku slavu, za
+                svoje sugrađane on je ostao samo onaj isti Meša koji je nekada
+                radio u školi. To je stvarna slika tuzlanske neposrednosti.
+                Takve priče i danas se prepričavaju među Tuzlacima kao dokaz da
+                je ovaj grad uvijek više cijenio čovjeka nego njegovu slavu.
+                Upravo zbog te jednostavnosti i iskrenosti, Tuzla je ostala
+                duboko utkana u Mešino sjećanje i književnost. Njegove riječi i
+                danas podsjećaju koliko su ljudi i uspomene iz rodnog grada
+                oblikovali njegov pogled na život.
+              </p>
+              <a
+                href="https://grad.tuzla.ba/tuzla/historija-tuzle/"
+                target="_blank"
+              >
+                Saznaj više
+              </a>
+            </article>
+
+            <article data-category="legende">
+              <img src="images/tuzlanskepredaje.jpg" alt="Tuzlanske predaje" />
+              <h3>Tuzlanske predaje</h3>
+              <p>
+                Tuzlanske predaje predstavljaju stare priče i usmena sjećanja
+                koja su se kroz generacije prenosila među stanovnicima grada.
+                Ove priče govore o starim mahalama, trgovcima, zanatlijama,
+                običajima i događajima koji su obilježili prošlost Tuzle. Mnoge
+                predaje povezane su sa slanim izvorima, starom čaršijom i
+                poznatim gradskim mjestima koja i danas imaju važan značaj za
+                građane. Kroz ove priče može se osjetiti duh stare urbane Tuzle
+                i način života nekadašnjih generacija. Predaje predstavljaju
+                važan dio kulturnog identiteta grada i čuvaju uspomenu na
+                prošlost Tuzle kroz narodno sjećanje. Fotografije, arhivski
+                zapisi i historijske priče danas pomažu da se sačuva ovo
+                vrijedno kulturno naslijeđe grada soli. Mnoge priče vezane su za
+                svakodnevni život, stare gradske običaje i poznate ličnosti
+                Tuzle. Tuzlanske predaje i danas predstavljaju važan dio
+                kulturne tradicije i urbanog identiteta grada. Upravo kroz ove
+                priče najbolje se može osjetiti duh stare Tuzle.
+              </p>
+              <a href="https://tztz.ba/ba/" target="_blank"> Saznaj više </a>
+            </article>
+
+            <!-- Industrija -->
+            <article data-category="industrija">
+              <img src="images/kreka.jpg" alt="Rudnik Kreka" />
+              <h3>Rudnik Kreka</h3>
+              <p>
+                Rudnik Kreka predstavlja jedan od najvažnijih simbola
+                industrijske historije Tuzle i okolnog područja. Rudarstvo je
+                kroz decenije imalo veliki značaj za razvoj grada, industrije i
+                zapošljavanje stanovništva. Generacije rudara radile su u teškim
+                uslovima i ostavile snažan trag u identitetu Tuzle. Razvoj
+                rudnika uticao je na širenje grada, izgradnju radničkih naselja
+                i razvoj industrijske kulture ovog područja. Rudari su bili
+                poznati po solidarnosti i snažnom osjećaju zajedništva koji je
+                obilježio radnički život Tuzle. Danas rudarska tradicija
+                predstavlja važan dio kolektivnog sjećanja i industrijskog
+                naslijeđa grada. Fotografije, dokumenti i priče o rudarima i
+                dalje čuvaju uspomenu na važnost Rudnika Kreka za razvoj Tuzle.
+                Rudarska naselja i industrijski objekti i danas podsjećaju na
+                period snažnog razvoja industrije u gradu. Kreka je ostala jedan
+                od najvažnijih simbola radničke historije i identiteta Tuzle.
+              </p>
+              <a href="https://kreka.ba/o-nama/" target="_blank">
+                Saznaj više
+              </a>
+            </article>
+
+            <article data-category="industrija">
+              <img src="images/solana.jpg" alt="Solana Tuzla" />
+              <h3>Solana Tuzla</h3>
+              <p>
+                Solana Tuzla jedan je od najpoznatijih industrijskih simbola
+                grada i direktno je povezana sa njegovim identitetom grada soli.
+                Proizvodnja soli kroz historiju omogućila je razvoj trgovine,
+                industrije i urbanog života u Tuzli. Mnogi stanovnici
+                generacijama su radili u Solani i na taj način učestvovali u
+                razvoju grada. Industrija soli značajno je uticala na izgled
+                Tuzle i njeno širenje tokom dvadesetog stoljeća. Solana je
+                postala simbol rada, industrijske tradicije i ekonomskog razvoja
+                ovog područja. Danas predstavlja važan dio kulturnog i
+                industrijskog naslijeđa Tuzle, a priče o proizvodnji soli i
+                dalje zauzimaju posebno mjesto u historiji grada. Upravo
+                zahvaljujući Solani Tuzla je postala prepoznatljiva širom Bosne
+                i Hercegovine i regiona. Brojni industrijski objekti i danas
+                podsjećaju na važnost proizvodnje soli za razvoj grada. Solana
+                ostaje jedan od najvažnijih simbola identiteta i industrijske
+                prošlosti Tuzle.
+              </p>
+              <a href="https://solana.ba/historijat-muzej/" target="_blank">
+                Saznaj više
+              </a>
+            </article>
+
+            <article data-category="industrija">
+              <img
+                src="images/industrija.jpg"
+                alt="Industrijski razvoj Tuzle"
+              />
+              <h3>Industrijski razvoj</h3>
+              <p>
+                Industrijski razvoj Tuzle imao je veliki uticaj na izgled grada
+                i svakodnevni život njegovih stanovnika. Razvoj industrije bio
+                je povezan sa eksploatacijom soli, uglja i energetskih resursa
+                koji su omogućili snažan privredni napredak ovog područja.
+                Fabrike, rudnici i industrijska postrojenja uticali su na
+                širenje grada i razvoj novih naselja. Tuzla je tokom dvadesetog
+                stoljeća postala jedan od najvažnijih industrijskih centara
+                Bosne i Hercegovine. Industrija nije uticala samo na ekonomiju,
+                nego i na razvoj kulture, sporta i urbanog života građana.
+                Radnička kultura i osjećaj zajedništva postali su važan dio
+                identiteta Tuzle. Brojni industrijski objekti i danas
+                predstavljaju dio historijskog i kulturnog naslijeđa grada.
+                Fotografije i arhivski zapisi pokazuju koliko je industrija
+                oblikovala razvoj Tuzle kroz različite periode. Industrijski
+                razvoj ostao je važan dio identiteta i historije grada soli.
+              </p>
+              <a href="https://kreka.ba/" target="_blank"> Saznaj više </a>
+            </article>
+
+            <!-- Znamenitosti -->
+            <article data-category="znamenitosti">
+              <img src="images/kapijaa.jpg" alt="Kapija" />
+              <h3>Kapija</h3>
+              <p>
+                Kapija predstavlja jedno od najvažnijih mjesta sjećanja u Tuzli
+                i simbol je kolektivnog pamćenja grada. Ovo mjesto povezano je
+                sa tragičnim događajem iz 1995. godine kada je tokom rata
+                izgubljen veliki broj mladih života. Danas Kapija predstavlja
+                prostor poštovanja, mira i sjećanja na nevine žrtve. Građani
+                Tuzle redovno dolaze kako bi odali počast i sačuvali uspomenu na
+                stradale. Kapija nije samo dio grada, nego mjesto koje nosi
+                snažnu emocionalnu poruku za sve generacije. Ona podsjeća koliko
+                su mir i ljudski život važni. Mnogi posjetioci upravo kroz
+                Kapiju upoznaju i teži dio historije Tuzle. Ovo mjesto postalo
+                je simbol zajedništva, tuge i borbe za očuvanje sjećanja.
+                Fotografije, priče i arhivski zapisi pomažu da istina o ovom
+                događaju ostane trajno sačuvana. Kapija danas predstavlja jedno
+                od najvažnijih mjesta kulture sjećanja u Bosni i Hercegovini.
+                Građani Tuzle upravo kroz ovo mjesto čuvaju uspomenu na prošlost
+                i važnost mira za buduće generacije.
+              </p>
+              <a href="https://memorijalnicentarkapija.ba/" target="_blank">
+                Saznaj više
+              </a>
+            </article>
+
+            <article data-category="znamenitosti">
+              <img src="images/trg.jpg" alt="Trg slobode" />
+              <h3>Trg slobode</h3>
+              <p>
+                Trg slobode predstavlja centralno mjesto okupljanja i jedan od
+                najpoznatijih prostora u Tuzli. Tokom godina postao je simbol
+                gradskog života, susreta i društvenih događaja. Na trgu se
+                svakodnevno okupljaju građani i posjetioci koji žele osjetiti
+                atmosferu grada. Oko njega se nalaze važni objekti,
+                ugostiteljski prostori i kulturni sadržaji koji mu daju poseban
+                značaj. Trg slobode često je mjesto održavanja koncerata,
+                manifestacija i javnih okupljanja. Njegov moderan izgled
+                pokazuje razvoj savremene Tuzle, ali i dalje čuva duh gradskog
+                centra. Trg povezuje ljude različitih generacija i predstavlja
+                važan dio svakodnevnog života. Mnogi ga doživljavaju kao srce
+                grada i prostor u kojem se najbolje može osjetiti energija
+                Tuzle. Upravo zbog toga Trg slobode ima posebno mjesto u
+                identitetu grada. Tokom praznika i kulturnih događaja trg
+                postaje jedno od najživljih mjesta okupljanja građana i
+                posjetilaca Tuzle.
+              </p>
+              <a
+                href="https://tztz.ba/ba/trg-slobode-najveci-trg-u-bosni-i-hercegovini/"
+                target="_blank"
+              >
+                Saznaj više
+              </a>
+            </article>
+
+            <article data-category="znamenitosti">
+              <img src="images/tuzla.jpg" alt="Panonska jezera" />
+              <h3>Panonska jezera</h3>
+              <p>
+                Panonska jezera predstavljaju jedan od najpoznatijih simbola
+                savremene Tuzle i njene turističke ponude. Nastala su kao
+                jedinstven projekat koji je spojio prirodno naslijeđe i moderan
+                gradski razvoj. Slana voda u jezerima podsjeća na priču o
+                Panonskom moru i bogatstvu soli po kojem je Tuzla poznata.
+                Jezera su postala mjesto odmora, druženja i ljetnih aktivnosti
+                za građane i turiste. Tokom ljetnih mjeseci privlače veliki broj
+                posjetilaca iz Bosne i Hercegovine i regiona. Panonska jezera
+                promijenila su sliku grada i učinila Tuzlu još
+                prepoznatljivijom. Ona predstavljaju spoj prirode, turizma i
+                urbanog života. Prostor oko jezera stalno se razvija i postaje
+                važno mjesto kulturnih i društvenih događaja. Panonska jezera
+                danas predstavljaju jedan od najvažnijih turističkih prostora i
+                simbola savremene Tuzle. Jezera su postala važan dio identiteta
+                grada i svakodnevnog života građana tokom ljetnog perioda.
+              </p>
+              <a href="https://panonika.ba/" target="_blank"> Saznaj više </a>
+            </article>
+
+            <!-- Sport -->
+            <article data-category="sport">
+              <img src="images/tusanj.jpg" alt="Stadion Tušanj" />
+              <h3>Stadion Tušanj</h3>
+              <p>
+                Stadion Tušanj predstavlja jedno od najvažnijih sportskih mjesta
+                u Tuzli i dom je FK Sloboda Tuzla. Stadion je kroz historiju bio
+                mjesto brojnih važnih utakmica, sportskih događaja i okupljanja
+                navijača iz cijelog grada. Generacije Tuzlaka upravo za Tušanj
+                vežu svoje sportske uspomene i navijačke trenutke. Stadion se
+                nalazi u blizini centra grada i predstavlja važan dio sportske
+                kulture Tuzle. Na Tušnju su igrane utakmice domaćih i
+                međunarodnih takmičenja, a atmosfera na tribinama često je bila
+                prepoznatljiva širom Bosne i Hercegovine. Mnogi poznati
+                fudbaleri upravo su na ovom stadionu započeli ili razvijali
+                svoje karijere. Tušanj nije samo sportski objekat, nego simbol
+                zajedništva, navijačke energije i lokalnog ponosa građana Tuzle.
+                Stadion i danas okuplja veliki broj ljubitelja sporta i ostaje
+                važan dio svakodnevnog života grada. Kroz svoju dugu historiju
+                Tušanj je postao jedan od prepoznatljivih simbola sportske
+                Tuzle.
+              </p>
+              <a href="https://fksloboda.ba/stadion-tusanj/" target="_blank">
+                Saznaj više
+              </a>
+            </article>
+
+            <article data-category="sport">
+              <img src="images/sloboda.jpg" alt="Sloboda Tuzla" />
+              <h3>Sloboda Tuzla</h3>
+              <p>
+                FK Sloboda Tuzla jedan je od najpoznatijih i najstarijih
+                fudbalskih klubova u Bosni i Hercegovini. Klub je osnovan 1919.
+                godine i kroz decenije je postao važan simbol sportskog
+                identiteta Tuzle. Sloboda je poznata po velikoj navijačkoj
+                tradiciji i snažnoj povezanosti sa građanima grada. Tokom svoje
+                historije klub je igrao brojne važne utakmice i predstavljao
+                Tuzlu širom bivše Jugoslavije i Bosne i Hercegovine. Crveno-crne
+                boje kluba postale su prepoznatljiv simbol sportskog duha
+                Tuzlaka. Mnogi poznati fudbaleri svoje su prve velike uspjehe
+                ostvarili upravo igrajući za Slobodu. Klub je kroz godine
+                prolazio kroz uspone i teške periode, ali je ostao važan dio
+                identiteta grada. Navijači Slobode poznati su po velikoj podršci
+                i odanosti klubu bez obzira na rezultate. Utakmice Slobode na
+                stadionu Tušanj predstavljaju važan sportski i društveni događaj
+                za građane Tuzle. FK Sloboda danas ostaje simbol tradicije,
+                zajedništva i sportske historije grada.
+              </p>
+              <a href="https://fksloboda.ba/historija-kluba/" target="_blank">
+                Saznaj više
+              </a>
+            </article>
+
+            <article data-category="sport">
+              <img src="images/sport.jpg" alt="Sport u Tuzli" />
+              <h3>Sport u Tuzli</h3>
+              <p>
+                Sport u Tuzli ima veliku tradiciju i važan je dio identiteta
+                grada. Stadion Tušanj predstavlja dom FK Sloboda Tuzla, jednog
+                od najstarijih fudbalskih klubova u Bosni i Hercegovini.
+                Sportsko-kulturni centar Mejdan poznat je po rukometnim,
+                košarkaškim i odbojkaškim utakmicama koje okupljaju veliki broj
+                građana. Tuzla je poznata po klubovima kao što su FK Sloboda, RK
+                Sloboda, KK Sloboda i OK Sloboda. Navijačka kultura i podrška
+                lokalnim klubovima važan su dio sportske atmosfere grada. Sport
+                je kroz godine postao simbol zajedništva, energije i ponosa
+                Tuzlaka. Brojni mladi sportisti upravo u Tuzli započinju svoje
+                prve sportske korake kroz škole sporta i omladinske klubove.
+                Sportski događaji i utakmice i danas predstavljaju važan dio
+                društvenog života grada. Tuzla je kroz sport razvila snažnu
+                navijačku tradiciju i posebnu povezanost građana sa lokalnim
+                klubovima. Mejdan i Tušanj ostali su mjesta važnih sportskih
+                uspomena i velikih okupljanja navijača.
+              </p>
+              <a href="https://stadiontusanj.ba/" target="_blank">
+                Saznaj više
+              </a>
+            </article>
+
+            <!-- Arhitektura -->
+            <article data-category="arhitektura">
+              <img src="images/carsija.jpg" alt="Stara čaršija" />
+              <h3>Stara čaršija</h3>
+              <p>
+                Stara čaršija predstavlja jedan od najvažnijih historijskih
+                dijelova Tuzle i prostor u kojem se nekada odvijao svakodnevni
+                život grada. U čaršiji su se nalazile zanatske radnje, trgovine
+                i mjesta okupljanja stanovnika. Ovaj dio Tuzle bio je centar
+                trgovine i društvenog života još u osmanskom periodu. Uske
+                ulice, stare kuće i tradicionalni objekti i danas podsjećaju na
+                izgled nekadašnjeg grada. Čaršija čuva duh stare Tuzle i priče
+                generacija koje su tu živjele i radile. Ona predstavlja važan
+                dio kulturnog i urbanog identiteta Tuzle. Mnogi stari zanati i
+                običaji upravo su se razvijali u ovom dijelu grada. Fotografije
+                i arhivski zapisi danas pomažu da se sačuva uspomena na izgled i
+                atmosferu stare čaršije. Ovaj dio grada posebno je važan za
+                očuvanje historijskog identiteta Tuzle. Stara čaršija povezuje
+                prošlost i sadašnjost kroz arhitekturu, priče i gradske običaje.
+                Mnogi građani upravo ovaj prostor smatraju simbolom stare urbane
+                Tuzle.
+              </p>
+              <a href="https://tztz.ba/ba/" target="_blank"> Saznaj više </a>
+            </article>
+
+            <article data-category="arhitektura">
+              <img src="images/arhitektura.jpg" alt="Arhitektura Tuzle" />
+              <h3>Arhitektura Tuzle</h3>
+              <p>
+                Arhitektura Tuzle pokazuje spoj osmanskog, austrougarskog i
+                savremenog perioda razvoja grada. U Tuzli se mogu vidjeti stari
+                trgovi, austrougarske zgrade, industrijski objekti i moderni
+                gradski prostori koji zajedno stvaraju poseban izgled grada.
+                Panonska jezera, Trg slobode i stara čaršija predstavljaju neke
+                od najprepoznatljivijih urbanih prostora Tuzle. Industrijski
+                razvoj i vađenje soli značajno su uticali na izgled grada i
+                njegovo širenje. Arhitektura Tuzle pokazuje kako su se kroz
+                historiju mijenjale potrebe i način života građana. Upravo ta
+                kombinacija starog i modernog daje Tuzli prepoznatljiv
+                identitet. Mnogi objekti danas predstavljaju važan dio kulturnog
+                naslijeđa grada. Kroz stare fotografije i arhivsku građu moguće
+                je pratiti kako se Tuzla mijenjala kroz različite historijske
+                periode. Austrougarski objekti i stare gradske građevine i danas
+                imaju važnu ulogu u vizuelnom identitetu Tuzle. Razvoj
+                industrije ostavio je trag i na urbanom širenju grada tokom
+                dvadesetog stoljeća. Savremeni dijelovi Tuzle danas se povezuju
+                sa historijskim jezgrom i stvaraju spoj tradicije i modernog
+                urbanog razvoja.
+              </p>
+              <a href="https://tztz.ba/ba/" target="_blank"> Saznaj više </a>
+            </article>
+
+            <article data-category="arhitektura">
+              <img src="images/ulice.jpg" alt="Gradske ulice Tuzle" />
+              <h3>Gradske ulice</h3>
+              <p>
+                Gradske ulice Tuzle čuvaju tragove razvoja grada kroz različite
+                historijske periode. Ulice oko stare čaršije i centra grada
+                podsjećaju na vrijeme kada je Tuzla bila važan trgovački i
+                zanatski centar. Kroz grad se mogu vidjeti spojeni uticaji
+                starog urbanog jezgra i savremenog razvoja. Korzo i centralni
+                gradski prostori predstavljaju mjesta okupljanja građana i dio
+                svakodnevnog života Tuzlaka. Mnoge ulice povezane su sa pričama
+                o industriji, soli i razvoju grada kroz dvadeseto stoljeće.
+                Upravo kroz gradske ulice najbolje se može osjetiti ritam,
+                historija i identitet Tuzle kao grada soli. Stare i nove gradske
+                četvrti zajedno pokazuju kako se Tuzla širila i razvijala kroz
+                godine. Fotografije gradskih ulica danas predstavljaju važan dio
+                arhivskog naslijeđa i kolektivnog sjećanja građana. Korzo je
+                posebno poznat kao mjesto šetnje, susreta i svakodnevnog
+                gradskog života. Ulice Tuzle povezuju historijske, kulturne i
+                moderne dijelove grada u jedinstvenu urbanu cjelinu. Kroz
+                njihove promjene može se pratiti razvoj Tuzle od industrijskog
+                do savremenog grada.
+              </p>
+              <a href="https://tztz.ba/ba/" target="_blank"> Saznaj više </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mapa i informacije o Tuzli -->
+      <aside class="bocna-sekcija">
+        <div class="aside-tekst">
+          <span>Lokacija grada</span>
+
+          <h2>Tuzla na mapi</h2>
+
+          <p>
+            Zahvaljujući svom položaju, Tuzla je kroz historiju predstavljala
+            važnu poveznicu između sjeveroistočne Bosne i drugih dijelova
+            zemlje. Grad se nalazi na značajnim saobraćajnim pravcima koji
+            povezuju Tuzlu sa Sarajevom, Brčkom, Bijeljinom i drugim većim
+            gradovima regiona. U blizini grada nalazi se i Međunarodni aerodrom
+            Tuzla koji dodatno doprinosi povezanosti ovog područja sa evropskim
+            državama i ostatkom svijeta. Pored urbanog jezgra, područje Tuzle
+            karakterišu brojne zelene površine, parkovi i uzvišenja.
+          </p>
+        </div>
+
+        <iframe
+          title="Mapa grada Tuzle"
+          src="https://www.google.com/maps?q=Tuzla%20Bosnia%20and%20Herzegovina&output=embed"
+          loading="lazy"
+          allowfullscreen
+        >
+        </iframe>
+      </aside>
+    </main>
+
+    <div class="back-to-top">
+      <a href="#">↑</a>
+    </div>
+
+    <footer>
+      <!-- Footer stranice -->
+      <!-- Podaci o autorima -->
+      <div class="footer-left">
+        <h3>Digitalni Arhiv Tuzle - AURUM</h3>
+        <p>Autori projekta:</p>
+        <ul class="autori-lista">
+          <li>Lamija Pjanić</li>
+          <li>Lejla Kurt</li>
+          <li>Lejla Bećirović</li>
+        </ul>
+      </div>
+
+      <!-- Društvene mreže -->
+      <!-- Linkovi se otvaraju u novom tabu -->
+      <div class="footer-center">
+        <a
+          href="https://instagram.com"
+          target="_blank"
+          aria-label="Pratite nas na Instagramu"
+        >
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a
+          href="https://facebook.com"
+          target="_blank"
+          aria-label="Pratite nas na Facebooku"
+        >
+          <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        <a
+          href="https://twitter.com"
+          target="_blank"
+          aria-label="Pratite nas na Twitteru"
+        >
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+        <a
+          href="https://github.com"
+          target="_blank"
+          aria-label="Pogledajte izvorni kod na GitHubu"
+        >
+          <i class="fa-brands fa-github"></i>
+        </a>
+      </div>
+
+      <!-- Autorska prava -->
+      <div class="footer-right">
+        <p>© 2026 Digitalni arhiv Tuzle.</p>
+        <p>Sva prava zadržana.</p>
+      </div>
+    </footer>
+  </body>
+</html>
