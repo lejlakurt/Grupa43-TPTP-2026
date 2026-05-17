@@ -1,7 +1,4 @@
-<!-- ┌────────────────────────────────────────────────────────┐ -->
-<!-- │                       1. HEAD                          │ -->
-<!-- └────────────────────────────────────────────────────────┘ -->
-<!-- Konfiguracija stranice, postavljanje naslova, povezivanje CSS i JS-->
+<!-- Head i povezivanje CSS i JS fajlova -->
 
 <!doctype html>
 <html lang="bs">
@@ -20,45 +17,39 @@
 
   <body>
 
-<!-- ┌────────────────────────────────────────────────────────┐ -->
-<!-- │                  2. ZAGLAVLJE (HEADER)                 │ -->
-<!-- └────────────────────────────────────────────────────────┘ -->
-<!-- Logo projekta, navigacijski linkovi, prekidač za promjenu teme-->
+<!-- Header i navigacija -->
 
-<header>
-  <div class="header-top">
-    <div class="logo-container">
-      <img src="images/logo.svg" alt="Logo AURUM" class="logo-img" />
-      <h1 class="logo">AURUM</h1>
-    </div>
-  </div>
+ <header>
+      <div class="header-top">
+        <div class="logo-container">
+          <img
+            src="images/logo1.svg"
+            alt="Grb Tuzlanskog kantona"
+            class="grb"
+          />
+          <h1 class="logo">AURUM</h1>
+        </div>
+      </div>
 
-  <nav aria-label="Glavni navigacijski meni">
-    <a href="index.html">Početna</a>
-    <a href="sadrzaj.html" class="active">Sadržaj</a>
-    <a href="kontakt.html">Kontakt</a>
-    <a href="https://github.com/" target="_blank">GitHub</a>
-  </nav>
+      <nav aria-label="Glavni navigacijski meni">
+        <a href="index.html">Početna</a>
+        <a href="sadrzaj.html"class="active">Sadržaj</a>
+        <a href="kontakt.html">Kontakt</a>
+        <a href="istrazuj.html">Istraži</a>
+        <a href="https://github.com/" target="_blank">GitHub</a>
+      </nav>
 
-  <div class="theme-switch">
-    <p>Mode</p>
-
-    <div class="toggle-row">
-      <span>Light</span>
-
-      <button id="theme-toggle" type="button">
-        <span class="toggle-circle"></span>
-      </button>
-
-      <span>Dark</span>
-    </div>
-  </div>
-</header>
-
-<!-- ┌────────────────────────────────────────────────────────┐ -->
-<!-- │                  3. HERO SEKCIJA                       │ -->
-<!-- └────────────────────────────────────────────────────────┘ -->
-<!-- Uvodni blok sa opisom arhive i linkovima za navigaciju na stranici-->
+      <div class="theme-switch">
+        <div class="toggle-row">
+          <span>Light</span>
+          <button id="theme-toggle" type="button">
+            <span class="toggle-circle"></span>
+          </button>
+          <span>Dark</span>
+        </div>
+      </div>
+    </header>
+<!-- Hero sekcija -->
 
 <section class="hero-index hero-sadrzaj">
   <div class="hero-flex">  
@@ -79,14 +70,13 @@
       <a href="#kategorije">Kategorije</a>
       <a href="#video-arhiv">Video</a>
       <a href="#citati">Citati</a>
-      <a href="#timeline">Timeline</a>
+<a href="#timeline-sekcija">Timeline</a>
     </nav>
   </div>
 
   <div class="hero-logo-desno">
-    <img src="images/logo.svg" alt="Logo AURUM" class="hero-logo-img" />
+    <img src="images/logo1.svg" alt="Logo AURUM" class="hero-logo-img" />
   </div>
-</div>
 </section>
     
 
@@ -94,9 +84,7 @@
     <main>
       <div class="page-card">
 
-<!-- ┌────────────────────────────────────────────────────────┐ -->
-<!-- │                  4. UVODNA SEKCIJA                     │ -->
-<!-- └────────────────────────────────────────────────────────┘ -->
+<!-- Uvodna sekcija -->
 
         <section id="uvod">
           <h1>Digitalni Arhiv: Vremenska Kapsula Tuzle</h1>
@@ -104,10 +92,7 @@
         </section>
 
 
-<!-- ┌────────────────────────────────────────────────────────┐ -->
-<!-- │                  5. TABELA HRONOLOGIJE                 │ -->
-<!-- └────────────────────────────────────────────────────────┘ -->
-<!-- Tabela historijskih lokaliteta u formi klikabilne tabele-->
+<!-- Tabela hronologije -->
 
         <section id="tabela-promjena">
   <h2>Hronologija srušenih i izmijenjenih simbola</h2>
@@ -166,10 +151,7 @@
   </table>
 </section>
 
-<!-- ┌────────────────────────────────────────────────────────┐ -->
-<!-- │                  6. MODALNI PROZORI                    │ -->
-<!-- └────────────────────────────────────────────────────────┘ -->
-<!-- Slajderi prije/poslije-->
+<!-- Modalni prozori -->
 
 <!-- 1. MODAL: Hotel Bristol -->
 <div id="modal-bristol" class="modal">
@@ -246,9 +228,7 @@
   </div>
 </div>
 
-<!-- ┌────────────────────────────────────────────────────────┐ -->
-<!-- │                  7. GALERIJA ARTEFAKATA                │ -->
-<!-- └────────────────────────────────────────────────────────┘ -->
+<!-- Galerija artefakata -->
 
          <section id="galerija-slika">
     <h2>Galerija artefakata</h2>
@@ -287,133 +267,205 @@
       </div>
     </section>
 
-<!-- ┌────────────────────────────────────────────────────────┐ -->
-<!-- │                8. VREMENSKA LINIJA (TIMELINE)          │ -->
-<!-- └────────────────────────────────────────────────────────┘ -->
+        
+
+
+<!-- Timeline sekcija -->
 
       <section class="timeline-sekcija" id="timeline-sekcija" aria-label="Vremenska linija historije Tuzle">
 
-        <h2>Vremenska linija Tuzle</h2>
-        <p>Ključni momenti koji su oblikovali grad soli - od prvih zapisa do savremenog doba.</p>
+  <h2>Vremenska linija Tuzle</h2>
+  <p>Ključni momenti koji su oblikovali grad soli — od prvih zapisa do savremenog doba.</p>
 
-        <ul class="timeline-lista" role="list">
-          /* ovu ideju za cik-cak raspored kartica je generisao AI */
+  <ul class="timeline-lista" role="list">
 
-          <!-- Stavka 1: lijevo (neparna) -->
-          <li class="tl-stavka" role="listitem">
-            <div class="tl-kartica">
-              <p class="tl-godina">Antičko doba · 2. st. p.n.e.</p>
-              <h3>Ilirsko vađenje soli</h3>
-              <p>Ilirska plemena počela su eksploatisati slane izvore na području
-                današnje Tuzle. Sol je bila dragocjeno dobro kojim se trgovalo
-                s primorskim narodima, što je gradu dalo prvobitan ekonomski značaj.</p>
-              <span class="tl-badge">Prahistorija</span>
-            </div>
-            <div class="tl-marker" aria-hidden="true"></div>
-          </li>
+    <li class="tl-stavka" role="listitem">
+      <div class="tl-kartica">
+        <p class="tl-godina">Antičko doba · 2. st. p.n.e.</p>
+        <h3>Ilirsko vađenje soli</h3>
+        <p>Ilirska plemena počela su eksploatisati slane izvore na području
+          današnje Tuzle. Sol je bila dragocjeno dobro kojim se trgovalo
+          s primorskim narodima, što je gradu dalo prvobitan ekonomski značaj.</p>
+        <span class="tl-badge">Prahistorija</span>
+      </div>
 
-          <!-- Stavka 2: desno (parna) -->
-          <li class="tl-stavka" role="listitem">
-            <div class="tl-marker" aria-hidden="true"></div>
-            <div class="tl-kartica">
-              <p class="tl-godina">Bosanska kraljevina · 12. – 15. st.</p>
-              <h3>Tuzla u Bosanskoj kraljevini</h3>
-              <p>Prije dolaska Osmanlija, grad je bio poznat kao <em>Soli</em> ili
-                <em>Gornja i Donja Tuzla</em> i nalazio se pod upravom bosanskih
-                vladara. Sol je i tada bila strateški resurs - bosanski vladari
-                kontrolirali su izvoz soli prema Jadranskom moru i unutrašnjosti
-                Balkana, čineći grad važnom kapicom kraljevine.</p>
-              <span class="tl-badge">Bosanska kraljevina</span>
-            </div>
-          </li>
+      <div class="tl-marker" aria-hidden="true"></div>
 
-          <!-- Stavka 3: lijevo (neparna) -->
-          <li class="tl-stavka" role="listitem">
-            <div class="tl-kartica">
-              <p class="tl-godina">Osmanski period · 1463.</p>
-              <h3>Tuzla pod osmanskom vlašću</h3>
-              <p>Osmanlije preuzimaju grad i daju mu ime Tuz-la ("mjesto soli").
-                Grad se razvija kao važno administrativno i trgovačko središte
-                Bosanskog sandžaka, a solana ostaje ključni privredni resurs.</p>
-              <span class="tl-badge">Osmanski period</span>
-            </div>
-            <div class="tl-marker" aria-hidden="true"></div>
-          </li>
-
-          <!-- Stavka 4: desno (parna) -->
-          <li class="tl-stavka" role="listitem">
-            <div class="tl-marker" aria-hidden="true"></div>
-            <div class="tl-kartica">
-              <p class="tl-godina">1878. — 1918.</p>
-              <h3>Austrougarska uprava</h3>
-              <p>Austrougarska monarhija donosi modernizaciju: grade se škole,
-                bolnice, industrijska postrojenja i prva tramvajska pruga u BiH.
-                Tuzla postaje industrijski grad sa velikom rudarskom tradicijom.</p>
-              <span class="tl-badge">Austrougarski period</span>
-            </div>
-          </li>
-
-          <!-- Stavka 5: lijevo (neparna) -->
-          <li class="tl-stavka" role="listitem">
-            <div class="tl-kartica">
-              <p class="tl-godina">1888.</p>
-              <h3>Česma na Skveru</h3>
-              <p>Izgrađena česma na centralnom gradskom trgu - Skveru.
-                Postaje simbol javnog života i okupljalište Tuzlaka. Danas
-                je zaštićeni kulturno-historijski spomenik Bosne i Hercegovine.</p>
-              <span class="tl-badge">Arhitektura</span>
-            </div>
-            <div class="tl-marker" aria-hidden="true"></div>
-          </li>
-
-          <!-- Stavka 6: desno (parna) -->
-          <li class="tl-stavka" role="listitem">
-            <div class="tl-marker" aria-hidden="true"></div>
-            <div class="tl-kartica">
-              <p class="tl-godina">1899.</p>
-              <h3>Stara Gimnazija - prva moderna škola</h3>
-              <p>Otvorena Stara Tuzlanska Gimnazija, jedna od prvih modernih
-                obrazovnih ustanova u BiH. Zgrada austrougarskog stila stojeći
-                je svjedok kulturnog napretka koji je grad doživio krajem 19. vijeka.</p>
-              <span class="tl-badge">Obrazovanje</span>
-            </div>
-          </li>
-
-          <!-- Stavka 7: lijevo (neparna) -->
-          <li class="tl-stavka" role="listitem">
-            <div class="tl-kartica">
-              <p class="tl-godina">25. maj 1995.</p>
-              <h3>Tragedija na Kapiji</h3>
-              <p>Granatiranje centralnog gradskog trga za vrijeme agresije odnijeo
-                je živote 71 mladog Tuzlaka. Kapija postaje vječno mjesto sjećanja
-                i simbol otpora. Svake godine 25. maja grad se zaustavlja u šutnji.</p>
-              <span class="tl-badge">Savremena historija</span>
-            </div>
-            <div class="tl-marker" aria-hidden="true"></div>
-          </li>
-
-          <!-- Stavka 8: desno (parna) -->
-          <li class="tl-stavka" role="listitem">
-            <div class="tl-marker" aria-hidden="true"></div>
-            <div class="tl-kartica">
-              <p class="tl-godina">2004.</p>
-              <h3>Panonska jezera - novi simbol Tuzle</h3>
-              <p>Na površini gdje su nekada bili aktivni rudnici soli nastala su
-                artificijelna Panonska jezera, turistički i rekreativni centar
-                koji postaje prepoznatljiv simbol savremene Tuzle i njene
-                transformacije.</p>
-              <span class="tl-badge">Savremeno doba</span>
-            </div>
-          </li>
-
+      <div class="tl-side-lista">
+        <ul>
+          <li>Prvi oblici eksploatacije soli</li>
+          <li>Trgovina sa primorskim narodima</li>
+          <li>Početak razvoja naselja oko izvora</li>
         </ul>
-      </section>
+      </div>
+    </li>
+
+    <li class="tl-stavka" role="listitem">
+      <div class="tl-side-lista">
+        <ul>
+          <li>Soli kao strateško mjesto</li>
+          <li>Trgovina prema:
+            <ul>
+              <li>Jadranskom moru</li>
+              <li>Unutrašnjosti Balkana</li>
+            </ul>
+          </li>
+          <li>Važan centar Bosanske kraljevine</li>
+        </ul>
+      </div>
+
+      <div class="tl-marker" aria-hidden="true"></div>
+
+      <div class="tl-kartica">
+        <p class="tl-godina">Bosanska kraljevina · 12. – 15. st.</p>
+        <h3>Tuzla u Bosanskoj kraljevini</h3>
+        <p>Prije dolaska Osmanlija, grad je bio poznat kao <em>Soli</em> ili
+          <em>Gornja i Donja Tuzla</em> i nalazio se pod upravom bosanskih
+          vladara. Sol je i tada bila strateški resurs — bosanski vladari
+          kontrolirali su izvoz soli prema Jadranskom moru i unutrašnjosti
+          Balkana, čineći grad važnom kapicom kraljevine.</p>
+        <span class="tl-badge">Bosanska kraljevina</span>
+      </div>
+    </li>
+
+    <li class="tl-stavka" role="listitem">
+      <div class="tl-kartica">
+        <p class="tl-godina">Osmanski period · 1463.</p>
+        <h3>Tuzla pod osmanskom vlašću</h3>
+        <p>Osmanlije preuzimaju grad i daju mu ime Tuz-la ("mjesto soli").
+          Grad se razvija kao važno administrativno i trgovačko središte
+          Bosanskog sandžaka, a solana ostaje ključni privredni resurs.</p>
+        <span class="tl-badge">Osmanski period</span>
+      </div>
+
+      <div class="tl-marker" aria-hidden="true"></div>
+
+      <div class="tl-side-lista">
+        <ul>
+          <li>Dobijanje naziva Tuzla</li>
+          <li>Razvoj čaršije i zanata</li>
+          <li>Širenje trgovine soli</li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="tl-stavka" role="listitem">
+      <div class="tl-side-lista">
+        <ul>
+          <li>Modernizacija grada</li>
+          <li>Razvoj industrije i rudarstva</li>
+          <li>Izgradnja škola i bolnica</li>
+        </ul>
+      </div>
+
+      <div class="tl-marker" aria-hidden="true"></div>
+
+      <div class="tl-kartica">
+        <p class="tl-godina">1878. — 1918.</p>
+        <h3>Austrougarska uprava</h3>
+        <p>Austrougarska monarhija donosi modernizaciju: grade se škole,
+          bolnice, industrijska postrojenja i prva tramvajska pruga u BiH.
+          Tuzla postaje industrijski grad sa velikom rudarskom tradicijom.</p>
+        <span class="tl-badge">Austrougarski period</span>
+      </div>
+    </li>
+
+    <li class="tl-stavka" role="listitem">
+      <div class="tl-kartica">
+        <p class="tl-godina">1888.</p>
+        <h3>Česma na Skveru</h3>
+        <p>Izgrađena česma na centralnom gradskom trgu — Skveru.
+          Postaje simbol javnog života i okupljalište Tuzlaka. Danas
+          je zaštićeni kulturno-historijski spomenik Bosne i Hercegovine.</p>
+        <span class="tl-badge">Arhitektura</span>
+      </div>
+
+      <div class="tl-marker" aria-hidden="true"></div>
+
+      <div class="tl-side-lista">
+        <ul>
+          <li>Mjesto okupljanja građana</li>
+          <li>Jedan od simbola Skvera</li>
+          <li>Zaštićeni kulturni spomenik</li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="tl-stavka" role="listitem">
+      <div class="tl-side-lista">
+        <ul>
+          <li>Prva moderna škola u Tuzli</li>
+          <li>Austrougarska arhitektura</li>
+          <li>Razvoj obrazovanja i kulture</li>
+        </ul>
+      </div>
+
+      <div class="tl-marker" aria-hidden="true"></div>
+
+      <div class="tl-kartica">
+        <p class="tl-godina">1899.</p>
+        <h3>Stara Gimnazija — prva moderna škola</h3>
+        <p>Otvorena Stara Tuzlanska Gimnazija, jedna od prvih modernih
+          obrazovnih ustanova u BiH. Zgrada austrougarskog stila stojeći
+          je svjedok kulturnog napretka koji je grad doživio krajem 19. vijeka.</p>
+        <span class="tl-badge">Obrazovanje</span>
+      </div>
+    </li>
+
+    <li class="tl-stavka" role="listitem">
+      <div class="tl-kartica">
+        <p class="tl-godina">25. maj 1995.</p>
+        <h3>Tragedija na Kapiji</h3>
+        <p>Granatiranje centralnog gradskog trga za vrijeme agresije odnijeo
+          je živote 71 mladog Tuzlaka. Kapija postaje vječno mjesto sjećanja
+          i simbol otpora. Svake godine 25. maja grad se zaustavlja u šutnji.</p>
+        <span class="tl-badge">Savremena historija</span>
+      </div>
+
+      <div class="tl-marker" aria-hidden="true"></div>
+
+      <div class="tl-side-lista">
+        <ul>
+          <li>71 izgubljeni mladi život</li>
+          <li>Mjesto kolektivnog sjećanja</li>
+          <li>Obilježavanje svakog 25. maja</li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="tl-stavka" role="listitem">
+      <div class="tl-side-lista">
+        <ul>
+          <li>Transformacija bivših rudnika</li>
+          <li>Centar za:
+            <ul>
+              <li>turizam</li>
+              <li>rekreaciju</li>
+              <li>kulturna dešavanja</li>
+            </ul>
+          </li>
+          <li>Novi simbol savremene Tuzle</li>
+        </ul>
+      </div>
+
+      <div class="tl-marker" aria-hidden="true"></div>
+
+      <div class="tl-kartica">
+        <p class="tl-godina">2004.</p>
+        <h3>Panonska jezera — novi simbol Tuzle</h3>
+        <p>Na površini gdje su nekada bili aktivni rudnici soli nastala su
+          artificijelna Panonska jezera, turistički i rekreativni centar
+          koji postaje prepoznatljiv simbol savremene Tuzle i njene
+          transformacije.</p>
+        <span class="tl-badge">Savremeno doba</span>
+      </div>
+    </li>
+
+  </ul>
+</section>
 
 
-<!-- ┌────────────────────────────────────────────────────────┐ -->
-<!-- │                9. KATEGORIZACIJA ZAPISA                │ -->
-<!-- └────────────────────────────────────────────────────────┘ -->
-<!--Koristi semantičku ugnježdenu listu--> 
+<!-- Kategorizacija zapisa --> 
 
 <section id="kategorije">
   <h2>Kategorizacija zapisa</h2>
@@ -459,9 +511,7 @@
   </ul>
 </section>
 
-<!-- ┌────────────────────────────────────────────────────────┐ -->
-<!-- │                  10. VIDEO ARHIV                       │ -->
-<!-- └────────────────────────────────────────────────────────┘ -->
+<!-- Video sekcija -->
 
 <div class="video-stranica-kontejner">
   <section class="video-sekcija" id="video-arhiv">
@@ -478,17 +528,14 @@
       <span class="potpis">— Lejla Bećirović</span>
     </div>
     <div class="video-container-custom">
-      <video controls poster="images/video-cover.jpg">
+      <video controls poster="images/video-cover.png">
         <source src="videos/tuzla_kroz_vrijeme.mp4" type="video/mp4" />
       </video>
     </div>
   </section>
 </div>
 
-<!-- ┌────────────────────────────────────────────────────────┐ -->
-<!-- │                  11. INTERAKTIVNA MAPA                 │ -->
-<!-- └────────────────────────────────────────────────────────┘ -->
-<!-- SVG koristi <image> kao statičnu pozadinu i <g> grupe sa krugovima (<circle>) kao interaktivne tačke. Svaka grupa sadrži "data-*" koje JavaScript koristi za punjenje desnog info panela-->
+<!-- Interaktivna mapa Tuzle -->
 
 <section class="mapa-istrazi-sekcija" id="interaktivna-mapa">
   <h2>Istražite mapu Tuzle</h2>
@@ -571,10 +618,9 @@
   </div>
 </section>
 
-<!-- ┌────────────────────────────────────────────────────────┐ -->
-<!-- │                  12. GLAS GRAĐANA (SLIDER)              │ -->
-<!-- └────────────────────────────────────────────────────────┘ -->
-<!-- Interaktivni slider. Klasa "active" je trenutno vidljivi komentar-->
+
+        
+<!-- Glas građana -->
 
 <section id="glas-gradana">
   <div class="container">
@@ -615,18 +661,13 @@
 </main>
 </div> 
 
-<!-- ┌────────────────────────────────────────────────────────┐ -->
-<!-- │                  13. BACK TO TOP (DUGME)               │ -->
-<!-- └────────────────────────────────────────────────────────┘ -->
+<!-- Back to top dugme -->
 
 <div class="back-to-top">
   <a href="#" aria-label="Nazad na vrh stranice">↑</a>
 </div>
 
-
-<!-- ┌────────────────────────────────────────────────────────┐ -->
-<!-- │                  14. PODNOŽJE (FOOTER)                 │ -->
-<!-- └────────────────────────────────────────────────────────┘ -->
+<!-- Footer -->
 
 <footer>
   
@@ -668,5 +709,3 @@
 
 </body>
 </html>
-     
-
