@@ -11,772 +11,10 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
     <script src="js/tptpskripte.js" defer></script>
-
-    <style>
-
-  /*  hero sekcija */
-
-  .hero-istrazi {
-    width: 86%;
-    margin: 0 auto 70px;
-    padding: 60px 0 52px;
-    border-bottom: 3px solid var(--dark);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  /* mali narandjasti natpis iznad naslova */
-  .hero-istrazi .hero-label {
-    color: var(--orange);
-    font-size: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    margin-bottom: 18px;
-    opacity: 0;
-    animation: fadeUp 0.7s ease forwards;
-    animation-delay: 0.2s;
-  }
-
-  .hero-istrazi h2 {
-    font-size: clamp(40px, 5.5vw, 72px);
-    line-height: 0.93;
-    letter-spacing: -3px;
-    color: var(--dark);
-    max-width: 700px;
-    margin-bottom: 22px;
-    opacity: 0;
-    animation: fadeUp 0.8s ease forwards;
-    animation-delay: 0.4s;
-  }
-
-  .hero-istrazi > p {
-    font-size: 15px;
-    line-height: 1.75;
-    max-width: 560px;
-    opacity: 0;
-    animation: fadeUp 0.8s ease forwards;
-    animation-delay: 0.6s;
-  }
-
-  /* navigacioni linkovi u hero sekciji — pill dugmad s ikonama */
-  .hero-istrazi-nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px;
-    margin-top: 36px;
-    opacity: 0;
-    animation: fadeUp 0.8s ease forwards;
-    animation-delay: 0.8s;
-  }
-
-  .hero-istrazi-nav a {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    border: 1.5px solid var(--dark);
-    padding: 10px 20px;
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--dark);
-    text-decoration: none;
-    transition: background 0.25s, color 0.25s, border-color 0.25s;
-  }
-
-  .hero-istrazi-nav a:hover {
-    background: var(--orange);
-    border-color: var(--orange);
-    color: white;
-  }
-
-  .hero-istrazi-nav a i {
-    font-size: 13px;
-  }
-
-
-  /* 
-     2 generator rando, činjenica iz arhiva
-     korisnik klikne dugme i dobije nasumičan arhivski podatak.
-     primijenila sam flex layout koji centrira sadržaj unutar kartice.
-      */
-
-  .generator-sekcija {
-    width: 86%;
-    margin: 0 auto 90px;
-  }
-
-  .generator-sekcija > h2 {
-    margin-bottom: 8px;
-  }
-
-  .generator-sekcija > p {
-    font-size: 14px;
-    margin-bottom: 36px;
-    max-width: 560px;
-  }
-
-  /* vanjski okvir generatora — nema crnog bordera, samo sjenka i narančasti border-top */
-  #generator {
-    border: none;
-    border-top: 3px solid var(--orange);
-    box-shadow:
-      0 8px 24px rgba(17, 24, 39, 0.09),
-      0 18px 40px rgba(17, 24, 39, 0.13);
-    background: var(--white);
-    padding: 50px 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 28px;
-    max-width: 900px;
-    width: 100%;
-    margin: 0 auto;
-    text-align: center;
-  }
-
-  /* prikaz teksta činjenice — veći font, centriran
-     min-height sprječava "skok" layouta kad se tekst promijeni —
-     ovo sam naučila iz stackoverflow odgovora o layout shift */
-  #fact-display {
-    font-size: 20px;
-    line-height: 1.6;
-    color: var(--dark);
-    min-height: 60px;
-    font-style: italic;
-    transition: opacity 0.3s ease;
-    margin: 0;
-    width: 100%;
-  }
-
-  body.dark #fact-display {
-    color: #f8fafc;
-  }
-
-  /* klasa koju js dodaje tokom fade animacije
-     opacity: 0 + transition na #fact-display zajedno čine fade efekt
-     js dodaje klasu, čeka 300ms, mijenja tekst, pa uklanja klasu  */
-  #fact-display.fade-out {
-    opacity: 0;
-  }
-
-  /* dugme za generisanje nove činjenice */
-  #btn-generator {
-    background: var(--dark);
-    color: white;
-    border: none;
-    padding: 13px 30px;
-    font-family: inherit;
-    font-size: 13px;
-    font-weight: 700;
-    cursor: pointer;
-    border-radius: 20px;
-    display: inline-flex;
-    align-items: center;
-    gap: 9px;
-    transition: background 0.25s, transform 0.15s;
-  }
-
-  #btn-generator:hover {
-    background: var(--orange);
-  }
-
-  /* sitna animacija klika — scale efekt koji daje osjećaj fizičnog pritiska.
-     naučila sam o transform: scale() iz mdn dokumentacije */
-  #btn-generator:active {
-    transform: scale(0.97);
-  }
-
-  /* dark mode: generator — nema bordera, samo sjenka ostaje */
-  body.dark #generator {
-    background: var(--dark-card);
-    border-top-color: var(--orange);
-    box-shadow:
-      0 8px 24px rgba(0, 0, 0, 0.25),
-      0 18px 40px rgba(0, 0, 0, 0.30);
-  }
-
-
-  /* 3 prije i poslije slider */
-
-  .mapa-istrazi-sekcija {
-    width: 86%;
-    margin: 0 auto 90px;
-  }
-
-  .mapa-istrazi-sekcija > h2 {
-    margin-bottom: 8px;
-  }
-
-  .mapa-istrazi-sekcija > p {
-    font-size: 14px;
-    margin-bottom: 36px;
-    max-width: 560px;
-  }
-
-  /* dugmad za odabir lokacije — inline flex red */
-  .ba-selector {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 24px;
-  }
-
-  .ba-dugme {
-    font-family: inherit;
-    font-size: 13px;
-    font-weight: 600;
-    padding: 9px 20px;
-    background: transparent;
-    border: 1.5px solid var(--dark);
-    color: var(--dark);
-    cursor: pointer;
-    transition: background 0.2s, color 0.2s, border-color 0.2s;
-  }
-
-  .ba-dugme:hover,
-  .ba-dugme.aktivno {
-    background: var(--orange);
-    border-color: var(--orange);
-    color: white;
-  }
-
-  body.dark .ba-dugme {
-    border-color: #334155;
-    color: #f8fafc;
-  }
-
-  body.dark .ba-dugme:hover,
-  body.dark .ba-dugme.aktivno {
-    background: var(--orange);
-    border-color: var(--orange);
-    color: white;
-  }
-
-  /* grid: slider zauzima više prostora, info panel manji desno */
-  .ba-grid {
-    display: grid;
-    grid-template-columns: 1.6fr 1fr;
-    gap: 36px;
-    align-items: start;
-  }
-
-  /* slider kontejner — overflow: hidden reže slike na rubovima
-     aspect-ratio: 4/3 održava proporcije bez fiksne visine u pikselima */
-  .ba-kontejner {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 4/3;
-    overflow: hidden;
-    border: 2px solid var(--dark);
-    cursor: ew-resize;
-    user-select: none;
-    touch-action: none;
-    background: #111;
-  }
-
-  body.dark .ba-kontejner {
-    border-color: #334155;
-  }
-
-  .ba-slika {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-
-  /* "prije" slika — ispod, uvijek vidljiva */
-  .ba-prije {
-    z-index: 1;
-    background: linear-gradient(135deg, #2a1a0a 0%, #5c3a1a 50%, #3a2510 100%);
-  }
-
-  /* "poslije" slika — iznad, klipovana js-om.
-     clip-path: inset(0 50% 0 0) znači: odsijeci 50% s desne strane.
-     js mijenja tu vrijednost dinamički dok korisnik vuče slider */
-  .ba-poslije {
-    z-index: 2;
-    clip-path: inset(0 50% 0 0);
-    background: linear-gradient(135deg, #0a1628 0%, #1e3a5c 50%, #0f2640 100%);
-  }
-
-  /* bijela vertikalna linija koja dijeli slike */
-  .ba-razdjela {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    width: 2px;
-    background: white;
-    z-index: 10;
-    transform: translateX(-50%);
-    pointer-events: none;
-  }
-
-  /* kružno dugme na razdjeli za drag */
-  .ba-handle {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    background: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.35);
-  }
-
-  .ba-handle svg {
-    width: 18px;
-    height: 18px;
-    color: #111;
-  }
-
-  /* labele "PRIJE" i "POSLIJE" na uglovima slike */
-  .ba-label {
-    position: absolute;
-    top: 14px;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    background: rgba(0,0,0,0.55);
-    color: white;
-    padding: 4px 10px;
-    z-index: 12;
-    pointer-events: none;
-  }
-
-  .ba-label-prije { left: 14px; z-index: 3; }
-  .ba-label-poslije { right: 14px; z-index: 13; }
-
-  /* info panel desno od slidera — nema crnog bordera, samo sjenka i narančasti border-top */
-  .ba-info-panel {
-    background: var(--white);
-    border: none;
-    border-top: 3px solid var(--orange);
-    box-shadow:
-      0 8px 24px rgba(17, 24, 39, 0.09),
-      0 18px 40px rgba(17, 24, 39, 0.13);
-    padding: 28px 26px;
-    min-height: 320px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    gap: 0;
-  }
-
-  /* dark mode: info panel — sjenka tamnija da se vidi na tamnoj pozadini */
-  body.dark .ba-info-panel {
-    background: var(--dark-card);
-    border-top-color: var(--orange);
-    box-shadow:
-      0 8px 24px rgba(0, 0, 0, 0.25),
-      0 18px 40px rgba(0, 0, 0, 0.30);
-  }
-
-  /* sitni kategorija label — narančast, uppercase */
-  .ba-info-kategorija {
-    font-size: 10px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1.4px;
-    color: var(--orange);
-    margin-bottom: 10px;
-  }
-
-  .ba-info-naziv {
-    font-size: 21px;
-    font-weight: 700;
-    color: var(--dark);
-    line-height: 1.2;
-    margin-bottom: 14px;
-  }
-
-  body.dark .ba-info-naziv { color: #f8fafc; }
-
-  .ba-info-opis {
-    font-size: 13px;
-    line-height: 1.75;
-    color: var(--muted);
-    flex: 1;
-    margin-bottom: 20px;
-  }
-
-  /* redak s godinama "prije" i "poslije" — dva boxa pored sebe */
-  .ba-info-godine {
-    display: flex;
-    gap: 16px;
-    margin-top: auto;
-  }
-
-  /* kutijice za godine — nema crnog bordera, samo sjenka i narančasti border-top */
-  .ba-godina-box {
-    flex: 1;
-    border: none;
-    border-top: 3px solid var(--orange);
-    box-shadow:
-      0 4px 12px rgba(17, 24, 39, 0.08),
-      0 8px 20px rgba(17, 24, 39, 0.10);
-    padding: 12px 14px;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
-
-  /* dark mode: kutijice za godine — bordera nema, box-shadow tamniji */
-  body.dark .ba-godina-box {
-    box-shadow:
-      0 4px 12px rgba(0, 0, 0, 0.25),
-      0 8px 20px rgba(0, 0, 0, 0.30);
-  }
-
-  /* sitni label "PRIJE" ili "POSLIJE" iznad broja */
-  .ba-godina-label {
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
-
-  /* sama godina — narančasta, velika */
-  .ba-godina-broj {
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--orange);
-  }
-
-  @media (max-width: 780px) {
-    .ba-grid { grid-template-columns: 1fr; }
-  }
-
-
-  /* 
-     [4] kviz — pitanja o tuzli
-      */
-
-  .kviz-sekcija {
-    width: 86%;
-    margin: 0 auto 90px;
-  }
-
-  .kviz-sekcija > h2 { margin-bottom: 8px; }
-
-  .kviz-sekcija > p {
-    font-size: 14px;
-    margin-bottom: 40px;
-    max-width: 560px;
-  }
-
-  /* progress bar red: tekst | bar | bodovi */
-  .kviz-progres-wrap {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin-bottom: 30px;
-  }
-
-  .kviz-progres-tekst {
-    font-size: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
-    color: var(--muted);
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
-
-  /* siva traka, fill je narančast */
-  .kviz-progres-bar {
-    flex: 1;
-    height: 4px;
-    background: #e5e7eb;
-    border-radius: 2px;
-    overflow: hidden;
-  }
-
-  .kviz-progres-fill {
-    height: 100%;
-    background: var(--orange);
-    border-radius: 2px;
-    transition: width 0.4s ease;
-    width: 0%;
-  }
-
-  .kviz-bodovi-tekuci {
-    font-size: 12px;
-    font-weight: 700;
-    color: var(--orange);
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
-
-  /* blok svakog pitanja — sakriven dok nije aktivan */
-  .kviz-pitanje-blok {
-    display: none;
-    animation: fadeUp 0.4s ease forwards;
-  }
-
-  .kviz-pitanje-blok.aktivno { display: block; }
-
-  /* kartica pitanja — nema crnog bordera, samo sjenka i narančasti border-top */
-  .kviz-kartica {
-    background: var(--white);
-    border: none;
-    border-top: 3px solid var(--orange);
-    box-shadow:
-      0 8px 24px rgba(17, 24, 39, 0.09),
-      0 18px 40px rgba(17, 24, 39, 0.13);
-    padding: 32px 34px 28px;
-  }
-
-  /* sitni broj pitanja iznad teksta pitanja */
-  .kviz-broj-pitanja {
-    font-size: 11px;
-    font-weight: 700;
-    color: var(--orange);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 12px;
-  }
-
-  .kviz-kartica h3 {
-    font-size: 20px;
-    color: var(--dark);
-    line-height: 1.3;
-    margin-bottom: 26px;
-    font-weight: 700;
-  }
-
-  /* grid s opcijama — 2 kolone na desktopu, 1 na mobilnom */
-  .kviz-opcije {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-  }
-
-  .kviz-opcija {
-    background: var(--light);
-    border: 1.5px solid transparent;
-    padding: 14px 18px;
-    text-align: left;
-    font-family: inherit;
-    font-size: 13px;
-    color: var(--dark);
-    cursor: pointer;
-    transition: background 0.2s, border-color 0.2s, color 0.2s;
-    line-height: 1.4;
-    border-radius: 0;
-  }
-
-  .kviz-opcija:hover:not(:disabled) {
-    border-color: var(--orange);
-    background: var(--soft-orange);
-  }
-
-  /* tačan odgovor — zeleni feedback */
-  .kviz-opcija.tacno {
-    background: #dcfce7;
-    border-color: #16a34a;
-    color: #15803d;
-    font-weight: 700;
-  }
-
-  /* netačan odgovor — crveni feedback */
-  .kviz-opcija.netacno {
-    background: #fee2e2;
-    border-color: #dc2626;
-    color: #b91c1c;
-  }
-
-  .kviz-opcija:disabled { cursor: default; }
-
-  /* feedback poruka ispod opcija — sakrivena dok korisnik ne odabere */
-  .kviz-feedback {
-    margin-top: 16px;
-    padding: 12px 16px;
-    font-size: 13px;
-    font-weight: 600;
-    display: none;
-    border-left: 3px solid;
-  }
-
-  .kviz-feedback.tacno {
-    display: block;
-    background: #f0fdf4;
-    border-color: #16a34a;
-    color: #15803d;
-  }
-
-  .kviz-feedback.netacno {
-    display: block;
-    background: #fef2f2;
-    border-color: #dc2626;
-    color: #b91c1c;
-  }
-
-  /* red s "Sljedeće pitanje" dugmetom — poravnat desno */
-  .kviz-kontrole {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin-top: 20px;
-    gap: 12px;
-  }
-
-  /* dugme za sljedeće pitanje — sakriveno dok korisnik ne odabere */
-  .kviz-btn-next {
-    background: var(--dark);
-    color: white;
-    border: none;
-    padding: 12px 28px;
-    font-family: inherit;
-    font-size: 13px;
-    font-weight: 700;
-    cursor: pointer;
-    border-radius: 20px;
-    transition: background 0.25s;
-    display: none;
-  }
-
-  .kviz-btn-next:hover { background: var(--orange); }
-  .kviz-btn-next.vidljivo { display: inline-block; }
-
-  /* ekran rezultata  sakriven dok kviz nije završen,
-     nema crnog bordera, samo sjenka i narančasti border-top */
-  .kviz-rezultat {
-    display: none;
-    background: var(--white);
-    border: none;
-    border-top: 3px solid var(--orange);
-    box-shadow:
-      0 8px 24px rgba(17, 24, 39, 0.09),
-      0 18px 40px rgba(17, 24, 39, 0.13);
-    padding: 50px 40px;
-    text-align: center;
-    animation: fadeUp 0.5s ease forwards;
-  }
-
-  /* velika emoji ikona na vrhu rezultat ekrana */
-  .rezultat-ikona {
-    font-size: 56px;
-    margin-bottom: 20px;
-    display: block;
-  }
-
-  .kviz-rezultat h3 {
-    font-size: 28px;
-    color: var(--dark);
-    margin-bottom: 8px;
-  }
-
-  /* broj bodova -  veliki narandjasti broj */
-  .rezultat-bodovi {
-    font-size: 52px;
-    font-weight: 700;
-    color: var(--orange);
-    line-height: 1;
-    margin: 16px 0 10px;
-    display: block;
-  }
-
-  /* "od 6" ispod bodova */
-  .rezultat-max {
-    font-size: 14px;
-    color: var(--muted);
-    margin-bottom: 20px;
-  }
-
-  .rezultat-poruka {
-    font-size: 15px;
-    line-height: 1.7;
-    max-width: 420px;
-    margin: 0 auto 28px;
-    color: var(--muted);
-  }
-
-  /* dugme za restart kviza */
-  .kviz-btn-restart {
-    background: var(--orange);
-    color: white;
-    border: none;
-    padding: 14px 34px;
-    font-family: inherit;
-    font-size: 14px;
-    font-weight: 700;
-    cursor: pointer;
-    border-radius: 20px;
-    transition: background 0.25s;
-  }
-
-  .kviz-btn-restart:hover { background: #e95d12; }
-
-  /* dark mode: kviz - tamna pozadina za karticu i rezultat,
-     border-top ostaje narandjast, box-shadow tamniji */
-  body.dark .kviz-kartica {
-    background: var(--dark-card);
-    border-top-color: var(--orange);
-    box-shadow:
-      0 8px 24px rgba(0, 0, 0, 0.25),
-      0 18px 40px rgba(0, 0, 0, 0.30);
-  }
-  body.dark .kviz-kartica h3 { color: #f8fafc; }
-  body.dark .kviz-opcija { background: #1e293b; color: #f8fafc; }
-  body.dark .kviz-opcija:hover:not(:disabled) { background: #2d3f55; border-color: var(--orange); }
-  body.dark .kviz-progres-bar { background: #1e293b; }
-  body.dark .kviz-rezultat {
-    background: var(--dark-card);
-    border-top-color: var(--orange);
-    box-shadow:
-      0 8px 24px rgba(0, 0, 0, 0.25),
-      0 18px 40px rgba(0, 0, 0, 0.30);
-  }
-  body.dark .kviz-rezultat h3 { color: #f8fafc; }
-
-
-  /* 5 responzivnost*/
-
-  @media (max-width: 1000px) {
-    /* kviz opcije u jednu kolonu na tabletu */
-    .kviz-opcije { grid-template-columns: 1fr; }
-  }
-
-  @media (max-width: 700px) {
-    /* sve sekcije na 92% širine na mobitelu */
-    .hero-istrazi,
-    .generator-sekcija,
-    .mapa-istrazi-sekcija,
-    .kviz-sekcija {
-      width: 92%;
-    }
-
-    .hero-istrazi h2 {
-      font-size: 38px;
-      letter-spacing: -2px;
-    }
-
-    /* manji padding generatora na mobitelu */
-    #generator {
-      padding: 28px 22px;
-    }
-
-    .kviz-kartica { padding: 22px 18px 18px; }
-    .kviz-rezultat { padding: 36px 20px; }
-    .kviz-progres-wrap { flex-wrap: wrap; }
-  }
-</style>
   </head>
 
   <body>
-
-    <!--header -->
+    <!-- Header i navigacija -->
     <header>
       <div class="header-top">
         <div class="logo-container">
@@ -789,7 +27,7 @@
         <a href="index.html">Početna</a>
         <a href="sadrzaj.html">Sadržaj</a>
         <a href="kontakt.html">Kontakt</a>
-        <a href="istrazuj.html"class="active" >Istraži</a>
+        <a href="istrazuj.html" class="active">Istraži</a>
         <a href="https://github.com/" target="_blank">GitHub</a>
       </nav>
 
@@ -804,16 +42,15 @@
       </div>
     </header>
 
-    <main style="width: 100%; margin: 0;">
-
-      <!--1 hero sekcija -->
+    <main class="istrazuj-main">
+      <!-- Hero sekcija -->
       <section class="hero-istrazi" aria-label="Uvod u stranicu Istraži Tuzlu">
         <p class="hero-label">Digitalni arhiv grada soli</p>
         <h2>Istraži Tuzlu</h2>
         <p>
           Otkrij historiju grada soli kroz generator arhivskih činjenica,
-          interaktivni slider poređenja fotografija i kviz koji testira
-          tvoje znanje o Tuzli.
+          interaktivni slider poređenja fotografija i kviz koji testira tvoje
+          znanje o Tuzli.
         </p>
 
         <nav class="hero-istrazi-nav" aria-label="Brza navigacija po stranici">
@@ -829,74 +66,103 @@
         </nav>
       </section>
 
-           <!-- 2 generator činjenica — na kraju stranice -->
-      <section class="generator-sekcija" id="generator-sekcija" aria-label="Generator arhivskih činjenica o Tuzli">
-
+      <!-- Generator arhivskih činjenica -->
+      <section
+        class="generator-sekcija"
+        id="generator-sekcija"
+        aria-label="Generator arhivskih činjenica o Tuzli"
+      >
         <h2>Arhivske tajne</h2>
         <p>Svaki klik otkriva drugu malu historijsku činjenicu iz arhiva.</p>
 
-        <div id="generator" role="region" aria-live="polite" aria-label="Prikaz nasumične arhivske činjenice">
+        <div
+          id="generator"
+          role="region"
+          aria-live="polite"
+          aria-label="Prikaz nasumične arhivske činjenice"
+        >
           <p id="fact-display">Klikni na dugme i istraži arhivske tajne...</p>
           <button id="btn-generator" type="button">
             <i class="fa-solid fa-shuffle" aria-hidden="true"></i>
             Saznaj više
           </button>
         </div>
-
       </section>
 
-
-      <!-- 3 prije i poslije — slider za poređenje fotografija -->
-      <section class="mapa-istrazi-sekcija" id="mapa-sekcija" aria-label="Poređenje starih i novih fotografija Tuzle">
-
+      <!-- Before / after sekcija -->
+      <section
+        class="mapa-istrazi-sekcija"
+        id="mapa-sekcija"
+        aria-label="Poređenje starih i novih fotografija Tuzle"
+      >
         <h2>Prije i Poslije</h2>
-        <p>Povuci liniju lijevo-desno da vidiš kako se Tuzla mijenjala kroz godine.</p>
+        <p>
+          Povuci liniju lijevo-desno da vidiš kako se Tuzla mijenjala kroz
+          godine.
+        </p>
 
-        <!-- dugmad za odabir lokacije -->
+        <!-- Dugmad za promjenu lokacije -->
         <div class="ba-selector" role="group" aria-label="Odaberi lokaciju">
-          <button class="ba-dugme aktivno" data-lokacija="0" type="button">Most s kipovima</button>
-          <button class="ba-dugme" data-lokacija="1" type="button">Skver</button>
-          <button class="ba-dugme" data-lokacija="2" type="button">Panonska jezera</button>
+          <button class="ba-dugme aktivno" data-lokacija="0" type="button">
+            Most s kipovima
+          </button>
+          <button class="ba-dugme" data-lokacija="1" type="button">
+            Skver
+          </button>
+          <button class="ba-dugme" data-lokacija="2" type="button">
+            Panonska jezera
+          </button>
         </div>
 
         <div class="ba-grid">
-
-          <!-- slider kontejner -->
-          <div class="ba-kontejner" id="baKontejner" aria-label="Slider za poređenje fotografija">
-
+          <!-- Slider za prikaz prije i poslije -->
+          <div
+            class="ba-kontejner slider-container"
+            id="baKontejner"
+            aria-label="Slider za poređenje fotografija"
+          >
             <img
-              class="ba-slika ba-prije"
+              class="ba-slika slider-img img-after"
               id="baSlika1"
               src="images/2.svg"
-              alt="Most prije"
-            />
-
-            <img
-              class="ba-slika ba-poslije"
-              id="baSlika2"
-              src="images/1.svg"
               alt="Most poslije"
+              draggable="false"
             />
 
-            <div class="ba-razdjela" id="baRazdjela" aria-hidden="true">
-              <div class="ba-handle" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <polyline points="15 18 9 12 15 6"></polyline>
-                  <polyline points="9 6 15 12 9 18" transform="translate(6,0)"></polyline>
-                </svg>
-              </div>
+            <div class="img-before-wrapper" id="baPrijeWrapper">
+              <img
+                class="ba-slika slider-img img-before"
+                id="baSlika2"
+                src="images/1.svg"
+                alt="Most prije"
+                draggable="false"
+              />
             </div>
 
-            <span class="ba-label ba-label-prije" aria-hidden="true">PRIJE</span>
-            <span class="ba-label ba-label-poslije" aria-hidden="true">POSLIJE</span>
+            <div class="slider-handle" id="baRazdjela" aria-hidden="true">
+              <div class="handle-circle"></div>
+            </div>
+
+            <span class="ba-label ba-label-prije" aria-hidden="true"
+              >PRIJE</span
+            >
+            <span class="ba-label ba-label-poslije" aria-hidden="true"
+              >POSLIJE</span
+            >
           </div>
 
-          <!-- info panel desno od slidera -->
+          <!-- Informacije o lokaciji -->
           <div class="ba-info-panel" id="baInfoPanel">
             <p class="ba-info-kategorija" id="baInfoKat">Znamenitosti</p>
             <h3 class="ba-info-naziv" id="baInfoNaziv">Most s kipovima</h3>
             <p class="ba-info-opis" id="baInfoOpis">
-              2024. godine se navršilo 90 godina otkako postoji most “Kipovi” u Tuzli. Za devet decenija postojanja, most je saniran nekoliko puta ali ove godine je doživio veću rekonstrukciju. Kipovi koje je svorio vrhunski kipar Franjo Leder su postavljeni 1936. godine. Prema nekim izvorima prvi je to betonski most građen u Tuzli, projektovao ga je arhitekta Bogdan Đukić, a njegova gradnja počela je 1935. godine.
+              2024. godine se navršilo 90 godina otkako postoji most “Kipovi” u
+              Tuzli. Za devet decenija postojanja, most je saniran nekoliko puta
+              ali ove godine je doživio veću rekonstrukciju. Kipovi koje je
+              svorio vrhunski kipar Franjo Leder su postavljeni 1936. godine.
+              Prema nekim izvorima prvi je to betonski most građen u Tuzli,
+              projektovao ga je arhitekta Bogdan Đukić, a njegova gradnja počela
+              je 1935. godine.
             </p>
             <div class="ba-info-godine">
               <div class="ba-godina-box">
@@ -909,50 +175,62 @@
               </div>
             </div>
           </div>
-
         </div>
-
       </section>
 
-
-      <!--   4 kviz — testiranje znanja o tuzli  -->
+      <!-- Kviz sekcija -->
       <section class="kviz-sekcija" id="kviz-sekcija" aria-label="Kviz o Tuzli">
-
         <h2>Kviz: koliko znaš o Tuzli?</h2>
-        <p>Šest pitanja, šest šansi da dokažeš da si pravi poznavalac grada soli.</p>
+        <p>
+          Šest pitanja, šest šansi da dokažeš da si pravi poznavalac grada soli.
+        </p>
 
-        <!-- traka napretka -->
-        <div class="kviz-progres-wrap" aria-label="Napredak u kviizu">
-          <span class="kviz-progres-tekst" id="kvizProgresTekst">Pitanje 1 od 6</span>
-          <div class="kviz-progres-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <div class="kviz-progres-wrap" aria-label="Napredak u kvizu">
+          <span class="kviz-progres-tekst" id="kvizProgresTekst">
+            Pitanje 1 od 6
+          </span>
+          <div
+            class="kviz-progres-bar"
+            role="progressbar"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            aria-valuenow="0"
+          >
             <div class="kviz-progres-fill" id="kvizProgresFill"></div>
           </div>
           <span class="kviz-bodovi-tekuci" id="kvizBodoviTekuci">0 bod.</span>
         </div>
 
-        <!-- pitanje 1 -->
+        <!-- Prvo pitanje -->
         <div class="kviz-pitanje-blok aktivno" data-pitanje="0">
           <div class="kviz-kartica">
             <p class="kviz-broj-pitanja">Pitanje 1 od 6</p>
             <h3>Šta znači ime "Tuzla" na turskom jeziku?</h3>
             <div class="kviz-opcije" role="group" aria-label="Opcije odgovora">
               <button class="kviz-opcija" data-tacno="false">Tvrđava</button>
-              <button class="kviz-opcija" data-tacno="true">Mjesto soli / solana</button>
+              <button class="kviz-opcija" data-tacno="true">
+                Mjesto soli / solana
+              </button>
               <button class="kviz-opcija" data-tacno="false">Rijeka</button>
               <button class="kviz-opcija" data-tacno="false">Planina</button>
             </div>
             <div class="kviz-feedback" id="feedback-0"></div>
           </div>
           <div class="kviz-kontrole">
-            <button class="kviz-btn-next" data-sljedeci="1">Sljedeće <i class="fa-solid fa-arrow-right"></i></button>
+            <button class="kviz-btn-next" data-sljedeci="1">
+              Sljedeće <i class="fa-solid fa-arrow-right"></i>
+            </button>
           </div>
         </div>
 
-        <!-- pitanje 2 -->
+        <!-- Drugo pitanje -->
         <div class="kviz-pitanje-blok" data-pitanje="1">
           <div class="kviz-kartica">
             <p class="kviz-broj-pitanja">Pitanje 2 od 6</p>
-            <h3>Koje godine je sagrađena česma na Skveru, danas zaštićeni kulturno-historijski spomenik?</h3>
+            <h3>
+              Koje godine je sagrađena česma na Skveru, danas zaštićeni
+              kulturno-historijski spomenik?
+            </h3>
             <div class="kviz-opcije" role="group" aria-label="Opcije odgovora">
               <button class="kviz-opcija" data-tacno="false">1862.</button>
               <button class="kviz-opcija" data-tacno="false">1904.</button>
@@ -962,69 +240,105 @@
             <div class="kviz-feedback" id="feedback-1"></div>
           </div>
           <div class="kviz-kontrole">
-            <button class="kviz-btn-next" data-sljedeci="2">Sljedeće <i class="fa-solid fa-arrow-right"></i></button>
+            <button class="kviz-btn-next" data-sljedeci="2">
+              Sljedeće <i class="fa-solid fa-arrow-right"></i>
+            </button>
           </div>
         </div>
 
-        <!-- pitanje 3 -->
+        <!-- Treće pitanje -->
         <div class="kviz-pitanje-blok" data-pitanje="2">
           <div class="kviz-kartica">
             <p class="kviz-broj-pitanja">Pitanje 3 od 6</p>
-            <h3>Pod kojim imenom je Tuzla bila poznata u periodu Bosanske kraljevine?</h3>
+            <h3>
+              Pod kojim imenom je Tuzla bila poznata u periodu Bosanske
+              kraljevine?
+            </h3>
             <div class="kviz-opcije" role="group" aria-label="Opcije odgovora">
-              <button class="kviz-opcija" data-tacno="false">Soli Gornje</button>
-              <button class="kviz-opcija" data-tacno="true">Soli (Gornja i Donja Tuzla)</button>
+              <button class="kviz-opcija" data-tacno="false">
+                Soli Gornje
+              </button>
+              <button class="kviz-opcija" data-tacno="true">
+                Soli (Gornja i Donja Tuzla)
+              </button>
               <button class="kviz-opcija" data-tacno="false">Salines</button>
               <button class="kviz-opcija" data-tacno="false">Tuzgrad</button>
             </div>
             <div class="kviz-feedback" id="feedback-2"></div>
           </div>
           <div class="kviz-kontrole">
-            <button class="kviz-btn-next" data-sljedeci="3">Sljedeće <i class="fa-solid fa-arrow-right"></i></button>
+            <button class="kviz-btn-next" data-sljedeci="3">
+              Sljedeće <i class="fa-solid fa-arrow-right"></i>
+            </button>
           </div>
         </div>
 
-        <!-- pitanje 4 -->
+        <!-- Četvrto pitanje -->
         <div class="kviz-pitanje-blok" data-pitanje="3">
           <div class="kviz-kartica">
             <p class="kviz-broj-pitanja">Pitanje 4 od 6</p>
             <h3>Panonska jezera u Tuzli nastala su na mjestu nekadašnjih…</h3>
             <div class="kviz-opcije" role="group" aria-label="Opcije odgovora">
-              <button class="kviz-opcija" data-tacno="false">Šumskih površina</button>
-              <button class="kviz-opcija" data-tacno="false">Vojnih baraka</button>
-              <button class="kviz-opcija" data-tacno="true">Rudnih ležišta soli</button>
-              <button class="kviz-opcija" data-tacno="false">Starog aerodroma</button>
+              <button class="kviz-opcija" data-tacno="false">
+                Šumskih površina
+              </button>
+              <button class="kviz-opcija" data-tacno="false">
+                Vojnih baraka
+              </button>
+              <button class="kviz-opcija" data-tacno="true">
+                Rudnih ležišta soli
+              </button>
+              <button class="kviz-opcija" data-tacno="false">
+                Starog aerodroma
+              </button>
             </div>
             <div class="kviz-feedback" id="feedback-3"></div>
           </div>
           <div class="kviz-kontrole">
-            <button class="kviz-btn-next" data-sljedeci="4">Sljedeće <i class="fa-solid fa-arrow-right"></i></button>
+            <button class="kviz-btn-next" data-sljedeci="4">
+              Sljedeće <i class="fa-solid fa-arrow-right"></i>
+            </button>
           </div>
         </div>
 
-        <!-- pitanje 5 -->
+        <!-- Peto pitanje -->
         <div class="kviz-pitanje-blok" data-pitanje="4">
           <div class="kviz-kartica">
             <p class="kviz-broj-pitanja">Pitanje 5 od 6</p>
-            <h3>Po kome je nazvana Narodna i univerzitetska biblioteka u Tuzli?</h3>
+            <h3>
+              Po kome je nazvana Narodna i univerzitetska biblioteka u Tuzli?
+            </h3>
             <div class="kviz-opcije" role="group" aria-label="Opcije odgovora">
-              <button class="kviz-opcija" data-tacno="false">Meša Selimović</button>
-              <button class="kviz-opcija" data-tacno="false">Branko Ćopić</button>
-              <button class="kviz-opcija" data-tacno="true">Derviš Sušić</button>
-              <button class="kviz-opcija" data-tacno="false">Skender Kulenović</button>
+              <button class="kviz-opcija" data-tacno="false">
+                Meša Selimović
+              </button>
+              <button class="kviz-opcija" data-tacno="false">
+                Branko Ćopić
+              </button>
+              <button class="kviz-opcija" data-tacno="true">
+                Derviš Sušić
+              </button>
+              <button class="kviz-opcija" data-tacno="false">
+                Skender Kulenović
+              </button>
             </div>
             <div class="kviz-feedback" id="feedback-4"></div>
           </div>
           <div class="kviz-kontrole">
-            <button class="kviz-btn-next" data-sljedeci="5">Sljedeće <i class="fa-solid fa-arrow-right"></i></button>
+            <button class="kviz-btn-next" data-sljedeci="5">
+              Sljedeće <i class="fa-solid fa-arrow-right"></i>
+            </button>
           </div>
         </div>
 
-        <!-- pitanje 6 -->
+        <!-- Šesto pitanje -->
         <div class="kviz-pitanje-blok" data-pitanje="5">
           <div class="kviz-kartica">
             <p class="kviz-broj-pitanja">Pitanje 6 od 6</p>
-            <h3>Koji narod je prvi počeo eksploatisati slane izvore na području Tuzle?</h3>
+            <h3>
+              Koji narod je prvi počeo eksploatisati slane izvore na području
+              Tuzle?
+            </h3>
             <div class="kviz-opcije" role="group" aria-label="Opcije odgovora">
               <button class="kviz-opcija" data-tacno="false">Rimljani</button>
               <button class="kviz-opcija" data-tacno="true">Iliri</button>
@@ -1034,26 +348,32 @@
             <div class="kviz-feedback" id="feedback-5"></div>
           </div>
           <div class="kviz-kontrole">
-            <button class="kviz-btn-next kviz-btn-zavrsi" data-sljedeci="-1">Završi kviz <i class="fa-solid fa-flag-checkered"></i></button>
+            <button class="kviz-btn-next kviz-btn-zavrsi" data-sljedeci="-1">
+              Završi kviz <i class="fa-solid fa-flag-checkered"></i>
+            </button>
           </div>
         </div>
 
-        <!-- ekran rezultata -->
-        <div class="kviz-rezultat" id="kvizRezultat" role="region" aria-live="polite" aria-label="Rezultat kviza">
-          <span class="rezultat-ikona" id="rezultatIkona" aria-hidden="true">🏆</span>
+        <!-- Prikaz rezultata kviza -->
+        <div
+          class="kviz-rezultat"
+          id="kvizRezultat"
+          role="region"
+          aria-live="polite"
+          aria-label="Rezultat kviza"
+        >
+          <span class="rezultat-ikona" id="rezultatIkona" aria-hidden="true">
+            🏆
+          </span>
           <h3>Kviz završen!</h3>
           <span class="rezultat-bodovi" id="rezultatBodovi">0</span>
-          
+
           <p class="rezultat-poruka" id="rezultatPoruka"></p>
           <button class="kviz-btn-restart" id="kvizRestart" type="button">
             <i class="fa-solid fa-rotate-right"></i> Pokušaj ponovo
           </button>
         </div>
-
       </section>
-
-
-
     </main>
 
     <div class="back-to-top">
@@ -1061,360 +381,55 @@
     </div>
 
     <footer>
+      <!-- Podaci o autorima -->
       <div class="footer-left">
         <h3>Digitalni Arhiv Tuzle - AURUM</h3>
         <p>Autori projekta:</p>
         <ul class="autori-lista">
           <li>Lamija Pjanić</li>
           <li>Lejla Kurt</li>
-          <li>Leyla Bećirović</li>
+          <li>Lejla Bećirović</li>
         </ul>
       </div>
 
+      <!-- Linkovi društvenih mreža -->
+      <!-- Linkovi se otvaraju u novom tabu -->
       <div class="footer-center">
-        <a href="https://instagram.com" target="_blank">
-          <img src="images/instagram.svg" alt="Instagram" width="24" height="24" aria-label="Instagram">
+        <a
+          href="https://instagram.com"
+          target="_blank"
+          aria-label="Pratite nas na Instagramu"
+        >
+          <i class="fa-brands fa-instagram"></i>
         </a>
-      </div>
-      <div class="footer-center">
-        <a href="https://x.com" target="_blank">
-          <img src="images/x.svg" alt="X" width="24" height="24" aria-label="X">
+        <a
+          href="https://facebook.com"
+          target="_blank"
+          aria-label="Pratite nas na Facebooku"
+        >
+          <i class="fa-brands fa-facebook-f"></i>
         </a>
-      </div>
-      <div class="footer-center">
-        <a href="https://facebook.com" target="_blank">
-          <img src="images/facebook.svg" alt="Facebook" width="24" height="24" aria-label="Facebook">
+        <a
+          href="https://twitter.com"
+          target="_blank"
+          aria-label="Pratite nas na Twitteru"
+        >
+          <i class="fa-brands fa-x-twitter"></i>
         </a>
-      </div>
-      <div class="footer-center">
-        <a href="https://github.com" target="_blank">
-          <img src="images/git.svg" alt="GitHub" width="24" height="24" aria-label="GitHub">
+        <a
+          href="https://github.com"
+          target="_blank"
+          aria-label="Pogledajte izvorni kod na GitHubu"
+        >
+          <i class="fa-brands fa-github"></i>
         </a>
       </div>
 
-
+      <!-- Autorska prava -->
       <div class="footer-right">
         <p>© 2026 Digitalni arhiv Tuzle.</p>
         <p>Sva prava zadržana.</p>
       </div>
     </footer>
-
-
-    <script>
-
-      /* GENERATOR RANDOM ČINJENICA  */
-
-      // niz arhivskih podataka koji se prikazuju nasumično
-      // koristim niz objekata jer mi je to pokazao claude, razumijem da
-      // svaki element u [] je posebna stavka kojoj pristupam indeksom [0], [1], itd
-      const arhivaFaktovi = [
-        "Prva pozorišna predstava u Tuzli odigrana je 1898. godine u hotelu 'Grand'.",
-        "Čuveni pisac Meša Selimović rođen je u Tuzli, a mnogi njegovi rukopisi se pominju u gradskim arhivima.",
-        "U Tuzli je 1905. godine osnovano jedno od prvih pjevačkih društava u BiH pod nazivom 'Majevica'.",
-        "Prvi kino-projektor stigao je u Tuzlu početkom 20. vijeka, a filmovi su se prikazivali u improvizovanim šatorima.",
-        "Hotel 'Bristol' nekada je bio centar društvenog života i arhitektonski simbol modernizacije grada.",
-        "Tuzla je među prvim gradovima u regiji dobila električnu rasvjetu još krajem 19. vijeka.",
-        "Barokna zgrada u centru grada, poznata kao 'Barok', bila je jedna od najljepših građevina austrougarskog perioda.",
-        "Prva biblioteka u Tuzli otvorena je u sklopu čitaonice koju su osnovali lokalni građani i trgovci."
-      ];
-
-      // dohvat html elemenata po id-u 
-      // document.getElementById traži element čiji je id jednak zadanom stringu
-      const prikaz = document.getElementById("fact-display");
-      const dugme  = document.getElementById("btn-generator");
-
-      // posljednji prikazani indeks — čuvam ga da ne ponavljam istu činjenicu
-      // dva puta zaredom. inizijalizujem na -1 jer na početku ništa nije prikazano
-      let posljednjiIndeks = -1;
-
-      // funkcija za odabir nasumičnog indeksa koji nije isti kao prethodni
-      // math.random() vraća decimalni broj između 0 i 1 (ne uključujući 1)
-      // math.floor() zaokružuje prema dolje na cijeli broj
-      // množimo s arhivaFaktovi.length da dobijemo indeks u rasponu niza
-      // uz pomoć claude-a sam razumjela zašto treba while petlja — da izbjegnemo ponavljanje
-      function nasumicniIndeks() {
-        let novi;
-        do {
-          novi = Math.floor(Math.random() * arhivaFaktovi.length);
-        } while (novi === posljednjiIndeks && arhivaFaktovi.length > 1);
-        return novi;
-      }
-
-      // onclick handler — ovaj sam napisala sama uz malo pomoći
-      // fade efekt: dodamo css klasu koja mijenja opacity na 0 (transition se brine o animaciji),
-      // a nakon 300ms (koliko traje transition) mijenjamo tekst i uklanjamo klasu
-      // timeout vrijednost od 300ms mora biti ista kao css transition duration — claude mi je ovo objasnio
-      dugme.onclick = function () {
-        prikaz.classList.add("fade-out");
-
-        setTimeout(function () {
-          const indeks     = nasumicniIndeks();
-          posljednjiIndeks = indeks;
-          prikaz.innerText = arhivaFaktovi[indeks];
-          prikaz.classList.remove("fade-out");
-        }, 300);
-      };
-
-
-      /*   PRIJE I POSLIJE SLIDER */
-
-      // podaci za svaku lokaciju — naziv, opisi, putanje slika i godine
-      // organizacija u niz objekata olakšava zamjenu podataka bez promjene logike
-      const baPodaci = [
-        {
-          naziv:        "Most s kipovima",
-          kategorija:   "Znamenitosti",
-          opis:         "2024. godine navršilo se 90 godina otkako postoji most “Kipovi” u Tuzli. Za devet decenija postojanja, most je saniran nekoliko puta ali ove godine je doživio veću rekonstrukciju. Kipovi koje je svorio vrhunski kipar Franjo Leder su postavljeni 1936. godine. Prema nekim izvorima prvi je to betonski most građen u Tuzli, projektovao ga je arhitekta Bogdan Đukić, a njegova gradnja počela je 1935. godine.",
-          godinaPrije:  "~1930.",
-          godinaPoslije:"2024.",
-          slika1: "images/2.svg",
-          slika2: "images/1.svg"
-        },
-        {
-          naziv:        "Skver",
-          kategorija:   "Arhitektura",
-          opis:         "Skver u Tuzli je jedan od najprepoznativljijih i centralnih dijelova grada, koji povezuje glavnu saobraćajnicu s užim centrom grada. Oduvijek poznat je kao prometno čvorište i mjesto susreta.",
-          godinaPrije:  "~1957.",
-          godinaPoslije:"2026.",
-          slika1: "images/4.svg",
-          slika2: "images/3.svg"
-        },
-        {
-          naziv:        "Panonska jezera",
-          kategorija:   "Priroda & Turizam",
-          opis:         "Gdje su nekada bila aktivna rudna ležišta soli iz kojih se crpio privredni život Tuzle, danas se prostiru vještačka Panonska jezera — simbol savremene transformacije grada.",
-          godinaPrije:  "~2000.",
-          godinaPoslije:"2023.",
-          slika1: "images/6.svg",
-          slika2: "images/5.svg"
-        },
-      ];
- 
-      let baVuce = false;
-
-      const baKontejner    = document.getElementById("baKontejner");
-      const baSlika1       = document.getElementById("baSlika1");
-      const baSlika2       = document.getElementById("baSlika2");
-      const baRazdjela     = document.getElementById("baRazdjela");
-      const baInfoKat      = document.getElementById("baInfoKat");
-      const baInfoNaziv    = document.getElementById("baInfoNaziv");
-      const baInfoOpis     = document.getElementById("baInfoOpis");
-      const baGodinaPrije  = document.getElementById("baGodinaPrije");
-      const baGodinaPoslije= document.getElementById("baGodinaPoslije");
-
-      // ažurira vizualnu poziciju slidera.
-      // clip-path: inset(0 X% 0 0) odsjeca X% s desne strane "poslije" slike.
-      // math.max i math.min ograničavaju vrijednost između 2 i 98 da slider ne ispadne van.
-      // ovo sam naučila uz pomoć claude-a koji mi je objasnio kako clip-path radi.
-      function baPodesiPoziciju(procenat) {
-        procenat = Math.max(2, Math.min(98, procenat));
-        baSlika2.style.clipPath = "inset(0 " + (100 - procenat) + "% 0 0)";
-        baRazdjela.style.left   = procenat + "%";
-      }
-
-      // pretvara x koordinatu miša/prsta u postotak širine kontejnera.
-      // getBoundingClientRect() vraća dimenzije i poziciju elementa u viewportu.
-      function baXuProcenat(clientX) {
-        const rect = baKontejner.getBoundingClientRect();
-        return ((clientX - rect.left) / rect.width) * 100;
-      }
-
-      // mouse eventi — mousedown na kontejneru, move i up na window
-      // jer korisnik može povući miš van kontejnera dok drži klik.
-      baKontejner.addEventListener("mousedown", function (e) {
-        baVuce = true;
-        baPodesiPoziciju(baXuProcenat(e.clientX));
-      });
-
-      window.addEventListener("mousemove", function (e) {
-        if (!baVuce) return;
-        baPodesiPoziciju(baXuProcenat(e.clientX));
-      });
-
-      window.addEventListener("mouseup", function () { baVuce = false; });
-
-      // touch eventi za mobilne uređaje — passive: true poboljšava scroll performanse.
-      // ovo sam pronašla uz pomoć claude-a koji mi je objasnio zašto passive listener pomaže.
-      baKontejner.addEventListener("touchstart", function (e) {
-        baVuce = true;
-        baPodesiPoziciju(baXuProcenat(e.touches[0].clientX));
-      }, { passive: true });
-
-      window.addEventListener("touchmove", function (e) {
-        if (!baVuce) return;
-        baPodesiPoziciju(baXuProcenat(e.touches[0].clientX));
-      }, { passive: true });
-
-      window.addEventListener("touchend", function () { baVuce = false; });
-
-      // promjena aktivne lokacije klikom na dugmad selektora.
-      // querySelectorAll vraća nodeList svih elemenata koji odgovaraju selektoru,
-      // a forEach prolazi kroz svaki od njih — naučila sam ovo uz Gemini
-      document.querySelectorAll(".ba-dugme").forEach(function (dugme) {
-        dugme.addEventListener("click", function () {
-          const d = baPodaci[parseInt(dugme.dataset.lokacija)];
-
-          baSlika1.src = d.slika1;
-          baSlika1.alt = "Lokacija prije: " + d.naziv;
-          baSlika2.src = d.slika2;
-          baSlika2.alt = "Lokacija poslije: " + d.naziv;
-
-          baInfoKat.textContent          = d.kategorija;
-          baInfoNaziv.textContent        = d.naziv;
-          baInfoOpis.textContent         = d.opis;
-          baGodinaPrije.textContent      = d.godinaPrije;
-          baGodinaPoslije.textContent    = d.godinaPoslije;
-
-          // vrati slider na sredinu pri promjeni lokacije
-          baPodesiPoziciju(50);
-
-          // ažuriraj aktivno dugme — ukloni klasu svima pa dodaj odabranom.
-          // pattern koji sam naučila uz Gemini
-          document.querySelectorAll(".ba-dugme").forEach(function (b) {
-            b.classList.remove("aktivno");
-          });
-          dugme.classList.add("aktivno");
-        });
-      });
-
-      // inicijalizacija: slider na 50% pri učitavanju stranice
-      baPodesiPoziciju(50);
-
-
-      /*  KVIZ — pitanja, bodovanje, rezultati  */
-
-      let kvizBodovi      = 0;
-      let trenutnoPitanje = 0;
-      const ukupnoPitanja = 6;
-
-      // poruke prema broju tačnih odgovora — koristim objekt kao lookup tablicu
-      // pristupam porukama s poruke[broj], što je brže od if/else lanca
-      // ovu tehniku sam naučila uz pomoć claude-a i on je smislio tekst poruke
-      const poruke = {
-        6: "Savršen rezultat! Pravi si poznavalac historije i kulture Tuzle. Grad soli ti je otvorena knjiga!",
-        5: "Odlično! Gotovo savršeno — samo jedan korak do naslova pravog tuzlanskog znalca.",
-        4: "Dobro poznavanje! Tuzla ti nije strana, ali ima još lijepih priča koje čekaju da ih otkriješ.",
-        3: "Solidno! Polovina tačnih odgovora — vrijedi zaroniti dublje u historiju grada soli.",
-        2: "Za početak okej, ali grad soli ima još mnogo toga da ti otkrije. Istraži arhiv!",
-        1: "Jedan korak na putu — AURUM arhiv je pravo mjesto da naučiš mnogo više o Tuzli.",
-        0: "Nema veze — sada znaš šta ne znaš! Prošetaj kroz arhiv i pokušaj ponovo."
-      };
-
-      const kvizProgresTekst = document.getElementById("kvizProgresTekst");
-      const kvizProgresFill  = document.getElementById("kvizProgresFill");
-      const kvizBodoviTekuci = document.getElementById("kvizBodoviTekuci");
-
-      // ažurira progress bar i tekstualni prikaz napretka.
-      // formula: (trenutni_indeks / ukupno) * 100 daje postotak.
-      function azurirajProgres(pitanjeIndeks) {
-        const procenat = (pitanjeIndeks / ukupnoPitanja) * 100;
-        kvizProgresFill.style.width = procenat + "%";
-        kvizProgresFill.setAttribute("aria-valuenow", procenat);
-        kvizProgresTekst.textContent = "Pitanje " + (pitanjeIndeks + 1) + " od " + ukupnoPitanja;
-        kvizBodoviTekuci.textContent = kvizBodovi + " bod.";
-      }
-
-      // event listeneri za svaki blok pitanja.
-      // forEach iterira kroz sve blokove i svakom dodaje vlastiti listener.
-      document.querySelectorAll(".kviz-pitanje-blok").forEach(function (blok) {
-        const opcije   = blok.querySelectorAll(".kviz-opcija");
-        const feedback = blok.querySelector(".kviz-feedback");
-        const btnNext  = blok.querySelector(".kviz-btn-next");
-
-        opcije.forEach(function (opcija) {
-          opcija.addEventListener("click", function () {
-            // onemogući sve opcije — korisnik ne može mijenjati odgovor
-            opcije.forEach(o => o.disabled = true);
-
-            // dataset.tacno je string "true" ili "false" iz html data-atributa.
-            // poređenje s === "true" pretvara ga u boolean. ovo mi je claude objasnio.
-            const jeTacno = opcija.dataset.tacno === "true";
-
-            if (jeTacno) {
-              opcija.classList.add("tacno");
-              feedback.textContent = "✓ Tačno! Odlično poznavanje historije Tuzle.";
-              feedback.className   = "kviz-feedback tacno";
-              kvizBodovi++;
-              kvizBodoviTekuci.textContent = kvizBodovi + " bod.";
-            } else {
-              opcija.classList.add("netacno");
-              feedback.textContent = "✗ Nije tačno. Pogledaj tačan odgovor označen zelenom bojom.";
-              feedback.className   = "kviz-feedback netacno";
-              // označi tačan odgovor zeleno i kad korisnik griješi
-              opcije.forEach(function (o) {
-                if (o.dataset.tacno === "true") o.classList.add("tacno");
-              });
-            }
-
-            btnNext.classList.add("vidljivo");
-          });
-        });
-
-        btnNext.addEventListener("click", function () {
-          const sljedeciIndeks = parseInt(btnNext.dataset.sljedeci);
-
-          if (sljedeciIndeks === -1) {
-            prikaziRezultat();
-          } else {
-            blok.classList.remove("aktivno");
-            document.querySelector("[data-pitanje='" + sljedeciIndeks + "']").classList.add("aktivno");
-            azurirajProgres(sljedeciIndeks);
-          }
-        });
-      });
-
-      function prikaziRezultat() {
-        document.querySelectorAll(".kviz-pitanje-blok").forEach(b => b.classList.remove("aktivno"));
-
-        kvizProgresFill.style.width  = "100%";
-        kvizProgresTekst.textContent = "Kviz završen!";
-        kvizBodoviTekuci.textContent = kvizBodovi + " / " + ukupnoPitanja;
-
-        const rezultatEl = document.getElementById("kvizRezultat");
-        const ikona      = document.getElementById("rezultatIkona");
-        const bodEl      = document.getElementById("rezultatBodovi");
-        const porukaEl   = document.getElementById("rezultatPoruka");
-
-        bodEl.textContent    = kvizBodovi;
-        porukaEl.textContent = poruke[kvizBodovi] || poruke[0];
-
-        // trojna if/else — bira ikonu prema rasponu bodova.
-        // ovo sam naučila uz pomoć claude-a, shvatila sam da se evaluira s vrha prema dnu.
-        if (kvizBodovi === 6)     ikona.textContent = "🏆";
-        else if (kvizBodovi >= 4) ikona.textContent = "⭐";
-        else if (kvizBodovi >= 2) ikona.textContent = "📚";
-        else                      ikona.textContent = "💡";
-
-        rezultatEl.style.display = "block";
-      }
-
-      // restart — vraća sve varijable i dom na početno stanje
-      document.getElementById("kvizRestart").addEventListener("click", function () {
-        kvizBodovi      = 0;
-        trenutnoPitanje = 0;
-
-        document.getElementById("kvizRezultat").style.display = "none";
-
-        document.querySelectorAll(".kviz-pitanje-blok").forEach(function (blok) {
-          blok.classList.remove("aktivno");
-
-          blok.querySelectorAll(".kviz-opcija").forEach(function (o) {
-            o.disabled = false;
-            o.classList.remove("tacno", "netacno");
-          });
-
-          const fb = blok.querySelector(".kviz-feedback");
-          fb.className   = "kviz-feedback";
-          fb.textContent = "";
-
-          blok.querySelector(".kviz-btn-next").classList.remove("vidljivo");
-        });
-
-        document.querySelector("[data-pitanje='0']").classList.add("aktivno");
-        azurirajProgres(0);
-      });
-
-    </script>
-
   </body>
 </html>

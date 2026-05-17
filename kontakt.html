@@ -10,396 +10,17 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
     <script src="js/tptpskripte.js" defer></script>
-
-    <style>
-      /* ── Hero kontakt ── */
-      .hero-kontakt {
-        width: 86%;
-        margin: 0 auto 60px;
-        padding: 60px 0 50px;
-        border-bottom: 3px solid var(--dark);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-
-      .hero-kontakt .hero-label {
-        color: var(--orange);
-        font-size: 12px;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 1.5px;
-        margin-bottom: 18px;
-        opacity: 0;
-        animation: fadeUp 0.7s ease forwards;
-        animation-delay: 0.2s;
-      }
-
-      .hero-kontakt h2 {
-        font-size: clamp(38px, 5vw, 68px);
-        line-height: 0.95;
-        letter-spacing: -2.5px;
-        color: var(--dark);
-        max-width: 700px;
-        margin-bottom: 20px;
-        opacity: 0;
-        animation: fadeUp 0.8s ease forwards;
-        animation-delay: 0.4s;
-      }
-
-      .hero-kontakt p {
-        font-size: 15px;
-        line-height: 1.7;
-        max-width: 550px;
-        opacity: 0;
-        animation: fadeUp 0.8s ease forwards;
-        animation-delay: 0.6s;
-      }
-
-      /* ── Info kartice ── */
-      .kontakt-kartice {
-        width: 86%;
-        margin: 0 auto 60px;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 20px;
-      }
-
-      .kontakt-kartica {
-        background: var(--white);
-        padding: 28px 22px;
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        box-shadow:
-          0 8px 20px rgba(17, 24, 39, 0.07),
-          0 16px 36px rgba(17, 24, 39, 0.10);
-        transition: transform 0.25s ease, box-shadow 0.25s ease;
-      }
-
-      .kontakt-kartica:hover {
-        transform: translateY(-5px);
-        box-shadow:
-          0 16px 32px rgba(17, 24, 39, 0.12),
-          0 28px 52px rgba(17, 24, 39, 0.16);
-      }
-
-      .kontakt-kartica .k-ikona {
-        width: 42px;
-        height: 42px;
-        background: var(--soft-orange);
-        border-radius: 50%;
-        display: grid;
-        place-items: center;
-      }
-
-      .kontakt-kartica .k-ikona i {
-        color: var(--orange);
-        font-size: 16px;
-      }
-
-      .kontakt-kartica .k-label {
-        font-size: 11px;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 1.2px;
-        color: var(--orange);
-      }
-
-      .kontakt-kartica .k-vrijednost {
-        font-size: 14px;
-        font-weight: 600;
-        color: var(--dark);
-        line-height: 1.5;
-        max-width: 100%;
-      }
-
-      .kontakt-kartica .k-opis {
-        font-size: 12px;
-        color: var(--muted);
-        max-width: 100%;
-      }
-
-      /* ── Dvokolonski layout ── */
-      .kontakt-grid {
-        width: 86%;
-        margin: 0 auto 80px;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 60px;
-        align-items: start;
-      }
-
-      /* ── Forma (lijeva kolona) ── */
-      .kontakt-forma-wrap h3 {
-        font-size: 26px;
-        margin-bottom: 8px;
-      }
-
-      .kontakt-forma-wrap > p {
-        font-size: 13px;
-        margin-bottom: 28px;
-      }
-
-      .kontakt-forma-wrap form {
-        width: 100%;
-      }
-
-      .kontakt-forma-wrap label {
-        display: block;
-        font-size: 12px;
-        margin-bottom: 6px;
-        color: var(--dark);
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-      }
-
-      .kontakt-forma-wrap input,
-      .kontakt-forma-wrap select,
-      .kontakt-forma-wrap textarea {
-        width: 100%;
-        background: transparent;
-        border: 2px solid var(--dark);
-        padding: 10px;
-        font-family: inherit;
-        font-size: 14px;
-        color: var(--dark);
-      }
-
-      .kontakt-forma-wrap input:focus,
-      .kontakt-forma-wrap select:focus,
-      .kontakt-forma-wrap textarea:focus {
-        outline: none;
-        border-color: var(--orange);
-      }
-
-      .kontakt-forma-wrap textarea {
-        resize: vertical;
-      }
-
-      .kontakt-forma-wrap form div {
-        margin-bottom: 16px;
-      }
-
-      .red-dva {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 16px;
-      }
-
-      .red-dva div {
-        margin-bottom: 0 !important;
-      }
-
-      .kontakt-forma-wrap form button {
-        width: 100%;
-        border: none;
-        background: var(--orange);
-        color: white;
-        padding: 12px;
-        border-radius: 20px;
-        cursor: pointer;
-        font-weight: bold;
-        margin-bottom: 10px;
-        font-family: inherit;
-        font-size: 14px;
-        transition: background 0.25s;
-      }
-
-      .kontakt-forma-wrap form button:hover {
-        background: #e95d12;
-      }
-
-      #resetDugme2 {
-        background: var(--dark) !important;
-      }
-
-      .greska2 {
-        display: block;
-        color: red;
-        font-size: 12px;
-        margin-top: 4px;
-      }
-
-      #uspjesnaPoruka2 {
-        color: green;
-        font-weight: bold;
-        margin-top: 8px;
-      }
-
-      /* ── Desna kolona: mapa + FAQ ── */
-      .kontakt-desno {
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
-      }
-
-      .mapa-wrap h3 {
-        font-size: 20px;
-        margin-bottom: 6px;
-      }
-
-      .mapa-wrap p {
-        font-size: 13px;
-        margin-bottom: 16px;
-      }
-
-      .mapa-wrap iframe {
-        width: 100%;
-        height: 260px;
-        border: none;
-        filter: grayscale(100%);
-        box-shadow:
-          0 12px 30px rgba(17, 24, 39, 0.12),
-          0 20px 45px rgba(17, 24, 39, 0.14);
-        display: block;
-      }
-
-      /* ── FAQ ── */
-      .faq-wrap h3 {
-        font-size: 20px;
-        margin-bottom: 18px;
-      }
-
-      details {
-        border-bottom: 1.5px solid #d1d5db;
-        padding: 0;
-      }
-
-      details:first-of-type {
-        border-top: 1.5px solid #d1d5db;
-      }
-
-      summary {
-        list-style: none;
-        padding: 15px 0;
-        font-size: 14px;
-        font-weight: 600;
-        color: var(--dark);
-        cursor: pointer;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 12px;
-        user-select: none;
-      }
-
-      summary::-webkit-details-marker {
-        display: none;
-      }
-
-      summary::after {
-        content: "+";
-        font-size: 20px;
-        color: var(--orange);
-        font-weight: 300;
-        flex-shrink: 0;
-        transition: transform 0.25s ease;
-      }
-
-      details[open] summary::after {
-        transform: rotate(45deg);
-      }
-
-      details p {
-        font-size: 13px;
-        line-height: 1.7;
-        padding-bottom: 15px;
-        max-width: 100%;
-      }
-
-      /* ── Dark mode dodaci ── */
-      body.dark .kontakt-kartica {
-        background: var(--dark-card);
-      }
-
-      body.dark .kontakt-kartica .k-vrijednost {
-        color: #f8fafc;
-      }
-
-      body.dark .kontakt-forma-wrap label,
-      body.dark .kontakt-forma-wrap h3,
-      body.dark .mapa-wrap h3,
-      body.dark .faq-wrap h3,
-      body.dark summary {
-        color: #f8fafc;
-      }
-
-      body.dark .kontakt-forma-wrap input,
-      body.dark .kontakt-forma-wrap select,
-      body.dark .kontakt-forma-wrap textarea {
-        background: var(--dark-card);
-        color: #f8fafc;
-        border-color: #f8fafc;
-      }
-
-      body.dark .mapa-wrap iframe {
-        filter: grayscale(100%) brightness(0.8);
-      }
-
-      body.dark details {
-        border-color: #374151;
-      }
-
-      body.dark details:first-of-type {
-        border-color: #374151;
-      }
-
-      body.dark .hero-kontakt h2 {
-        color: #f8fafc;
-      }
-
-      body.dark .hero-kontakt {
-        border-color: #f8fafc;
-      }
-
-      /* ── Responsive ── */
-      @media (max-width: 1000px) {
-        .kontakt-kartice {
-          grid-template-columns: repeat(2, 1fr);
-        }
-
-        .kontakt-grid {
-          grid-template-columns: 1fr;
-          gap: 40px;
-        }
-
-        .kontakt-forma-wrap,
-        .kontakt-desno {
-          width: 100%;
-        }
-      }
-
-      @media (max-width: 700px) {
-        .hero-kontakt,
-        .kontakt-kartice,
-        .kontakt-grid {
-          width: 92%;
-        }
-
-        .kontakt-kartice {
-          grid-template-columns: 1fr 1fr;
-        }
-
-        .red-dva {
-          grid-template-columns: 1fr;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .kontakt-kartice {
-          grid-template-columns: 1fr;
-        }
-      }
-    </style>
   </head>
 
   <body>
     <header>
       <div class="header-top">
         <div class="logo-container">
-          <img src="images/logo1.svg" alt="Grb Tuzlanskog kantona" class="grb" />
+          <img
+            src="images/logo1.svg"
+            alt="Grb Tuzlanskog kantona"
+            class="grb"
+          />
           <h1 class="logo">AURUM</h1>
         </div>
       </div>
@@ -423,14 +44,14 @@
       </div>
     </header>
 
-    <main style="width:100%; margin:0;">
-
+    <main style="width: 100%; margin: 0">
       <!-- HERO -->
       <section class="hero-kontakt">
         <p class="hero-label">Digitalni arhiv grada soli</p>
         <h2>Kontaktirajte nas</h2>
         <p>
-          Imate pitanje, prijedlog ili materijal koji bi obogatio naš arhiv? <br>
+          Imate pitanje, prijedlog ili materijal koji bi obogatio naš arhiv?
+          <br />
           Slobodno nam se obratite — svaki doprinos je dobrodošao.
         </p>
       </section>
@@ -440,7 +61,9 @@
         <div class="kontakt-kartica">
           <div class="k-ikona"><i class="fa-solid fa-location-dot"></i></div>
           <span class="k-label">Lokacija</span>
-          <span class="k-vrijednost">Narodna i univerzitetska biblioteka „Derviš Sušić"</span>
+          <span class="k-vrijednost"
+            >Narodna i univerzitetska biblioteka „Derviš Sušić"</span
+          >
           <span class="k-opis">Tuzla, Bosna i Hercegovina</span>
         </div>
 
@@ -462,13 +85,14 @@
           <div class="k-ikona"><i class="fa-solid fa-clock"></i></div>
           <span class="k-label">Radno vrijeme</span>
           <span class="k-vrijednost">Pon – Pet: 08:00 – 20:00</span>
-          <span class="k-opis">Subota: 08:00 – 15:00 · Nedjelja: zatvoreno</span>
+          <span class="k-opis"
+            >Subota: 08:00 – 15:00 · Nedjelja: zatvoreno</span
+          >
         </div>
       </div>
 
       <!-- DVOKOLONSKI GRID: FORMA + MAPA + CESTA PITANJA -->
       <div class="kontakt-grid">
-
         <!-- Lijevo: forma -->
         <div class="kontakt-forma-wrap">
           <h3>Pošaljite poruku</h3>
@@ -478,46 +102,67 @@
             <div class="red-dva">
               <div>
                 <label for="ime">Ime</label>
-                <input type="text" id="ime" name="ime" placeholder="Vaše ime"/>
+                <input type="text" id="ime" name="ime" placeholder="Vaše ime" />
                 <span id="greskaIme" class="greska2"></span>
               </div>
               <div>
                 <label for="prezime">Prezime</label>
-                <input type="text" id="prezime" name="prezime" placeholder="Vaše prezime"/>
+                <input
+                  type="text"
+                  id="prezime"
+                  name="prezime"
+                  placeholder="Vaše prezime"
+                />
                 <span id="greskaPrezime" class="greska2"></span>
               </div>
             </div>
 
             <div>
               <label for="email">Email adresa</label>
-              <input type="text" id="email" name="email" placeholder="email@adresa.com"/>
+              <input
+                type="text"
+                id="email"
+                name="email"
+                placeholder="email@adresa.com"
+              />
               <span id="greskaEmail" class="greska2"></span>
             </div>
 
             <div>
               <label for="telefon">Telefon</label>
-              <input type="text" id="telefon" name="telefon" value="+387 " placeholder="+387 00 000 000"/>
+              <input
+                type="text"
+                id="telefon"
+                name="telefon"
+                value="+387 "
+                placeholder="+387 00 000 000"
+              />
               <span id="greskaTelefon" class="greska2"></span>
             </div>
 
             <div>
               <label for="tema">Tema upita</label>
               <select id="tema" name="tema">
-              <option value="">Odaberite temu</option>
-              <option value="fotografije">Fotografije</option>
-              <option value="dokumenti">Dokumenti</option>
-              <option value="video">Video arhiv</option>
-              <option value="suradnja">Želim surađivati</option>
-              <option value="greska">Želim prijaviti grešku</option>
-              <option value="prijedlog">Prijedlog za arhiv</option>
-              <option value="prijedlog">Ostalo</option>
+                <option value="">Odaberite temu</option>
+                <option value="fotografije">Fotografije</option>
+                <option value="dokumenti">Dokumenti</option>
+                <option value="video">Video arhiv</option>
+                <option value="suradnja">Želim surađivati</option>
+                <option value="greska">Želim prijaviti grešku</option>
+                <option value="prijedlog">Prijedlog za arhiv</option>
+                <option value="prijedlog">Ostalo</option>
               </select>
               <span id="greskaTema" class="greska2"></span>
             </div>
 
             <div>
               <label for="poruka">Poruka</label>
-              <textarea id="poruka" name="poruka" rows="7" placeholder="Napišite..."></textarea>
+              <textarea
+                id="poruka"
+                name="poruka"
+                rows="7"
+                placeholder="Napišite..."
+              ></textarea>
               <span id="greskaPoruka" class="greska2"></span>
             </div>
 
@@ -532,15 +177,20 @@
 
         <!-- Desno: mapa + FAQ -->
         <div class="kontakt-desno">
-
           <!-- Mapa -->
           <div class="mapa-wrap">
             <h3>Pronađi nas</h3>
-            <p>Iako je naš arhiv primarno digitalan, fizički materijal obrađujemo u čitaonici NUB "Derviš Sušić" u Tuzli. Ukoliko želite lično donijeti fotografije, dokumente ili druge predmete za skeniranje, javite nam se da dogovorimo susret u biblioteci i sigurno preuzimanje materijala. </p>
+            <p>
+              Iako je naš arhiv primarno digitalan, fizički materijal obrađujemo
+              u čitaonici NUB "Derviš Sušić" u Tuzli. Ukoliko želite lično
+              donijeti fotografije, dokumente ili druge predmete za skeniranje,
+              javite nam se da dogovorimo susret u biblioteci i sigurno
+              preuzimanje materijala.
+            </p>
             <iframe
               title="Mapa: Biblioteka Derviš Sušić"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2843.890010094345!2d18.6796362!3d44.5378846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475ead239d1d5b07%3A0xc2091daead0c1d2e!2zTmFyb2RuYSBpIHN2ZXXEjWlsacWhbmEga25qacW-bmljYSAiRGVydmnFoSBTdcWhacSHIg!5e0!3m2!1shr!2sba!4v1778425537579!5m2!1shr!2sba" 
-              loading="lazy" 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2843.890010094345!2d18.6796362!3d44.5378846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475ead239d1d5b07%3A0xc2091daead0c1d2e!2zTmFyb2RuYSBpIHN2ZXXEjWlsacWhbmEga25qacW-bmljYSAiRGVydmnFoSBTdcWhacSHIg!5e0!3m2!1shr!2sba!4v1778425537579!5m2!1shr!2sba"
+              loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
               allowfullscreen
             ></iframe>
@@ -554,17 +204,18 @@
               <summary>Kako mogu doprinijeti arhivu?</summary>
               <p>
                 Možete nam poslati fotografije, dokumente ili priče putem
-                kontakt forme. Sve materijale pregledamo i, ukoliko su relevantni,
-                dodamo u digitalni arhiv uz vaše navođenje kao donatora.
+                kontakt forme. Sve materijale pregledamo i, ukoliko su
+                relevantni, dodamo u digitalni arhiv uz vaše navođenje kao
+                donatora.
               </p>
             </details>
 
             <details>
               <summary>Da li je arhiv dostupan svima?</summary>
               <p>
-                Da — AURUM je potpuno besplatan i otvoren za javnost. Cilj projekta
-                je očuvanje i dijeljenje historijskog nasljeđa Tuzle sa što širom
-                publikom.
+                Da — AURUM je potpuno besplatan i otvoren za javnost. Cilj
+                projekta je očuvanje i dijeljenje historijskog nasljeđa Tuzle sa
+                što širom publikom.
               </p>
             </details>
 
@@ -572,8 +223,8 @@
               <summary>Koliko dugo čuvate poslane materijale?</summary>
               <p>
                 Svi prihvaćeni materijali čuvaju se trajno u okviru arhiva.
-                Materijali koji ne budu uvršteni brišu se u roku od 30 dana
-                od pregleda.
+                Materijali koji ne budu uvršteni brišu se u roku od 30 dana od
+                pregleda.
               </p>
             </details>
 
@@ -586,10 +237,8 @@
               </p>
             </details>
           </div>
-
         </div>
       </div>
-
     </main>
 
     <div class="back-to-top">
@@ -597,167 +246,55 @@
     </div>
 
     <footer>
+      <!-- Lijeva kolona: Naziv i spisak autora projekta-->
       <div class="footer-left">
         <h3>Digitalni Arhiv Tuzle - AURUM</h3>
         <p>Autori projekta:</p>
         <ul class="autori-lista">
           <li>Lamija Pjanić</li>
           <li>Lejla Kurt</li>
-          <li>Leyla Bećirović</li>
+          <li>Lejla Bećirović</li>
         </ul>
       </div>
 
+      <!-- Srednja kolona: Socijalne mreže-->
+      <!-- Svaki link ima target="_blank" za otvaranje u novom tabu -->
       <div class="footer-center">
-        <a href="https://instagram.com" target="_blank">
-          <img src="images/instagram.svg" alt="Instagram" width="24" height="24" aria-label="Instagram">
+        <a
+          href="https://instagram.com"
+          target="_blank"
+          aria-label="Pratite nas na Instagramu"
+        >
+          <i class="fa-brands fa-instagram"></i>
         </a>
-      </div>
-      <div class="footer-center">
-        <a href="https://x.com" target="_blank">
-          <img src="images/x.svg" alt="X" width="24" height="24" aria-label="X">
+        <a
+          href="https://facebook.com"
+          target="_blank"
+          aria-label="Pratite nas na Facebooku"
+        >
+          <i class="fa-brands fa-facebook-f"></i>
         </a>
-      </div>
-      <div class="footer-center">
-        <a href="https://facebook.com" target="_blank">
-          <img src="images/facebook.svg" alt="Facebook" width="24" height="24" aria-label="Facebook">
+        <a
+          href="https://twitter.com"
+          target="_blank"
+          aria-label="Pratite nas na Twitteru"
+        >
+          <i class="fa-brands fa-x-twitter"></i>
         </a>
-      </div>
-      <div class="footer-center">
-        <a href="https://github.com" target="_blank">
-          <img src="images/git.svg" alt="GitHub" width="24" height="24" aria-label="GitHub">
+        <a
+          href="https://github.com"
+          target="_blank"
+          aria-label="Pogledajte izvorni kod na GitHubu"
+        >
+          <i class="fa-brands fa-github"></i>
         </a>
       </div>
 
-
+      <!-- Desna kolona: Informacije o autorskim pravima-->
       <div class="footer-right">
         <p>© 2026 Digitalni arhiv Tuzle.</p>
         <p>Sva prava zadržana.</p>
       </div>
     </footer>
-
-
-    <script>
-
-      /* FORMA — validacija i slanje */
-
-      const forma = document.getElementById("kontaktForma");
-
-      forma.addEventListener("submit", function (e) {
-        e.preventDefault();
-
-        let ispravno = true;
-
-        // Ime
-        const ime = document.getElementById("ime").value.trim();
-        const greskaIme = document.getElementById("greskaIme");
-        if (ime.length < 2) {
-          greskaIme.textContent = "Unesite ispravno ime.";
-          ispravno = false;
-        } else {
-          greskaIme.textContent = "";
-        }
-
-        // Prezime
-        const prezime = document.getElementById("prezime").value.trim();
-        const greskaPrezime = document.getElementById("greskaPrezime");
-        if (prezime.length < 2) {
-          greskaPrezime.textContent = "Unesite ispravno prezime.";
-          ispravno = false;
-        } else {
-          greskaPrezime.textContent = "";
-        }
-
-        // Email — regex validacija
-        // Ovaj regex pattern za email pronašla sam uz pomoć Claude-a.
-        // Razumijem da: ^ označava početak stringa, [\w.-]+ znači jedno ili više
-        // alfanumeričkih znakova, tačaka ili crtica, @ je literal znak,
-        // [\w.-]+ ponovo za dio domene, \. označava tačku, [a-z]{2,} završetak
-        // tipa ".com" ili ".ba", a /i na kraju znači da nije case-sensitive.
-        const emailRegex = /^[\w.-]+@[\w.-]+\.[a-z]{2,}$/i;
-        const email = document.getElementById("email").value.trim();
-        const greskaEmail = document.getElementById("greskaEmail");
-        if (!emailRegex.test(email)) {
-          greskaEmail.textContent = "Unesite ispravnu email adresu.";
-          ispravno = false;
-        } else {
-          greskaEmail.textContent = "";
-        }
-
-        // Telefon
-        const telefon = document.getElementById("telefon").value.trim();
-        const greskaTelefon = document.getElementById("greskaTelefon");
-        if (telefon === "" || telefon === "+387") {
-          greskaTelefon.textContent = "Unesite broj telefona.";
-          ispravno = false;
-        } else if (!/^\+?[\d\s\-]{7,20}$/.test(telefon)) {
-          greskaTelefon.textContent = "Unesite ispravan broj telefona.";
-          ispravno = false;
-        } else {
-          greskaTelefon.textContent = "";
-        }
-
-        // Tema
-        const tema = document.getElementById("tema").value;
-        const greskaTema = document.getElementById("greskaTema");
-        if (!tema) {
-          greskaTema.textContent = "Odaberite temu upita.";
-          ispravno = false;
-        } else {
-          greskaTema.textContent = "";
-        }
-
-        // Poruka
-        const poruka = document.getElementById("poruka").value.trim();
-        const greskaPoruka = document.getElementById("greskaPoruka");
-        if (poruka.length < 10) {
-          greskaPoruka.textContent = "Poruka mora imati najmanje 10 karaktera.";
-          ispravno = false;
-        } else {
-          greskaPoruka.textContent = "";
-        }
-
-        // Uspjeh — personalizirana poruka s imenom korisnika
-        if (ispravno) {
-          document.getElementById("uspjesnaPoruka2").textContent = "✓ Hvala, " + ime + "! Poruka je uspješno poslana.";
-          forma.reset();
-        }
-      });
-
-      // Reset dugme — briše polja i sve poruke o greškama
-      document.getElementById("resetDugme2").addEventListener("click", function () {
-        document.querySelectorAll(".greska2").forEach(function (el) {
-          el.textContent = "";
-        });
-        document.getElementById("uspjesnaPoruka2").textContent = "";
-      });
-
-
-      /* TAMNI / SVJETLI MOD
-         tptpskripte.js se brine o toggle-u na ostalim stranicama,
-         ali ovdje dodajem isti listener direktno jer skripta može
-         naići na grešku pri traženju elemenata koji ne postoje na ovoj stranici
-         (btn-generator, baKontejner, kvizRestart...) i stati prije toggle logike.
-         Isti princip kao na istrazuj.html gdje je logika također inline. */
-      const toggleDugme = document.getElementById("theme-toggle");
-      if (toggleDugme) {
-        // učitaj sačuvanu preferenciju iz localStorage pri otvaranju stranice
-        if (localStorage.getItem("tema") === "dark") {
-          document.body.classList.add("dark");
-        }
-
-        toggleDugme.addEventListener("click", function () {
-          document.body.classList.toggle("dark");
-          // zapamti odabir korisnika u localStorage da se sačuva između posjeta
-          if (document.body.classList.contains("dark")) {
-            localStorage.setItem("tema", "dark");
-          } else {
-            localStorage.setItem("tema", "light");
-          }
-        });
-      }
-
-    </script>
-
   </body>
-
 </html>
